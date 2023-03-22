@@ -1,0 +1,17 @@
+
+# Unity generated files
+/Library/
+/Temp/
+obj/
+
+# Visual Studio files
+*.sln
+*.csproj
+*.csproj.user
+*.sln.user
+
+# User and project-specific files
+*.userprefs
+.idea/
+UserSettings/
+ProjectSettings/
