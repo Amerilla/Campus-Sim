@@ -2,6 +2,8 @@
 # Unity generated files
 /Library/
 /Temp/
+/UIElementsSchema/
+/Logs/
 obj/
 
 # Visual Studio files
