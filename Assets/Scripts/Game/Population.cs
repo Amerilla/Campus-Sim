@@ -9,7 +9,16 @@ namespace Game
         private int _amount;
         private List<Requirement> _requirements;
         private State _state;
-        private enum State
+
+        public Population(string name, int budget, int amount, List<Requirement> requirements) {
+            _name = name;
+            _budget = budget;
+            _amount = amount;
+            _requirements = requirements;
+            //_state = state;
+        }
+
+        public enum State
         {
             Happy, Neutral, Angry
         }

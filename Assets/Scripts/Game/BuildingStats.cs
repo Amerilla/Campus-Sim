@@ -35,7 +35,7 @@ namespace Game
         {
             Transportation, Housing, Education, Parking, Park, Misc
         }
-
+        
     }
     
 }
