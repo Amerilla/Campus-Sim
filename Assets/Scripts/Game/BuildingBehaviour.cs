@@ -8,6 +8,9 @@ namespace Game
     {
         public string _name;
         private BuildingStats _buildingStats;
+
+
+        public BuildingStats Stats() => _buildingStats;
         
         void Start() {
             _buildingStats = Buildings.get[_name];
