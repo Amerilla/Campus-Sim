@@ -12,6 +12,7 @@ namespace Game
         private int _duration;
         private int _cooldown;
         private int _delay;
+        private int _lastCall;
         private string _description;
 
         public Action(string name, int cost, List<Consequence> subConsequence, Consequence mainConsequence, Type type, int duration, int cooldown, int delay, string description) {
@@ -22,10 +23,20 @@ namespace Game
             _type = type;
             _duration = duration;
             _cooldown = cooldown;
-            _delay = delay;
+            _delay = delay; // TODO: add delay function
             _description = description;
         }
 
+
+        public void Execute(int currentTurn) {
+            
+            if(_lastCall + _duration + _cooldown < currentTurn){
+                _mainConsequence.Apply();
+                foreach (Consequence consequence in _subConsequence) {
+                    consequence.Apply();
+                }
+            }
+        }
 
         public enum Type
         {

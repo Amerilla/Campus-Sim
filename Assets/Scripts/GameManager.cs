@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Debug.Log("--------------------------");
-        foreach (var (s, buildingBehaviour) in _buildings) {
-            Debug.Log(s);
-            Debug.Log(buildingBehaviour._name);
-        }
+        
     }
 }

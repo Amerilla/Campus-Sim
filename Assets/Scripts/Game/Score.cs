@@ -23,6 +23,7 @@ namespace Game
         }
 
         public int GetScore() => _value;
+        
 
     }
 
