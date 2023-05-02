@@ -19,3 +19,4 @@ obj/
 *.userprefs
 .idea/
 UserSettings/
+*.xml
