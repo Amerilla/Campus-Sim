@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Stylesheets/MainStyle.uss?fileID=7433441132597879392&amp;guid=4e9b1c1cda333584a87e140f3b4f583e&amp;type=3#MainStyle" />
+    <ui:VisualElement name="TopPane" class="border-pane">
+        <ui:VisualElement name="MoneyDisplay" style="height: 39px; position: relative; width: 140px; background-color: rgb(217, 217, 217); border-top-left-radius: 17px; border-bottom-left-radius: 17px; border-top-right-radius: 17px; border-bottom-right-radius: 17px; border-left-color: rgb(183, 154, 3); border-right-color: rgb(183, 154, 3); border-top-color: rgb(183, 154, 3); border-bottom-color: rgb(183, 154, 3); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; top: 9px; left: 68px;">
+            <ui:VisualElement name="Logo" style="position: relative; height: 31px; width: 30px; left: 92px;" />
+            <ui:Label text="100&apos;000&apos;000" display-tooltip-when-elided="true" name="Amount" style="position: relative; top: -6px; left: 11px; height: 35px; width: 86px; font-size: 14px; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&apos;); -unity-text-align: middle-left; white-space: nowrap; justify-content: space-between;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="LeftPane" class="border-pane" style="height: 402px; width: 111px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; opacity: 1;" />
+</ui:UXML>
