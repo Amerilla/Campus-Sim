@@ -5,7 +5,7 @@ namespace Game
 {
     public class BuildingStats
     {
-        private string _name;
+        public string _name;
         private List<Score> _scores;
         private int _cost;
         private int _capacity;
@@ -27,6 +27,8 @@ namespace Game
             _type = type;
         }
 
+        
+        
         public enum State
         {
             Good, Ok, Abandoned
@@ -35,7 +37,7 @@ namespace Game
         {
             Transportation, Housing, Education, Parking, Park, Misc
         }
-
+        
     }
     
 }

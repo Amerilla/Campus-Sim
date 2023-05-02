@@ -6,8 +6,8 @@
 /Packages/
 /Logs/
 obj/
-*log
-.meta
+*.log
+*.meta
 
 # Visual Studio files
 *.sln
