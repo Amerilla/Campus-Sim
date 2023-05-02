@@ -5,31 +5,44 @@ namespace Game
     public class Score
     {
         private string _name;
-        private int _value;
-        private float _coefficient;
+        protected float _value;
 
-        public Score(string name, int value, float coefficient) {
+        public Score(string name, float value) {
             _name = name;
             _value = value;
-            _coefficient = coefficient;
         }
 
-        public void AddScore(int value) {
+        public void AddScore(float value) {
             _value += value;
         }
 
-        public void SubScore(int value) {
+        public void SubScore(float value) {
             _value -= value;
         }
 
-        public int GetScore() => _value;
+        public float GetScore() => _value;
+
 
     }
 
     public class SubScore:Score
     {
-        public SubScore(string name, int value, float coefficient) : base(name, value, coefficient) {
+        private float _coeffcient;
+        private Score _parentScore;
+        public SubScore(string name, int value, float coefficient, Score parentScore) : base(name, value) {
+            _coeffcient = coefficient;
+            _parentScore = parentScore;
         }
+
+        public void UpdateParentScore() {
+            _parentScore.AddScore(base._value*_coeffcient);
+        }
+
+        public new void AddScore(float value) {
+            base._value += value;
+            UpdateParentScore();
+        }
+        
     }
     
 }

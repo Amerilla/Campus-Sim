@@ -9,5 +9,9 @@
             _subScore = subScore;
             _value = value;
         }
+
+        public void Apply() {
+            _subScore.AddScore(_value);
+        }
     }
 }
