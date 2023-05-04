@@ -5,9 +5,12 @@
 /UIElementsSchema/
 /Packages/
 /Logs/
+/ProjectSettings/
 obj/
 *.log
-*.meta
+
+# Meta files in empty directories: must NOT be tracked
+*/.meta
 
 # Visual Studio files
 *.sln
