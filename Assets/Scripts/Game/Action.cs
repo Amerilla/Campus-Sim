@@ -28,13 +28,12 @@ namespace Game
         }
 
 
-        public void Execute(int currentTurn) {
-            
-            if(_lastCall + _duration + _cooldown < currentTurn){
-                _mainConsequence.Apply();
-                foreach (Consequence consequence in _subConsequence) {
-                    consequence.Apply();
-                }
+        public void Execute(int currentTurn, Campus campus) {
+            if (_lastCall + _duration + _cooldown >= currentTurn) return;
+            if (!campus.Spend(_cost)) return;
+            _mainConsequence.Apply();
+            foreach (Consequence consequence in _subConsequence) {
+                consequence.Apply();
             }
         }
 

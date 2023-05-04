@@ -37,7 +37,9 @@ namespace Game
         {
             Transportation, Housing, Education, Parking, Park, Misc
         }
-        
+
+        public int GetResaleValue() => _resaleValue;
+
     }
     
 }
