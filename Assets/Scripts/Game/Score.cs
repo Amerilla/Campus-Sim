@@ -26,15 +26,15 @@ namespace Game
 
     public class SubScore:Score
     {
-        private float _coeffcient;
+        private float _coefficient;
         private Score _parentScore;
         public SubScore(string name, int value, float coefficient, Score parentScore) : base(name, value) {
-            _coeffcient = coefficient;
+            _coefficient = coefficient;
             _parentScore = parentScore;
         }
 
         public void UpdateParentScore() {
-            _parentScore.AddScore(base._value*_coeffcient);
+            _parentScore.AddScore(base._value*_coefficient);
         }
 
         public new void AddScore(float value) {
