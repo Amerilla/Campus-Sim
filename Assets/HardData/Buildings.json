@@ -1,0 +1,37 @@
+[
+  {
+    "name": "EPFL_IN",
+    "description": "Comme les étudiants en informatique ont une répulsion naturelle pour la lumière du jour, les salles de cours de ce bâtiment se trouvent en sous-sol, sans accès à la lumière du jour.",
+    "cost": 10000,
+    "capacity": 2000,
+    "resaleValue": 10000,
+    "buildingType": "Education"
+  },
+
+  {
+    "name": "EPFL_BM",
+    "description": "Ce bâtiment à l'entrée du campus abrite les salles blanches où sont assemblées des pièces microscopiques. Bien entendu ces salles se trouvent au rez-de-chaussée et sont vitrées, pour montrer aux visiteurs que l'EPFL est à la pointe de la technologie (avant de faire un tour aux toilettes et de constater que cette école n'a pas encore découvert l'eau chaude...)",
+    "cost": 10000,
+    "capacity": 2000,
+    "resaleValue": 10000,
+    "buildingType": "Education"
+  },
+
+  {
+    "name": "UNIL_Amphimax",
+    "description": "Un bâtiment vitré offrant une lumière naturelle très appréciée par les étudiants. En revanche, la direction l'apprécie beaucoup moins pour ses factures de chauffage très élevées en hiver !",
+    "cost": 40000,
+    "capacity": 1000,
+    "resaleValue": 10000,
+    "buildingType": "Education"
+  },
+
+  {
+    "name": "UNIL_Anthropole",
+    "description": "Un bâtiment impressionnant par sa structure complexe et ses nombreux atriums. En somme, carte et boussoles sont nécessaire pour ne pas s'y perdre à tout jamais",
+    "cost": 10000,
+    "capacity": 2000,
+    "resaleValue": 10000,
+    "buildingType": "Education"
+  }
+]

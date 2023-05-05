@@ -1,0 +1,69 @@
+[
+  {
+    "Positive": {
+      "name": "Rachat du SwissTech Convention Center",
+      "description": "L'université paie un loyer ahurissant pour ce bâtiment. C'en est trop! Il est grand temps de l'acheter",
+      "moneyChange": -120000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": 2
+        },
+        {
+          "subScore": "Diversité",
+          "value": 4
+        }
+      ],
+      "type": "Positive",
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    
+    "Random": {
+      "name": "Dons du Cubotron à une association caritative",
+      "description": "Ce bâtiment coûte cher, il est toujours vide et personne ne sait à quoi il sert ! Bon débarras, on en a plus besoin. En plus c'est bon pour l'image de l'unviersité",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Publication",
+          "value": -3
+        },
+  
+        {
+          "subScore": "Diversité",
+          "value": 4
+        }
+      ],
+      "type": "Random",
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    
+    "Negative": {
+      "name": "Vente de l'Internef à Migros",
+      "description": "Pour mettre en pratique les cours de la HEC, le bâtiment Internef est vendu à Migros, qui va le renommer en 'InterMigros'",
+      "moneyChange": 60000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -2
+        },
+        {
+          "subScore": "Diversité",
+          "value": -4
+        }
+      ],
+      "type": "Negative",
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  }
+  
+  
+  
+  
+  
+]
