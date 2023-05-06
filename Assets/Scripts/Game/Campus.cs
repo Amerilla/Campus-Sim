@@ -1,10 +1,10 @@
 ﻿using System;
-using Assets.Scripts.Data;
 
 namespace Game
 {
     public class Campus
     {
+        private BuildingsHandler _buildingsHandler;
        private string _name;
        private float _overallScore;
        private int _balance;
@@ -13,7 +13,7 @@ namespace Game
        private int _population;
        private State _state;
 
-       public Campus(string name, float overallScore, int balance, int revenue, int expenses, int population, State state) {
+       public Campus(string name, float overallScore, int balance, int revenue, int expenses, int population, State state, BuildingsHandler buildingsHandler) {
            _name = name;
            _overallScore = overallScore;
            _balance = balance;
@@ -21,6 +21,7 @@ namespace Game
            _expenses = expenses;
            _population = population;
            _state = state;
+           _buildingsHandler = buildingsHandler;
        }
 
        public enum State
@@ -40,9 +41,11 @@ namespace Game
 
        public int NetWorth() {
            int sum = 0;
+           /*
            foreach (var (s, buildingStats) in Buildings.get) {
                sum += buildingStats.GetResaleValue();
            }
+           */
 
            return _balance + sum;
        }

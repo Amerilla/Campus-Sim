@@ -4,12 +4,12 @@ namespace Game
 {
     public class Consequence
     {
-        private SubScore _subScore;
-        private int _value;
+        private readonly SubScore _subScore;
+        private readonly int _value;
 
         [JsonConstructor]
         private Consequence(string subScore, int? value) {
-            _subScore = new SubScore();
+            //_subScore = new SubScore();
             _value = value ?? 0;
         }
         

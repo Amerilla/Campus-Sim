@@ -14,14 +14,13 @@
           "value": 4
         }
       ],
-      "type": "Positive",
       "duration": null,
       "cooldown": null,
       "delay": 0
     },
     
     "Random": {
-      "name": "Dons du Cubotron à une association caritative",
+      "name": "Don du Cubotron à une association caritative",
       "description": "Ce bâtiment coûte cher, il est toujours vide et personne ne sait à quoi il sert ! Bon débarras, on en a plus besoin. En plus c'est bon pour l'image de l'unviersité",
       "moneyChange": 0,
       "consequences": [
@@ -35,7 +34,6 @@
           "value": 4
         }
       ],
-      "type": "Random",
       "duration": null,
       "cooldown": null,
       "delay": 0
@@ -55,7 +53,6 @@
           "value": -4
         }
       ],
-      "type": "Negative",
       "duration": null,
       "cooldown": null,
       "delay": 0

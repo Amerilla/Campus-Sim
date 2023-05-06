@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class Population
+    public class PopulationStats
     {
         private string _name;
         private int _budget;
@@ -10,7 +10,7 @@ namespace Game
         private List<Requirement> _requirements;
         private State _state;
 
-        public Population(string name, int budget, int amount, List<Requirement> requirements) {
+        public PopulationStats(string name, int budget, int amount, List<Requirement> requirements) {
             _name = name;
             _budget = budget;
             _amount = amount;

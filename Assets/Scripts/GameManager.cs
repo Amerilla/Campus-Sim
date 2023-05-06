@@ -2,31 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using Assets.Scripts.Data;
 using Game;
 using Newtonsoft.Json;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Dictionary<string, BuildingBehaviour> _buildings = new();
-    private Dictionary<string, GameObject> _gameObjects = new();
+    private ScoresHandler _scoresHandler;
+    private ChoiceGenerator _choiceGen;
     private int _currentTurn;
     private Campus _campus;
 
     void Start() {
-        /*
-        foreach (string s in Buildings.names) {
-            _gameObjects.Add(s,GameObject.Find(s));
-            _buildings.Add(s,GameObject.Find(s).GetComponent<BuildingBehaviour>());
-        }
-        */
+        var buildingsHandler = new BuildingsHandler(Deserialize<BuildingStats>("HardData/Buildings.json"));
+        _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
         
-        _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral);
+        _scoresHandler = new ScoresHandler(Deserialize<MainScore>("HardData/ScoreCategories.json"));
         
-        var buildings = Deserialize<BuildingStats>("HardData/Buildings.json");
-        var mainScores = Deserialize<MainScore>("HardData/ScoreCategories.json");
         var choicesEconomie = Deserialize<Choice>("HardData/Choices/Economie.json");
+        _choiceGen = new ChoiceGenerator(choicesEconomie);
         var p = 0;
     }
 
