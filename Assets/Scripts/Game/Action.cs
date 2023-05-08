@@ -26,19 +26,18 @@ namespace Game
             _cooldown = cooldown ?? 0;
             _delay = delay ?? 0;
         }
-        
-        public Action(string name, int moneyChange, List<Consequence> subConsequence, Consequence mainConsequence, ActionType actionType, int duration, int cooldown, int delay, string description) {
-            _name = name;
-            _description = description;
-            _moneyChange = moneyChange;
-            _subConsequence = subConsequence;
-            _mainConsequence = mainConsequence;
-            _actionType = actionType;
-            _duration = duration;
-            _cooldown = cooldown;
-            _delay = delay; // TODO: add delay function
-            _description = description;
-        }
+
+        public string GetName() => _name;
+
+        public string GetDescription() => _description;
+
+        public float MoneyChange() => _moneyChange;
+
+        public float Duration() => _duration;
+
+        public float GetCooldown() => _cooldown;
+
+        public float GetDelay() => _delay;
 
         public void SetActionType(ActionType actionType) {
             _actionType = actionType;
