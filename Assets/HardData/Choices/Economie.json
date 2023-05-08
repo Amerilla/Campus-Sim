@@ -1,8 +1,8 @@
 [
   {
     "Positive": {
-      "name": "Augmenter les prix de restauration",
-      "description": " ",
+      "name": "À la diet!",
+      "description": "Augmenter les prix de restauration pour un service de meilleur qualité! Et finalement, manger c'est surfait",
       "moneyChange": 1000000,
       "consequences": [
         {
@@ -21,8 +21,8 @@
     
     "Negative": {
       "name": "On a les crocs!",
-      "description": " ",
-      "moneyChange": -400000,
+      "description": "Pour une justice sociale, réduire les prix de la nourriture sur les campus!",
+      "moneyChange": -1000000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
@@ -40,7 +40,7 @@
 
     "Random": {
       "name": "Journée: aliment mal-aimé",
-      "description": " ",
+      "description": "Tout le monde a droit à l'amour... même les choux-fleurs. Pourquoi ne pas leur laisser une chance ? C'est plein de fibre, plein de vitamine, et en plus c'est pas si mauvais. ",
       "moneyChange": 0,
       "consequences": [
         {
@@ -62,9 +62,9 @@
 
   {
     "Positive": {
-      "name": " ",
-      "description": " ",
-      "moneyChange": -120000,
+      "name": "Wifi Payant",
+      "description": "Les étudiant-es seront responsables de leur consommation, ce n'est pas du ressort de l'instiution!",
+      "moneyChange": 200000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
@@ -72,7 +72,15 @@
         },
         {
           "subScore": "Diversité",
-          "value": 4
+          "value": -1
+        },
+        {
+          "subScore": "Résultat",
+          "value": -1
+        },
+        {
+          "subScore": "Consommation",
+          "value": 1
         }
       ],
       "duration": null,
@@ -81,9 +89,9 @@
     },
   
     "Negative": {
-      "name": " ",
-      "description": " ",
-      "moneyChange": 60000,
+      "name": "Wifi étendu à la ville",
+      "description": "Un wifi commun pour ne plus se ruiner chez Swisscom !",
+      "moneyChange": 1000000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
@@ -91,7 +99,11 @@
         },
         {
           "subScore": "Diversité",
-          "value": -4
+          "value": 1
+        },
+        {
+          "subScore": "Consommation",
+          "value": -1
         }
       ],
       "duration": null,
@@ -100,18 +112,22 @@
     },
 
     "Random": {
-      "name": " ",
-      "description": " ",
-      "moneyChange": 0,
+      "name": "Wifi individuel 6G",
+      "description": "l'UNIL et l'EPFL considère Internet comme une ressource essentielle à tout instant, elle fournira une connexion 6G individuelle, ultrarapide et gratuite aux étudiant-es inscrites",
+      "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Publication",
-          "value": -3
+          "subScore": "Pollution",
+          "value": -1
         },
   
         {
+          "subScore": "Consommation",
+          "value": -2
+        },
+        {
           "subScore": "Diversité",
-          "value": 4
+          "value": 1
         }
       ],
       "duration": null,
@@ -122,9 +138,9 @@
 
   {
     "Positive": {
-      "name": " ",
-      "description": "",
-      "moneyChange": -120000,
+      "name": "Inflation du semestre",
+      "description": "Augmenter les frais d'écolage, il y aura peut-être moins d'étudiant-es, mais tout l'enseignement sera de meilleure qualité!",
+      "moneyChange": 5000000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
@@ -132,7 +148,11 @@
         },
         {
           "subScore": "Diversité",
-          "value": 4
+          "value": -2
+        },
+        {
+          "subScore": "Résultat",
+          "value": 1
         }
       ],
       "duration": null,
@@ -141,17 +161,17 @@
     },
   
     "Negative": {
-      "name": " ",
+      "name": "Gratuité des études",
       "description": " ",
-      "moneyChange": 60000,
+      "moneyChange": 100000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
-          "value": -2
+          "value": -3
         },
         {
           "subScore": "Diversité",
-          "value": -4
+          "value": 2
         }
       ],
       "duration": null,
@@ -160,18 +180,18 @@
     },
 
     "Random": {
-      "name": " ",
-      "description": " ",
+      "name": "Un écolage PIB",
+      "description": "Aligner les frais d'écolage au PIB, une échelle progressiste qui prend en compte les inégalités mondiales Nord/Sud bien évidemment",
       "moneyChange": 0,
       "consequences": [
         {
           "subScore": "Publication",
-          "value": -3
+          "value": -1
         },
   
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Chiffre d'affaire",
+          "value": 2
         }
       ],
       "duration": null,
