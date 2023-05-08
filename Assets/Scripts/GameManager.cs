@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
-        
+        _UI = GameObject.Find("Game Information").GetComponent<UIBehaviour>();
         _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
         
         var choicesEconomie = DeserializeList<Choice>("HardData/Choices/Economie.json");
@@ -49,5 +49,6 @@ public class GameManager : MonoBehaviour
 
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
+        _UI
     }
 }
