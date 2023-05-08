@@ -57,10 +57,10 @@
       "cooldown": null,
       "delay": 0
     }
-  }
+  },
 
 
-{
+  {
     "Positive": {
       "name": "Rachat du SwissTech Convention Center",
       "description": "L'université paie un loyer ahurissant pour ce bâtiment. C'en est trop! Il est grand temps de l'acheter",
@@ -178,11 +178,7 @@
       "cooldown": null,
       "delay": 0
     }
-  },
-  
-  
-  
-  
+  }
   
   
 ]
