@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void NextTurn() {
 
 
-
+        _UI.UpdateProgressBars(_scoresHandler.GetScores());
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
         _UI.UpdateTurn(_currentTurn);
