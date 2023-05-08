@@ -7,7 +7,7 @@ public class UIBehaviour : MonoBehaviour
 {
     private GameManager _gameManager;
     private Label _moneyDisplay;
-    private Label _turn;
+    private Label _turnDisplay;
     private Button _go;
     
 

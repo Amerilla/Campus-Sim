@@ -49,6 +49,6 @@ public class GameManager : MonoBehaviour
 
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
-        _UI
+        _UI.UpdateTurn(_currentTurn);
     }
 }
