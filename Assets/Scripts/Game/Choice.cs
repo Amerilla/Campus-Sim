@@ -17,5 +17,11 @@ namespace Game
             _randomAction.SetActionType(Action.ActionType.Random);
             _negativeAction.SetActionType(Action.ActionType.Negative);
         }
+
+        public Action GetPositive() => _positiveAction;
+
+        public Action GetRandom() => _randomAction;
+
+        public Action GetNegative() => _negativeAction;
     }
 }

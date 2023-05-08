@@ -53,11 +53,19 @@ namespace Game
         [JsonConstructor]
         private MainScore(string name, float? mainCoeff, List<SubScore> scores) {
             _name = name;
-            _value = 1;
             _mainCoeff = mainCoeff ?? 0;
             _subscores = new Dictionary<string, SubScore>();
+
             foreach (var subScore in scores) {
                 _subscores.Add(subScore._name, subScore);
+            }
+
+        }
+
+        public void UpdateScore() {
+            _value = 0;
+            foreach (var (name, subScore) in _subscores) {
+                _value += subScore._subCoeff * subScore._value;
             }
         }
 
