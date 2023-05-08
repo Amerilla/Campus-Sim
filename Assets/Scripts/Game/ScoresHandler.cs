@@ -90,7 +90,8 @@ namespace Game
     {
         ENVIRONNEMENT, CULTURE, ECONOMIE, ENERGIE, ACADEMIQUE, POPULATION, MOBILITE
     }
-
+    
+    /*
     public enum Environnement { POLLUTION, BIODIVERSITE }
 
     public enum Culture { DIVERSITE, VIE_ASSOCIATIVE }
@@ -104,5 +105,8 @@ namespace Game
     public enum Population { BIEN_ETRE, MINORITES}
     
     public enum Mobilite { MOBILITE_INDIVIDUELLE, TRANSPORTS_PUBLICS}
+    */
+
+    
     
 }
