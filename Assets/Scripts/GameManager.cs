@@ -19,9 +19,23 @@ public class GameManager : MonoBehaviour
         _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
         _UI = GameObject.Find("Game Information").GetComponent<UIBehaviour>();
         _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
-        
-        var choicesEconomie = DeserializeList<Choice>("HardData/Choices/Economie.json");
-        _choiceGen = new ChoiceGenerator(choicesEconomie);
+
+        string root = "HardData/Choices";
+        var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
+        var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
+        var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
+        var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
+        var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
+        var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
+        var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
+        Dictionary<MainCategory, List<Choice>> choices = new Dictionary<MainCategory, List<Choice>>() {
+            { MainCategory.CULTURE, choicesCult },
+            { MainCategory.ENERGIE, choicesEne },
+            { MainCategory.ECONOMIE, choicesEco },
+            { MainCategory.MOBILITE, choicesMob },
+            { MainCategory.ACADEMIQUE, choicesAca }
+        };
+        _choiceGen = new ChoiceGenerator(choices);
         var p = 0;
     }
 

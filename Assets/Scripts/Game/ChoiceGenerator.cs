@@ -5,10 +5,10 @@ namespace Game
 {
     public class ChoiceGenerator
     {
-        private List<List<Choice>> _choices;
+        private Dictionary<MainCategory, List<Choice>> _choices;
 
-        public ChoiceGenerator(params List<Choice>[] choices) {
-            _choices = choices.ToList();
+        public ChoiceGenerator(Dictionary<MainCategory, List<Choice>> choices) {
+            _choices = choices;
         }
     }
 }
