@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
@@ -16,6 +17,18 @@ namespace Game
                 _mainScores.Add(mainScore._name, mainScore);
             }
         }
+        
+        public float GetSubscore(string subScoreName) {
+            foreach (var (mainName, mainScore) in _mainScores) {
+                if (mainName == subScoreName) return mainScore._value;
+                foreach (var (subName, subScore) in mainScore._subscores) {
+                    if (subName == subScoreName) return subScore._value;
+                }
+            }
+
+            throw new ArgumentException($"{subScoreName} is not the name of a SubScore nor a MainScore");
+
+        }
     }
     
     public class MainScore
@@ -23,14 +36,17 @@ namespace Game
         internal string _name;
         internal float _value;
         internal float _mainCoeff;
-        internal List<SubScore> _subscores;
+        internal Dictionary<string, SubScore> _subscores;
 
         [JsonConstructor]
         private MainScore(string name, float? mainCoeff, List<SubScore> scores) {
             _name = name;
             _value = 1;
             _mainCoeff = mainCoeff ?? 0;
-            _subscores = scores;
+            _subscores = new Dictionary<string, SubScore>();
+            foreach (var subScore in scores) {
+                _subscores.Add(subScore._name, subScore);
+            }
         }
 
     }
