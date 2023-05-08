@@ -1,17 +1,17 @@
 [
   {
     "Positive": {
-      "name": "Augmenter les prix de restauration",
+      "name": "Restaurer les bâtiments",
       "description": " ",
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
-          "value": 2
+          "subScore": "Bien-être",
+          "value": -1
         },
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Consommation",
+          "value": 3
         }
       ],
       "duration": null,
@@ -20,17 +20,17 @@
     },
     
     "Negative": {
-      "name": "On a les crocs!",
+      "name": "Sponsoriser les bâtiments",
       "description": " ",
-      "moneyChange": -400000,
+      "moneyChange": 60000,
       "consequences": [
         {
           "subScore": "Chiffre d'affaire",
-          "value": -2
+          "value": 2
         },
         {
-          "subScore": "Diversité",
-          "value": 3
+          "subScore": "Consommation",
+          "value": -1
         }
       ],
       "duration": null,
@@ -39,18 +39,26 @@
     },
 
     "Random": {
-      "name": "Journée: aliment mal-aimé",
+      "name": "Abandonner les bâtiments",
       "description": " ",
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Biodiversité",
-          "value": 1
+          "subScore": "Pollution",
+          "value": -2
         },
   
         {
-          "subScore": "Diversité",
-          "value": -1
+          "subScore": "Chiffre d'affaire",
+          "value": -2
+        },
+        {
+          "subScore": "Consommation",
+          "value": 1
+        },
+        {
+          "subScore": "Bien-être",
+          "value": -2
         }
       ],
       "duration": null,
@@ -178,7 +186,6 @@
       "cooldown": null,
       "delay": 0
     }
-  }
-  
+  } 
   
 ]

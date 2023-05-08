@@ -1,37 +1,21 @@
 [
   {
     "Positive": {
-      "name": "Rachat du SwissTech Convention Center",
-      "description": "L'université paie un loyer ahurissant pour ce bâtiment. C'en est trop! Il est grand temps de l'acheter",
-      "moneyChange": -120000,
+      "name": "Déminéraliser les places publiques",
+      "description": " ",
+      "moneyChange": -200000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "subScore": "Biodiversité",
           "value": 2
         },
         {
-          "subScore": "Diversité",
-          "value": 4
-        }
-      ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
-    },
-    
-    "Random": {
-      "name": "Don du Cubotron à une association caritative",
-      "description": "Ce bâtiment coûte cher, il est toujours vide et personne ne sait à quoi il sert ! Bon débarras, on en a plus besoin. En plus c'est bon pour l'image de l'unviersité",
-      "moneyChange": 0,
-      "consequences": [
-        {
-          "subScore": "Publication",
-          "value": -3
+          "subScore": "Bien-être",
+          "value": 2
         },
-  
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Transport public",
+          "value": -1
         }
       ],
       "duration": null,
@@ -40,30 +24,54 @@
     },
     
     "Negative": {
-      "name": "Vente de l'Internef à Migros",
-      "description": "Pour mettre en pratique les cours de la HEC, le bâtiment Internef est vendu à Migros, qui va le renommer en 'InterMigros'",
-      "moneyChange": 60000,
+      "name": "Sous la pelouse, les pavés",
+      "description": " ",
+      "moneyChange": -4000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "subScore": "Biodiversité",
           "value": -2
         },
         {
-          "subScore": "Diversité",
-          "value": -4
+          "subScore": "Bien-être",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Bétoner la Chamberonne",
+      "description": " ",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Biodiversité",
+          "value": -3
+        },
+  
+        {
+          "subScore": "Bien-être",
+          "value": -2
+        },
+        {
+          "subScore": "Mobilité individuelle",
+          "value": 1
         }
       ],
       "duration": null,
       "cooldown": null,
       "delay": 0
     }
-  }
+  },
 
 
-{
+  {
     "Positive": {
-      "name": "Rachat du SwissTech Convention Center",
-      "description": "L'université paie un loyer ahurissant pour ce bâtiment. C'en est trop! Il est grand temps de l'acheter",
+      "name": " ",
+      "description": " ",
       "moneyChange": -120000,
       "consequences": [
         {
@@ -79,10 +87,29 @@
       "cooldown": null,
       "delay": 0
     },
-    
+  
+    "Negative": {
+      "name": " ",
+      "description": " ",
+      "moneyChange": 60000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -2
+        },
+        {
+          "subScore": "Diversité",
+          "value": -4
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
     "Random": {
-      "name": "Don du Cubotron à une association caritative",
-      "description": "Ce bâtiment coûte cher, il est toujours vide et personne ne sait à quoi il sert ! Bon débarras, on en a plus besoin. En plus c'est bon pour l'image de l'unviersité",
+      "name": " ",
+      "description": " ",
       "moneyChange": 0,
       "consequences": [
         {
@@ -93,25 +120,6 @@
         {
           "subScore": "Diversité",
           "value": 4
-        }
-      ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
-    },
-    
-    "Negative": {
-      "name": "Vente de l'Internef à Migros",
-      "description": "Pour mettre en pratique les cours de la HEC, le bâtiment Internef est vendu à Migros, qui va le renommer en 'InterMigros'",
-      "moneyChange": 60000,
-      "consequences": [
-        {
-          "subScore": "Chiffre d'affaire",
-          "value": -2
-        },
-        {
-          "subScore": "Diversité",
-          "value": -4
         }
       ],
       "duration": null,
@@ -122,8 +130,8 @@
 
   {
     "Positive": {
-      "name": "Rachat du SwissTech Convention Center",
-      "description": "L'université paie un loyer ahurissant pour ce bâtiment. C'en est trop! Il est grand temps de l'acheter",
+      "name": " ",
+      "description": "",
       "moneyChange": -120000,
       "consequences": [
         {
@@ -139,10 +147,29 @@
       "cooldown": null,
       "delay": 0
     },
-    
+  
+    "Negative": {
+      "name": " ",
+      "description": " ",
+      "moneyChange": 60000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -2
+        },
+        {
+          "subScore": "Diversité",
+          "value": -4
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
     "Random": {
-      "name": "Don du Cubotron à une association caritative",
-      "description": "Ce bâtiment coûte cher, il est toujours vide et personne ne sait à quoi il sert ! Bon débarras, on en a plus besoin. En plus c'est bon pour l'image de l'unviersité",
+      "name": " ",
+      "description": " ",
       "moneyChange": 0,
       "consequences": [
         {
@@ -158,31 +185,7 @@
       "duration": null,
       "cooldown": null,
       "delay": 0
-    },
-    
-    "Negative": {
-      "name": "Vente de l'Internef à Migros",
-      "description": "Pour mettre en pratique les cours de la HEC, le bâtiment Internef est vendu à Migros, qui va le renommer en 'InterMigros'",
-      "moneyChange": 60000,
-      "consequences": [
-        {
-          "subScore": "Chiffre d'affaire",
-          "value": -2
-        },
-        {
-          "subScore": "Diversité",
-          "value": -4
-        }
-      ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
     }
-  },
-  
-  
-  
-  
-  
+  } 
   
 ]

@@ -2,25 +2,25 @@
 [
   {
     "Positive": {
-      "name": "Balélec XXL",
-      "description": "La fête, les amis, la musique. Un bon boost au moral quand les examens arrivent, tout le bord du lac se rappelera de cette soirée",
+      "name": "Abonnement TP gratuits ",
+      "description": " ",
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Résultat",
+          "subScore": "Pollution",
           "value": -1
         },
         {
-          "subScore": "Diversité",
-          "value": 2
+          "subScore": "Vie associative",
+          "value": 1
         },
         {
-          "subScore": "Bien-être",
+          "subScore": "Diversité",
           "value": 1
-        },    
+        },
         {
-          "subScore": "Consommation",
-          "value": -2
+          "subScore": "Transport public",
+          "value": 3
         }
       ],
       "duration": null,
@@ -29,31 +29,35 @@
     },
     
     "Negative": {
- "name": "Interdire Balélec",
+      "name": "Création de parking ",
       "description": " ",
       "moneyChange": -400000,
       "consequences": [
         {
- "subScore": "Consommation",
-          "value": 2
+          "subScore": "Pollution",
+          "value": -2
         },
         {
- "subScore": "Résultat",
+          "subScore": "Vie associative",
           "value": 1
         },
     {
-          "subScore": "Bien-être",
-          "value": -1
+          "subScore": "Diversité",
+          "value": 2
+        },
+        {
+          "subScore": "Mobilité individuelle",
+          "value": -3
         }
       ],
       "duration": null,
       "cooldown": null,
       "delay": 0
-}, 
+    }, 
     "Random": {
-      "name": "Festival de musique en mongolfière ",
+      "name": "Tapis roulants sur tout le campus",
       "description": " ",
-      "moneyChange": 0,
+      "moneyChange": -1000000,
       "consequences": [
         {
           "subScore": "Consommation",
@@ -61,12 +65,12 @@
         },
   
         {
-"subScore": "Pollution",
-          "value": -1
+          "subScore": "Bien-être",
+          "value": -2
         },
         {
-          "subScore": "Diversité",
- "value": 3
+          "subScore": "Mobilité individuelle",
+          "value": 4
         }
       ],
       "duration": null,
@@ -74,6 +78,10 @@
       "delay": 0
     }
   }
+
+  
+  
+  
+  
+  
 ]
-
-
