@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ProgressBar value="22" title="Environnement" name="ProgressBar_Environment" style="scale: 1 2; width: 40%; background-color: rgba(202, 0, 196, 0); -unity-font-style: bold; height: 5%; -unity-background-image-tint-color: rgb(35, 224, 183); border-left-color: rgb(63, 212, 0); border-right-color: rgb(63, 212, 0); border-top-color: rgb(63, 212, 0); border-bottom-color: rgb(63, 212, 0); color: rgb(236, 230, 23); -unity-text-outline-color: rgb(212, 21, 21); align-items: stretch; left: 0; top: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+</ui:UXML>
