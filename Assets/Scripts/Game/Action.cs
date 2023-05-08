@@ -31,9 +31,9 @@ namespace Game
 
         public string GetDescription() => _description;
 
-        public float MoneyChange() => _moneyChange;
+        public float GetMoneyChange() => _moneyChange;
 
-        public float Duration() => _duration;
+        public float GetDuration() => _duration;
 
         public float GetCooldown() => _cooldown;
 
