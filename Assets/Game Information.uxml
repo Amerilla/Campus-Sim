@@ -26,9 +26,8 @@
         <ui:ProgressBar value="22" title="Mobilité" name="ProgressBar_Mobility" style="scale: 1 2; width: 40%; -unity-font-style: bold; height: 5%;" />
         <ui:ProgressBar value="22" title="Energy" name="ProgressBar_Energy" style="width: 40%; scale: 1 2; -unity-font-style: bold; height: 5%;" />
         <ui:ProgressBar value="22" title="Culture" name="ProgressBar_Culture" style="width: 40%; scale: 1 2; -unity-font-style: bold; height: 5%;" />
-        <ui:ProgressBar value="22" title="Economy" name="ProgressBar_Econony" style="scale: 1 2; width: 30%; -unity-font-style: bold; color: rgb(255, 0, 0); height: 5%; flex-wrap: nowrap; top: auto; bottom: auto;" />
+        <ui:ProgressBar value="22" title="Economy" name="ProgressBar_Economy" style="scale: 1 2; width: 30%; -unity-font-style: bold; color: rgb(255, 0, 0); height: 5%; flex-wrap: nowrap; top: auto; bottom: auto;" />
     </ui:IMGUIContainer>
-    <ui:IMGUIContainer name="CenterPaneLefRight" style="position: absolute; width: 462px; height: 55%; left: 513px; top: 10%; flex-direction: column; justify-content: space-around; align-items: center; border-top-width: 10px; border-bottom-width: 10px;" />
     <ui:VisualElement name="BottomPane" focusable="false" style="flex-direction: row; left: 10%; position: absolute; bottom: 0; right: 0; top: 65%; background-color: rgba(0, 149, 255, 0.31);">
         <ui:IMGUIContainer name="question-haut-1" style="align-items: center; left: 5%; width: 15%; top: 3%; flex-direction: column; position: absolute; height: 45%;">
             <ui:Button text="Action 1" display-tooltip-when-elided="true" name="Action-1" style="width: 100%; height: 33%; background-color: rgb(243, 179, 52); border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; color: rgb(3, 4, 89); font-size: 16px; border-left-color: rgb(3, 4, 89); border-right-color: rgb(3, 4, 89); border-top-color: rgb(3, 4, 89); border-bottom-color: rgb(3, 4, 89); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px;" />
