@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     private Campus _campus;
 
     void Start() {
-        var buildingsHandler = new BuildingsHandler(Deserialize<BuildingStats>("HardData/Buildings.json"));
+        var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
         
-        _scoresHandler = new ScoresHandler(Deserialize<MainScore>("HardData/ScoreCategories.json"));
+        _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
         
-        var choicesEconomie = Deserialize<Choice>("HardData/Choices/Economie.json");
+        var choicesEconomie = DeserializeList<Choice>("HardData/Choices/Economie.json");
         _choiceGen = new ChoiceGenerator(choicesEconomie);
         var p = 0;
     }
@@ -28,32 +28,18 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private List<BuildingStats> DeserializeBuildings() {
-        string jsonPath = Path.Combine(Application.dataPath, "HardData/Buildings.json");
-        using StreamReader r = new StreamReader(jsonPath);
-        string json = r.ReadToEnd();
-        return JsonConvert.DeserializeObject<List<BuildingStats>>(json);
-    }
-
-    private List<MainScore> DeserializeScores() {
-        string jsonPath = Path.Combine(Application.dataPath, "HardData/MainScores.json");
-        using StreamReader r = new StreamReader(jsonPath);
-        string json = r.ReadToEnd();
-        return JsonConvert.DeserializeObject<List<MainScore>>(json);
-    }
-
-    private List<Action> DeserializeActions() {
-        string jsonPath = Path.Combine(Application.dataPath, "HardData/Choices/MainScores.json");
-        using StreamReader r = new StreamReader(jsonPath);
-        string json = r.ReadToEnd();
-        return JsonConvert.DeserializeObject<List<Action>>(json);
-    }
-
-    private List<T> Deserialize<T>(string path) {
+    private List<T> DeserializeList<T>(string path) {
         string jsonPath = Path.Combine(Application.dataPath, path);
         using StreamReader r = new StreamReader(jsonPath);
         string json = r.ReadToEnd();
         return JsonConvert.DeserializeObject<List<T>>(json);
+    }
+
+    private T DeserializeSingle<T>(string path) {
+        string jsonPath = Path.Combine(Application.dataPath, path);
+        using StreamReader r = new StreamReader(jsonPath);
+        string json = r.ReadToEnd();
+        return JsonConvert.DeserializeObject<T>(json);
     }
     
     public void NextTurn() {
