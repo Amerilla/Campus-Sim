@@ -1,0 +1,86 @@
+
+[
+  {
+    "Positive": {
+      "name": "Nourriture gratuite",
+      "description": " ",
+      "moneyChange": -100000,
+      "consequences": [
+        {
+          "subScore": "Pollution",
+          "value": -1
+        },
+        {
+          "subScore": "Vie associative",
+          "value": 1
+        },
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -2
+        },
+        {
+          "subScore": "Diversité",
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    
+    "Negative": {
+      "name": "Alcool gratuit",
+      "description": " ",
+      "moneyChange": -600000,
+      "consequences": [
+        {
+          "subScore": "Diversité",
+          "value": 3
+        },
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -1
+        },
+        {
+          "subScore": "Résultat",
+          "value": -2
+        },
+        {
+          "subScore": "Minorités",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }, 
+    "Random": {
+      "name": "Deo gratuit",
+      "description": " ",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Biodiversité",
+          "value": -1
+        },
+        {
+          "subScore": "Vie associative",
+          "value": 1
+        },
+        {
+          "subScore": "Bien-être",
+          "value": 3
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  }
+
+  
+  
+  
+  
+  
+]
