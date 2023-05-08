@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
     private Campus _campus;
+    private UIBehaviour _UI;
 
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
 
 
 
-
+        _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
     }
 }

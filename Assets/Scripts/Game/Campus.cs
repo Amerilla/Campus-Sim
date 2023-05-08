@@ -35,7 +35,9 @@ namespace Game
            return true;
        }
 
-       public void Balance() {
+       public int GetBalance() => _balance;
+
+       public void UpdateBalance() {
            _balance = _balance - _expenses + _revenue;
        }
 
