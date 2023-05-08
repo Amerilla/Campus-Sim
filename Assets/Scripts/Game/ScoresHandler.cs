@@ -17,8 +17,20 @@ namespace Game
                 _mainScores.Add(mainScore._name, mainScore);
             }
         }
+
+        public List<float> GetScores() {
+            return new List<float>() {
+                GetScore("Environnement"),
+                GetScore("Population"),
+                GetScore("Académique"),
+                GetScore("Culture"),
+                GetScore("Energie"),
+                GetScore("Economie"),
+                GetScore("Mobilité")
+            };
+        }
         
-        public float GetSubscore(string subScoreName) {
+        public float GetScore(string subScoreName) {
             foreach (var (mainName, mainScore) in _mainScores) {
                 if (mainName == subScoreName) return mainScore._value;
                 foreach (var (subName, subScore) in mainScore._subscores) {
