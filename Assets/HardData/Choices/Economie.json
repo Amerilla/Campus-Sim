@@ -198,6 +198,80 @@
       "cooldown": null,
       "delay": 0
     }
+  },
+  {
+    "Positive": {
+      "name": "Offre bio! ",
+      "description": "Ajouter plus d'espace marchands et qui seront bios, pour consommer éthiquement et surtout consommer ",
+      "moneyChange": 1000000,
+      "consequences": [
+        {
+          "subScore": "Minorités",
+          "value": -1
+        },
+        {
+          "subScore": "Variété de l'offre",
+          "value": 2
+        },
+        {
+          "subScore": "Biodiversité",
+          "value": 2
+        },
+        {
+          "subScore": "Consommation",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    
+    "Negative": {
+      "name": "Castor freegan partout",
+      "description": "Donner les invendus journaliers du campus, celleux qui ont moins de sous mangeront plus tard dans la journée ",
+      "moneyChange": -4000000,
+      "consequences": [
+        {
+          "subScore": "Pollution",
+          "value": -2
+        },
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": -1
+        },
+        {
+          "subScore": "Minorités",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    "Random": {
+      "name": "Campus Commercial",
+      "description": "Transformer le campus en centre commercial, plus besoin d'aller en ville, tout est sur place. Fini les études, avec les intelligences artificiels, on a plus besoin des humains pour étudier. Autant s'amuser et faire du shopping toute la journée !",
+      "moneyChange": 1000000,
+      "consequences": [
+        {
+          "subScore": "Variété de l'offre",
+          "value": 2
+        },
+  
+        {
+          "subScore": "Consommation",
+          "value": -2
+        },
+        {
+          "subScore": "Résultat",
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
   }
   
   

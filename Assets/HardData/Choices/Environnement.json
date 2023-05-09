@@ -278,6 +278,141 @@
       "cooldown": null,
       "delay": 0
     }
-  } 
+  },
+
+  {
+    "Positive": {
+      "name": "Campus potager",
+      "description": "Cultiver local, une économie circulaire, et une activité douce à pratique entre ami-es pour former une société universitaire plus solidaires",
+      "moneyChange": -400000,
+      "consequences": [
+        {
+          "subScore": "Diversité",
+          "value": 1
+        },
+        {
+          "subScore": "Variété de l'offre",
+          "value": -2
+        },
+        {
+          "subScore": "Pollution",
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Casser les prix",
+      "description": "Importer la nourriture à bas prix pour tous les portes-monnaies!",
+      "moneyChange": 100000,
+      "consequences": [
+        {
+          "subScore": "Bien-être",
+          "value": -1
+        },
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Midi selecta",
+      "description": "Remplacer les cafétérias par des selectas, service garanti 24h sur 24h",
+      "moneyChange": 400000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": 2
+        },
+        {
+          "subScore": "Minorités",
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+  {
+    "Positive": {
+      "name": "cours sur l'écologie",
+      "description": "intégrer un cours obligatoire sur les enjeux écologiques dans tous les cursus",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Biodiversité",
+          "value": 1
+        },
+        {
+          "subScore": "Vie associative",
+          "value": 1
+        },
+        {
+          "subScore": "Résultat",
+          "value": 1
+        },
+        {
+          "subScore": "Transport public",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+    
+    "Negative": {
+      "name": "cours de profit économique",
+      "description": "Intégrer un cours obligatoire pour être un-e entrepreneuse efficace de le système économique actuel",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Pollution",
+          "value": -1
+        },
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Cours d'animisme",
+      "description": "Intégrer un cours obligatoire sur l'animisme pour une approche plus consciente et connecté au monde ",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Vie associative",
+          "value": 1
+        },
+  
+        {
+          "subScore": "Minorités",
+          "value": 1
+        },
+        {
+          "subScore": "Publication",
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  }
   
 ]
