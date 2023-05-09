@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Game
 {
@@ -9,7 +10,7 @@ namespace Game
 
         [JsonConstructor]
         private Consequence(string subScore, int? value) {
-            //_subScore = new SubScore();
+            //_subScore = 
             _value = value ?? 0;
         }
         
@@ -19,7 +20,7 @@ namespace Game
         }
 
         public void Apply() {
-            //_subScore.AddScore(_value);
+           // _subScore.AddScore(_value);
         }
     }
 }

@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 using Game;
+using UnityEditor.UI;
 using Action = System.Action;
 
 public class UIBehaviour : MonoBehaviour
 {
     private GameManager _gameManager;
 
+    private MainCategory _shownCategory;
+    private bool _shown;
+    
     private VisualElement _root;
     
     private Label _moneyDisplay;
@@ -17,6 +21,7 @@ public class UIBehaviour : MonoBehaviour
     private Label _title;
     
     private Button _go;
+    private Button _nextTurn;
     
     private Button _environmentButton;
     private ProgressBar _environmentBar;
@@ -54,6 +59,7 @@ public class UIBehaviour : MonoBehaviour
 
     private void Start() {
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        
         Initialized();
     }
 
@@ -63,24 +69,32 @@ public class UIBehaviour : MonoBehaviour
         VisualElement bottomPane = _root.Q<VisualElement>("BottomPane");
         VisualElement centerPane = _root.Q<VisualElement>("CenterPane");
         VisualElement leftPane = _root.Q<VisualElement>("LeftPane");
+
+                
+        _actionDescription = bottomPane.Q<Label>("Description_ActionSelected");
+        _actionDescription.text = "";
+        _actionDuration = bottomPane.Q<Label>("Description_Duration");
+        _actionDuration.text = "";
+        _actionCost = bottomPane.Q<Label>("Description_Budget");
+        _actionCost.text = "";
         
         _environmentActions = new ScrollView();
         _environmentActions.name = "Environment_Actions";
         _environmentActions.style.position = new StyleEnum<Position>(Position.Absolute);
-        _environmentActions.style.display = DisplayStyle.None;
         bottomPane.Add(_environmentActions);
 
         _economyActions = new ScrollView();
         _economyActions.name = "Economy_Actions";
         _economyActions.style.position = new StyleEnum<Position>(Position.Absolute);
-        _economyActions.style.display = DisplayStyle.None;
         bottomPane.Add(_economyActions);
         
         _moneyDisplay = topPane.Q<VisualElement>("MoneyDisplay").Q<Label>("Amount");
         _turnDisplay = topPane.Q<VisualElement>("TimeDisplay").Q<Label>("Turn");
         _title = topPane.Q<Label>("Title");
+        _title.text = "";
         
         _go = bottomPane.Q<VisualElement>("GoDisplay").Q<Button>("Go");
+        _nextTurn = topPane.Q<Button>("Go");
 
         _environmentButton = leftPane.Q<Button>("Planet_Button");
         _environmentBar = centerPane.Q<ProgressBar>("ProgressBar_Environment");
@@ -106,7 +120,7 @@ public class UIBehaviour : MonoBehaviour
         
         
         
-        _go.clicked += () => _gameManager.NextTurn();
+        
         _environmentButton.clicked += () => ShowScore(MainCategory.ENVIRONNEMENT);
         _energyButton.clicked += () => ShowScore(MainCategory.ENERGIE);
         _academicButton.clicked += () => ShowScore(MainCategory.ACADEMIQUE);
@@ -115,7 +129,9 @@ public class UIBehaviour : MonoBehaviour
         _populationButton.clicked += () => ShowScore(MainCategory.POPULATION);
         _cultureButton.clicked += () => ShowScore(MainCategory.CULTURE);
 
+        _nextTurn.clicked += () => _gameManager.NextTurn();
 
+        HideUI();
     }
 
     public void UpdateMoney(int money) {
@@ -139,7 +155,14 @@ public class UIBehaviour : MonoBehaviour
     }
 
     private void ShowScore(MainCategory name) {
+        if (name == _shownCategory && _shown) {
+            HideUI();
+            return;
+        }
         HideAllActions();
+        ShowScoreBar();
+        _shownCategory = name;
+        _shown = true;
         switch (name) {
             case MainCategory.ENVIRONNEMENT: 
                 _title.text = "Environnement";
@@ -183,15 +206,18 @@ public class UIBehaviour : MonoBehaviour
             Button posButton = new Button();
             posButton.name = posAction.GetName();
             posButton.text = posAction.GetName();
+            posButton.clicked += () => ActionDetail(posAction);
 
             Button negButton = new Button();
             negButton.name = negAction.GetName();
             negButton.text = negAction.GetName();
+            negButton.clicked += () => ActionDetail(negAction);
 
 
             Button randomButton = new Button();
             randomButton.name = randomAction.GetName();
             randomButton.text = randomAction.GetName();
+            negButton.clicked += () => ActionDetail(randomAction);
         
             switch (score) {
                 case MainCategory.ENVIRONNEMENT:
@@ -219,13 +245,65 @@ public class UIBehaviour : MonoBehaviour
         
     }
 
+    private void HideUI() {
+        _shown = false;
+        _title.text = "";
+        HideAllActions();
+        HideScore();
+        HideDetails();
+    }
+
+    private void HideDetails() {
+        _actionDescription.style.display = DisplayStyle.None;
+        _actionDuration.style.display = DisplayStyle.None;
+        _actionCost.style.display = DisplayStyle.None;
+        _go.style.display = DisplayStyle.None;
+    }
+
     private void HideAllActions() {
         _economyActions.style.display = DisplayStyle.None;
         _environmentActions.style.display = DisplayStyle.None;
 
     }
 
-    private void ActionDetail() {
+    private void HideScore() {
+        _environmentBar.style.display = DisplayStyle.None;
+        _energyBar.style.display = DisplayStyle.None;
+        _economyBar.style.display = DisplayStyle.None;
+        _academicBar.style.display = DisplayStyle.None;
+        _cultureBar.style.display = DisplayStyle.None;
+        _mobilityBar.style.display = DisplayStyle.None;
+        _populationBar.style.display = DisplayStyle.None;
+
+    }
+
+    private void ShowScoreBar() {
+        _environmentBar.style.display = DisplayStyle.Flex;
+        _energyBar.style.display = DisplayStyle.Flex;
+        _economyBar.style.display = DisplayStyle.Flex;
+        _academicBar.style.display = DisplayStyle.Flex;
+        _cultureBar.style.display = DisplayStyle.Flex;
+        _mobilityBar.style.display = DisplayStyle.Flex;
+        _populationBar.style.display = DisplayStyle.Flex;
         
+    }
+
+    private void ActionDetail(Game.Action action) {
+        _actionDescription.text = action.GetDescription();
+        _actionDescription.style.display = DisplayStyle.Flex;
+        if (action.GetMoneyChange() > 0) {
+            _actionCost.text = $"Gain de {action.GetMoneyChange()} CHF";
+        }
+        else {
+            _actionCost.text = $"Perte de {action.GetMoneyChange()} CHF";
+
+        }
+        
+        _actionCost.style.display = DisplayStyle.Flex;
+        _actionDuration.text = $"Dure {action.GetDuration()} tours";
+        _actionDuration.style.display = DisplayStyle.Flex;
+        _go.style.display = DisplayStyle.Flex;
+        _go.clicked += () => _gameManager.AddActionToDo(action);
+
     }
 }
