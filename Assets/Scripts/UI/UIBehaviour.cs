@@ -20,32 +20,35 @@ public class UIBehaviour : MonoBehaviour
     
     private Button _environmentButton;
     private ProgressBar _environmentBar;
-    private ListView _environmentActions;
+    private ScrollView _environmentActions;
 
     private Button _energyButton;
     private ProgressBar _energyBar;
-    private ListView _energyActions;
+    private ScrollView _energyActions;
     
     private Button _academicButton;
     private ProgressBar _academicBar;
-    private ListView _academicActions;
+    private ScrollView _academicActions;
 
     private Button _mobilityButton;
     private ProgressBar _mobilityBar;
-    private ListView _mobilityActions;
+    private ScrollView _mobilityActions;
 
     private Button _populationButton;
     private ProgressBar _populationBar;
-    private ListView _populationActions;
+    private ScrollView _populationActions;
 
     private Button _economyButton;
     private ProgressBar _economyBar;
-    private ListView _economyActions;
+    private ScrollView _economyActions;
 
     private Button _cultureButton;
     private ProgressBar _cultureBar;
-    private ListView _cultureActions;
-    
+    private ScrollView _cultureActions;
+
+    private Label _actionDescription;
+    private Label _actionCost;
+    private Label _actionDuration;
     
     
 
@@ -61,23 +64,18 @@ public class UIBehaviour : MonoBehaviour
         VisualElement centerPane = _root.Q<VisualElement>("CenterPane");
         VisualElement leftPane = _root.Q<VisualElement>("LeftPane");
         
-        _environmentActions = new ListView();
+        _environmentActions = new ScrollView();
         _environmentActions.name = "Environment_Actions";
-        _environmentActions.style.position = new StyleEnum<Position>(Position.Relative);
-        _environmentActions.style.left = 10;
-        _environmentActions.style.top = 60;
+        _environmentActions.style.position = new StyleEnum<Position>(Position.Absolute);
         _environmentActions.style.display = DisplayStyle.None;
+        bottomPane.Add(_environmentActions);
 
-        _economyActions = new ListView();
+        _economyActions = new ScrollView();
         _economyActions.name = "Economy_Actions";
         _economyActions.style.position = new StyleEnum<Position>(Position.Absolute);
-        _economyActions.style.left = 0;
-        _economyActions.style.top = 0;
-        _economyActions.style.display = DisplayStyle.Flex;
-        _economyActions.style.backgroundColor = new StyleColor(Color.green);
-        
+        _economyActions.style.display = DisplayStyle.None;
         bottomPane.Add(_economyActions);
-
+        
         _moneyDisplay = topPane.Q<VisualElement>("MoneyDisplay").Q<Label>("Amount");
         _turnDisplay = topPane.Q<VisualElement>("TimeDisplay").Q<Label>("Turn");
         _title = topPane.Q<Label>("Title");
@@ -141,9 +139,11 @@ public class UIBehaviour : MonoBehaviour
     }
 
     private void ShowScore(MainCategory name) {
+        HideAllActions();
         switch (name) {
             case MainCategory.ENVIRONNEMENT: 
                 _title.text = "Environnement";
+                _environmentActions.style.display = DisplayStyle.Flex;
                 break;
             case MainCategory.ENERGIE:
                 _title.text = "Energie";
@@ -171,53 +171,61 @@ public class UIBehaviour : MonoBehaviour
     }
 
     public void CreateActions(List<Choice> choices, MainCategory score) {
+
+        
+
         foreach (var choice in choices) {
             Game.Action posAction = choice.GetPositive();
             Game.Action negAction = choice.GetNegative();
             Game.Action randomAction = choice.GetRandom();
+            
 
             Button posButton = new Button();
             posButton.name = posAction.GetName();
             posButton.text = posAction.GetName();
-            posButton.style.height = new StyleLength(33);
-            
+
             Button negButton = new Button();
             negButton.name = negAction.GetName();
             negButton.text = negAction.GetName();
-            negButton.style.height = new StyleLength(33);
+
 
             Button randomButton = new Button();
             randomButton.name = randomAction.GetName();
             randomButton.text = randomAction.GetName();
-            randomButton.style.height = new StyleLength(33);
-
+        
             switch (score) {
                 case MainCategory.ENVIRONNEMENT:
-                    _environmentActions.bindItem = new Action<VisualElement, int>((element, i) => {
-                        element.name = "Actions_Container";
-                        element.style.flexDirection = new StyleEnum<FlexDirection>(FlexDirection.Column);
-                        element.Add(posButton);
-                        element.Add(negButton);
-                        element.Add(randomButton);
-
-                    });
+                    _environmentActions.contentContainer.Add(posButton);
+                    _environmentActions.contentContainer.Add(negButton);
+                    _environmentActions.contentContainer.Add(randomButton);
+                    _environmentActions.style.width = new StyleLength(200);
+                    _environmentActions.style.width = new StyleLength(400);
+                    _environmentActions.contentContainer.style.flexDirection = FlexDirection.Column;
                     break;
                 case MainCategory.ECONOMIE:
-                    _economyActions.bindItem = new Action<VisualElement, int>((element, i) => {
-                        element.name = "Actions_Container";
-                        element.style.flexDirection = new StyleEnum<FlexDirection>(FlexDirection.Column);
-                        element.Add(posButton);
-                        element.Add(negButton);
-                        element.Add(randomButton);
-
-                    });
+                    _economyActions.contentContainer.Add(posButton);
+                    _economyActions.contentContainer.Add(negButton);
+                    _economyActions.contentContainer.Add(randomButton);
+                    _economyActions.style.width = new StyleLength(200);
+                    _economyActions.style.width = new StyleLength(400);
+                    _economyActions.contentContainer.style.flexDirection = FlexDirection.Column;
                     break;
                 default:
                     break;
 
             }
-            
+
         }
+        
     }
-    
+
+    private void HideAllActions() {
+        _economyActions.style.display = DisplayStyle.None;
+        _environmentActions.style.display = DisplayStyle.None;
+
+    }
+
+    private void ActionDetail() {
+        
+    }
 }

@@ -1,9 +1,9 @@
 [
   {
     "Positive": {
-      "name": "Déminéraliser les places publiques",
-      "description": " ",
-      "moneyChange": -200000,
+      "name": "À bas le béton!",
+      "description": "Déminéraliser les places publiques, c'est plus de biodiversité, moins d'îlots de chaleur,les petits oiseaux... laisser plus de place à la nature",
+      "moneyChange": -100000,
       "consequences": [
         {
           "subScore": "Biodiversité",
@@ -25,7 +25,7 @@
     
     "Negative": {
       "name": "Sous la pelouse, les pavés",
-      "description": " ",
+      "description": "La pelouse représente trop d'entretien et ça tache les pantalons. Les pavés c'est simple, efficace et confortable!",
       "moneyChange": -4000000,
       "consequences": [
         {
@@ -44,7 +44,7 @@
 
     "Random": {
       "name": "Bétoner la Chamberonne",
-      "description": " ",
+      "description": "La mobilité est un enjeu central du campus, il faut fluidifier les relations entre les espaces, La Chamberonne est un cours d'eau de trop!",
       "moneyChange": 0,
       "consequences": [
         {
@@ -58,6 +58,71 @@
         },
         {
           "subScore": "Mobilité individuelle",
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+
+  {
+    "Positive": {
+      "name": "Roi des forêts",
+      "description": "La plantation d'arbre apporte de l'ombre, de l'oxigène et enrichit les sols. C'est est un des moyens les plus simples contre le réchauffement climatique!",
+      "moneyChange": -400000,
+      "consequences": [
+        {
+          "subScore": "Chiffre d'affaire",
+          "value": 2
+        },
+        {
+          "subScore": "Diversité",
+          "value": 4
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Arbre en plastique",
+      "description": "Après un premier coût à l'achat ces arbres embelliront les intérieurs, pas besoin d'eau, uniquement un coup de plumeau de temps en temps! ",
+      "moneyChange": 60000,
+      "consequences": [
+        {
+          "subScore": "Pollution",
+          "value": 1
+        },
+        {
+          "subScore": "Bien-être",
+          "value": 1
+        },
+        {
+          "subScore": "Consommation",
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Arbre 'liquide' ",
+      "description": "Ces réservoirs d'eau permettront de purifier l'air comme les arbres sans l'embarras d'être planté dans la terre! ",
+      "moneyChange": 0,
+      "consequences": [
+        {
+          "subScore": "Pollution",
+          "value": -1
+        },
+  
+        {
+          "subScore": "Consommation",
           "value": 1
         }
       ],
@@ -67,20 +132,23 @@
     }
   },
 
-
   {
     "Positive": {
-      "name": " ",
-      "description": " ",
-      "moneyChange": -120000,
+      "name": "Mouton-Tondeuse",
+      "description": "Augmenter le nombre de moutons pour tondre la pelouse, c'est naturel, et les moutons sont trop mignons",
+      "moneyChange": -200000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "subScore": "Production",
+          "value": 1
+        },
+        {
+          "subScore": "Bien-être",
           "value": 2
         },
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Chiffre d'affaire",
+          "value": 1
         }
       ],
       "duration": null,
@@ -89,17 +157,17 @@
     },
   
     "Negative": {
-      "name": " ",
-      "description": " ",
+      "name": "Robots aspirateurs",
+      "description": "C'est un progrès social de supprimer ces emplois répétitifs grâce aux robots, tout va disparaître!",
       "moneyChange": 60000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
-          "value": -2
+          "subScore": "Biodiversité",
+          "value": -1
         },
         {
-          "subScore": "Diversité",
-          "value": -4
+          "subScore": "Minorités",
+          "value": -2
         }
       ],
       "duration": null,
@@ -108,8 +176,8 @@
     },
 
     "Random": {
-      "name": " ",
-      "description": " ",
+      "name": "Champ de fleurs",
+      "description": "Arrêter de tondre au profit du biotope, planter des bourgeons pour un décor floral, romantique, et agréable",
       "moneyChange": 0,
       "consequences": [
         {
@@ -118,8 +186,8 @@
         },
   
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Bien-être",
+          "value": 2
         }
       ],
       "duration": null,
@@ -130,17 +198,25 @@
 
   {
     "Positive": {
-      "name": " ",
-      "description": "",
-      "moneyChange": -120000,
+      "name": "Campus zéro-déchet",
+      "description": " Moins de pollution, plus de confort, moins de plastique, plus de tri !",
+      "moneyChange": -200000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
-          "value": 2
+          "subScore": "Pollution",
+          "value": 3
         },
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Variété de l'offre",
+          "value": -1
+        },
+        {
+          "subScore": "Consommation",
+          "value": -2
+        },
+        {
+          "subScore": "Bien-être",
+          "value": -1
         }
       ],
       "duration": null,
@@ -149,17 +225,17 @@
     },
   
     "Negative": {
-      "name": " ",
-      "description": " ",
+      "name": "Supprimer les poubelles",
+      "description": "Un confort moindre et un risque d'une accumulation de déchet conséquent",
       "moneyChange": 60000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
-          "value": -2
+          "subScore": "Pollution",
+          "value": -3
         },
         {
-          "subScore": "Diversité",
-          "value": -4
+          "subScore": "Bien-être",
+          "value": -3
         }
       ],
       "duration": null,
@@ -168,18 +244,34 @@
     },
 
     "Random": {
-      "name": " ",
-      "description": " ",
+      "name": "Tri des déchets obligatoie",
+      "description": "Atelier hebdomadaire de tri déchet obligatoire pour apprendre aux étudiants à trier efficacement, tout en sensibilisant à ses conséquences ! C'est une expérience sociale unique",
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Publication",
-          "value": -3
+          "subScore": "Pollution",
+          "value": -2
+        },
+        {
+          "subScore": "Diversité",
+          "value": 1
+        },
+        {
+          "subScore": "Consommation",
+          "value": -1
         },
   
         {
-          "subScore": "Diversité",
-          "value": 4
+          "subScore": "Bien-être",
+          "value": 2
+        },
+        {
+          "subScore": "Publication",
+          "value": 1
+        },
+        {
+          "subScore": "Bien-être",
+          "value": -3
         }
       ],
       "duration": null,
