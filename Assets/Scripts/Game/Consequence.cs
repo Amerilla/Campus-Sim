@@ -10,7 +10,7 @@ namespace Game
 
         [JsonConstructor]
         private Consequence(string subScore, int? value) {
-            //_subScore = 
+            _subScore = GameObject.Find("Game Manager").GetComponent<GameManager>().GetSubScore(subScore);
             _value = value ?? 0;
         }
         

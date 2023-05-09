@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public SubScore GetSubScore(string name) {
+        return _scoresHandler.GetSubScore(name);
+    }
+
     private List<T> DeserializeList<T>(string path) {
         string jsonPath = Path.Combine(Application.dataPath, path);
         using StreamReader r = new StreamReader(jsonPath);
