@@ -8,8 +8,7 @@ namespace Game
     {
         private string _name;
         private int _moneyChange;
-        private List<Consequence> _subConsequence;
-        private Consequence _mainConsequence;
+        private List<Consequence> _consequences;
         private ActionType _actionType;
         private int _duration;
         private int _cooldown;
@@ -22,6 +21,7 @@ namespace Game
             _name = name;
             _description = description;
             _moneyChange = moneyChange ?? 0;
+            _consequences = consequences;
             _duration = duration ?? 0;
             _cooldown = cooldown ?? 0;
             _delay = delay ?? 0;
@@ -47,9 +47,9 @@ namespace Game
 
         public void Execute(int currentTurn, Campus campus) {
             if (_lastCall + _duration + _cooldown >= currentTurn) return;
-            if (!campus.Spend(_moneyChange)) return;
-            _mainConsequence.Apply();
-            foreach (Consequence consequence in _subConsequence) {
+            if (!campus.Spend(-_moneyChange)) return;
+            foreach (Consequence consequence in _consequences) {
+                
                 consequence.Apply();
             }
         }
