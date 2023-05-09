@@ -49,7 +49,6 @@ namespace Game
             if (_lastCall + _duration + _cooldown >= currentTurn) return;
             if (!campus.Spend(-_moneyChange)) return;
             foreach (Consequence consequence in _consequences) {
-                
                 consequence.Apply();
             }
         }

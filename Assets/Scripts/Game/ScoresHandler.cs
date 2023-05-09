@@ -54,6 +54,12 @@ namespace Game
             }
             return null;
         }
+
+        public void UpdateScores() {
+            foreach (var mainScore in _mainScores) {
+                mainScore.Value.UpdateScore();
+            }
+        }
     }
     
     public class MainScore

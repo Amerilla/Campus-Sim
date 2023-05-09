@@ -70,6 +70,9 @@ public class GameManager : MonoBehaviour
     
     public void NextTurn() {
         ExecuteActions();
+        _scoresHandler.UpdateScores();  
+        
+        
         
         _UI.UpdateProgressBars(_scoresHandler.GetScores());
         _UI.UpdateMoney(_campus.GetBalance());

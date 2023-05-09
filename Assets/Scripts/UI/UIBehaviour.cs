@@ -70,17 +70,27 @@ public class UIBehaviour : MonoBehaviour
         VisualElement centerPane = _root.Q<VisualElement>("CenterPane");
         VisualElement leftPane = _root.Q<VisualElement>("LeftPane");
 
-                
+        bottomPane.style.backgroundColor = Color.clear;
+        
         _actionDescription = bottomPane.Q<Label>("Description_ActionSelected");
         _actionDescription.text = "";
+        _actionDescription.style.backgroundColor = Color.clear;
+        _actionDescription.style.width = new StyleLength(500);
+        _actionDescription.style.color = Color.white;
+        _actionDescription.style.whiteSpace = WhiteSpace.Normal;
         _actionDuration = bottomPane.Q<Label>("Description_Duration");
         _actionDuration.text = "";
+        _actionDuration.style.backgroundColor = Color.clear;
+        _actionDuration.style.color = Color.white;
         _actionCost = bottomPane.Q<Label>("Description_Budget");
         _actionCost.text = "";
+        _actionCost.style.backgroundColor = Color.clear;
+        _actionCost.style.color = Color.white;
         
         _environmentActions = new ScrollView();
         _environmentActions.name = "Environment_Actions";
         _environmentActions.style.position = new StyleEnum<Position>(Position.Absolute);
+        _environmentActions.style.left = new StyleLength(10);
         bottomPane.Add(_environmentActions);
 
         _economyActions = new ScrollView();
@@ -94,7 +104,10 @@ public class UIBehaviour : MonoBehaviour
         _title.text = "";
         
         _go = bottomPane.Q<VisualElement>("GoDisplay").Q<Button>("Go");
+        _go.style.color = Color.white;
+        
         _nextTurn = topPane.Q<Button>("Go");
+        _nextTurn.style.color = Color.white;
 
         _environmentButton = leftPane.Q<Button>("Planet_Button");
         _environmentBar = centerPane.Q<ProgressBar>("ProgressBar_Environment");
@@ -207,34 +220,46 @@ public class UIBehaviour : MonoBehaviour
             posButton.name = posAction.GetName();
             posButton.text = posAction.GetName();
             posButton.clicked += () => ActionDetail(posAction);
+            posButton.style.width = new StyleLength(250);
 
             Button negButton = new Button();
             negButton.name = negAction.GetName();
             negButton.text = negAction.GetName();
             negButton.clicked += () => ActionDetail(negAction);
+            negButton.style.width = new StyleLength(250);
 
 
             Button randomButton = new Button();
             randomButton.name = randomAction.GetName();
             randomButton.text = randomAction.GetName();
             negButton.clicked += () => ActionDetail(randomAction);
+            randomButton.style.width = new StyleLength(250);
         
             switch (score) {
                 case MainCategory.ENVIRONNEMENT:
                     _environmentActions.contentContainer.Add(posButton);
                     _environmentActions.contentContainer.Add(negButton);
                     _environmentActions.contentContainer.Add(randomButton);
-                    _environmentActions.style.width = new StyleLength(200);
-                    _environmentActions.style.width = new StyleLength(400);
-                    _environmentActions.contentContainer.style.flexDirection = FlexDirection.Column;
+                    _environmentActions.style.width = new StyleLength(800);
+                    _environmentActions.style.height = new StyleLength(300);
+                    _environmentActions.contentContainer.style.flexDirection = FlexDirection.Row;
+                    _environmentActions.contentContainer.style.flexWrap = Wrap.Wrap;
+                    _environmentActions.style.marginTop = new StyleLength(80);
+                    _environmentActions.style.marginLeft = new StyleLength(50);
+                    
+                    
                     break;
                 case MainCategory.ECONOMIE:
                     _economyActions.contentContainer.Add(posButton);
                     _economyActions.contentContainer.Add(negButton);
                     _economyActions.contentContainer.Add(randomButton);
-                    _economyActions.style.width = new StyleLength(200);
-                    _economyActions.style.width = new StyleLength(400);
-                    _economyActions.contentContainer.style.flexDirection = FlexDirection.Column;
+                    _economyActions.style.width = new StyleLength(800);
+                    _economyActions.style.height = new StyleLength(300);
+                    _economyActions.contentContainer.style.flexDirection = FlexDirection.Row;
+                    _economyActions.contentContainer.style.flexWrap = Wrap.Wrap;
+                    _economyActions.style.marginLeft = new StyleLength(50);
+                    _economyActions.style.marginTop = new StyleLength(80);
+                    
                     break;
                 default:
                     break;

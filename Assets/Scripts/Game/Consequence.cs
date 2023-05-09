@@ -20,7 +20,7 @@ namespace Game
         }
 
         public void Apply() {
-           // _subScore.AddScore(_value);
+           _subScore.AddScore(_value);
         }
     }
 }
