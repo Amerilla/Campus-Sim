@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     private int _currentTurn;
     private Campus _campus;
     private UIBehaviour _UI;
+    private List<Action> _actionsToDo;
 
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
-        _campus = new("EPFL-UNIL", 0, 0, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
+        _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _UI = GameObject.Find("Game Information").GetComponent<UIBehaviour>();
         _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
+        _actionsToDo = new List<Action>();
 
         string root = "HardData/Choices";
         var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
@@ -40,12 +42,16 @@ public class GameManager : MonoBehaviour
         _UI.CreateActions(choicesEco,MainCategory.ECONOMIE);
         _UI.CreateActions(choicesEnv,MainCategory.ENVIRONNEMENT);
         
-        
+        NextTurn();
     }
     
 
     void Update() {
         
+    }
+
+    public SubScore GetSubScore(string name) {
+        return _scoresHandler.GetSubScore(name);
     }
 
     private List<T> DeserializeList<T>(string path) {
@@ -63,11 +69,27 @@ public class GameManager : MonoBehaviour
     }
     
     public void NextTurn() {
-
-
+        ExecuteActions();
+        _scoresHandler.UpdateScores();  
+        _campus.UpdateBalance();
+        
+        
         _UI.UpdateProgressBars(_scoresHandler.GetScores());
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
         _UI.UpdateTurn(_currentTurn);
+        _actionsToDo.Clear();   
+    }
+
+    private void ExecuteActions() {
+        foreach (Action action in _actionsToDo) {
+            action.Execute(_currentTurn,_campus);
+        }
+        _actionsToDo.Clear();
+    }
+    
+    public void AddActionToDo(Action action) {
+        _actionsToDo.Add(action);
     }
 }
+

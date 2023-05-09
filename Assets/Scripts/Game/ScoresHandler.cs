@@ -5,6 +5,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
+
 namespace Game
 {
     public class ScoresHandler
@@ -16,6 +17,7 @@ namespace Game
             foreach (var mainScore in scores) {
                 _mainScores.Add(mainScore._name, mainScore);
             }
+
         }
 
         public List<float> GetScores() {
@@ -40,6 +42,23 @@ namespace Game
 
             throw new ArgumentException($"{subScoreName} is not the name of a SubScore nor a MainScore");
 
+        }
+
+        public SubScore GetSubScore(string name) {
+            SubScore subScore = null;
+            foreach (var mainScore in _mainScores) {
+                subScore = mainScore.Value.GetSubScore(name);
+                if(subScore != null) {
+                    return subScore;
+                }
+            }
+            return null;
+        }
+
+        public void UpdateScores() {
+            foreach (var mainScore in _mainScores) {
+                mainScore.Value.UpdateScore();
+            }
         }
     }
     
@@ -69,6 +88,16 @@ namespace Game
             }
         }
 
+        public SubScore GetSubScore(string name) {
+            foreach (var subScore in _subscores) {
+                if (subScore.Key == name) {
+                    return subScore.Value;
+                }
+            }
+            return null;
+        }
+        
+        
     }
 
     public class SubScore
@@ -82,6 +111,10 @@ namespace Game
             _name = name;
             _subCoeff = subCoeff;
             _value = 0;
+        }
+
+        public void AddScore(float value) {
+            _value += value;
         }
 
     }
@@ -106,7 +139,5 @@ namespace Game
     
     public enum Mobilite { MOBILITE_INDIVIDUELLE, TRANSPORTS_PUBLICS}
     */
-
-    
     
 }
