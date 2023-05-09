@@ -3,8 +3,7 @@
 namespace Game
 {
     public class Campus
-    {
-        private BuildingsHandler _buildingsHandler;
+    { private BuildingsHandler _buildingsHandler;
        private string _name;
        private float _overallScore;
        private int _balance;

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
-        _campus = new("EPFL-UNIL", 0, 100000000, 0, 0, 0, Campus.State.Neutral, buildingsHandler);
+        _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _UI = GameObject.Find("Game Information").GetComponent<UIBehaviour>();
         _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
         _actionsToDo = new List<Action>();
@@ -71,13 +71,14 @@ public class GameManager : MonoBehaviour
     public void NextTurn() {
         ExecuteActions();
         _scoresHandler.UpdateScores();  
-        
+        _campus.UpdateBalance();
         
         
         _UI.UpdateProgressBars(_scoresHandler.GetScores());
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
         _UI.UpdateTurn(_currentTurn);
+        _actionsToDo.Clear();   
     }
 
     private void ExecuteActions() {
