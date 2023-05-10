@@ -1,0 +1,69 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:GroupBox style="top: 45%; justify-content: space-around; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 100%; height: 55%; align-items: center; flex-direction: row; transition-duration: 1s;">
+        <ui:ScrollView name="Actions" style="width: 30%; height: 100%; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; border-left-color: rgb(142, 127, 127); border-right-color: rgb(142, 127, 127); border-top-color: rgb(142, 127, 127); border-bottom-color: rgb(142, 127, 127); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 0; border-top-right-radius: 50px; border-top-left-radius: 50px; background-color: rgb(254, 239, 229);" />
+        <ui:VisualElement name="Details" style="width: 30%; height: 100%; align-items: center; background-color: rgb(254, 239, 229); border-top-left-radius: 50px; border-top-right-radius: 50px; border-left-color: rgb(142, 127, 127); border-right-color: rgb(142, 127, 127); border-top-color: rgb(142, 127, 127); border-bottom-color: rgb(142, 127, 127); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 0;">
+            <ui:Label text="Label" display-tooltip-when-elided="true" name="Description" style="flex-direction: row; flex-wrap: wrap; white-space: normal; -unity-text-align: middle-center; font-size: 15px; height: 30%; width: 100%;" />
+            <ui:GroupBox name="Needed" style="height: 20%; flex-direction: row; justify-content: space-around; align-items: center; width: 75%; flex-wrap: wrap;">
+                <ui:GroupBox name="Env" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/planet.png?fileID=2800000&amp;guid=42dc27f57ad854bfc8305af880fab013&amp;type=3#planet&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 12px;" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Pop" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/population.png?fileID=2800000&amp;guid=8923527a4df5e45c19d7cfe52e554016&amp;type=3#population&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Eco" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/Economy.png?fileID=2800000&amp;guid=b0212eaa733804a9382cba74663eb1b8&amp;type=3#Economy&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Ener" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/Energy.png?fileID=2800000&amp;guid=702be4c1f245e434b8656a03048ea3af&amp;type=3#Energy&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Aca" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/acad%C3%A9miqueuuu.png?fileID=2800000&amp;guid=15e5d767141519c4f91edd60a096ad3c&amp;type=3#académiqueuuu&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Cult" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/culture.png?fileID=2800000&amp;guid=d99c09ea9eb05435c8039dd7303f5ad2&amp;type=3#culture&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Mob" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/mobilit%C3%A9.png?fileID=2800000&amp;guid=3694e23c4b8b3408382da1c040611a7e&amp;type=3#mobilité&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+            </ui:GroupBox>
+            <ui:Button text="Valider" display-tooltip-when-elided="true" name="Validation" style="width: 30%; height: 5%; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px; margin-bottom: 20px; padding-top: 1px; padding-bottom: 1px;" />
+            <ui:GroupBox name="Gain" style="height: 20%; flex-direction: row; justify-content: space-around; align-items: center; width: 75%; flex-wrap: wrap;">
+                <ui:GroupBox name="Env" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/planet.png?fileID=2800000&amp;guid=42dc27f57ad854bfc8305af880fab013&amp;type=3#planet&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Pop" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/population.png?fileID=2800000&amp;guid=8923527a4df5e45c19d7cfe52e554016&amp;type=3#population&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Eco" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/Economy.png?fileID=2800000&amp;guid=b0212eaa733804a9382cba74663eb1b8&amp;type=3#Economy&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Ener" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/Energy.png?fileID=2800000&amp;guid=702be4c1f245e434b8656a03048ea3af&amp;type=3#Energy&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Aca" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/acad%C3%A9miqueuuu.png?fileID=2800000&amp;guid=15e5d767141519c4f91edd60a096ad3c&amp;type=3#académiqueuuu&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Cult" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/culture.png?fileID=2800000&amp;guid=d99c09ea9eb05435c8039dd7303f5ad2&amp;type=3#culture&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+                <ui:GroupBox name="Mob" style="flex-direction: row; align-items: center; justify-content: space-between;">
+                    <ui:VisualElement name="Score" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/mobilit%C3%A9.png?fileID=2800000&amp;guid=3694e23c4b8b3408382da1c040611a7e&amp;type=3#mobilité&apos;); width: 40px; height: 40px; margin-right: 5px;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" />
+                </ui:GroupBox>
+            </ui:GroupBox>
+        </ui:VisualElement>
+    </ui:GroupBox>
+</ui:UXML>

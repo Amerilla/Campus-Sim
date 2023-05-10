@@ -74,9 +74,9 @@ public class UIBehaviour : MonoBehaviour
         
         _actionDescription = bottomPane.Q<Label>("Description_ActionSelected");
         _actionDescription.text = "";
-        _actionDescription.style.backgroundColor = Color.clear;
+        _actionDescription.style.backgroundColor = Color.grey;
         _actionDescription.style.width = new StyleLength(500);
-        _actionDescription.style.color = Color.white;
+        _actionDescription.style.color = Color.black;
         _actionDescription.style.whiteSpace = WhiteSpace.Normal;
         _actionDuration = bottomPane.Q<Label>("Description_Duration");
         _actionDuration.text = "";
@@ -90,7 +90,10 @@ public class UIBehaviour : MonoBehaviour
         _environmentActions = new ScrollView();
         _environmentActions.name = "Environment_Actions";
         _environmentActions.style.position = new StyleEnum<Position>(Position.Absolute);
-        _environmentActions.style.left = new StyleLength(10);
+        _environmentActions.style.width = new StyleLength(800);
+        _environmentActions.style.height = new StyleLength(300);
+        _environmentActions.contentContainer.style.flexDirection = FlexDirection.Row;
+        _environmentActions.contentContainer.style.flexWrap = Wrap.Wrap;
         bottomPane.Add(_environmentActions);
 
         _economyActions = new ScrollView();
@@ -232,7 +235,7 @@ public class UIBehaviour : MonoBehaviour
             Button randomButton = new Button();
             randomButton.name = randomAction.GetName();
             randomButton.text = randomAction.GetName();
-            negButton.clicked += () => ActionDetail(randomAction);
+            randomButton.clicked += () => ActionDetail(randomAction);
             randomButton.style.width = new StyleLength(250);
         
             switch (score) {
@@ -240,12 +243,8 @@ public class UIBehaviour : MonoBehaviour
                     _environmentActions.contentContainer.Add(posButton);
                     _environmentActions.contentContainer.Add(negButton);
                     _environmentActions.contentContainer.Add(randomButton);
-                    _environmentActions.style.width = new StyleLength(800);
-                    _environmentActions.style.height = new StyleLength(300);
-                    _environmentActions.contentContainer.style.flexDirection = FlexDirection.Row;
-                    _environmentActions.contentContainer.style.flexWrap = Wrap.Wrap;
-                    _environmentActions.style.marginTop = new StyleLength(80);
-                    _environmentActions.style.marginLeft = new StyleLength(50);
+                    
+     
                     
                     
                     break;
@@ -257,9 +256,7 @@ public class UIBehaviour : MonoBehaviour
                     _economyActions.style.height = new StyleLength(300);
                     _economyActions.contentContainer.style.flexDirection = FlexDirection.Row;
                     _economyActions.contentContainer.style.flexWrap = Wrap.Wrap;
-                    _economyActions.style.marginLeft = new StyleLength(50);
-                    _economyActions.style.marginTop = new StyleLength(80);
-                    
+
                     break;
                 default:
                     break;
