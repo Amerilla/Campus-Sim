@@ -5,9 +5,9 @@
         private string _name;
         private int _rangeScoreValue;
         private int _importance;
-        private SubScore _subScore;
+        private Score _subScore;
 
-        public Requirement(string name, int rangeScoreValue, int importance, SubScore subScore) {
+        public Requirement(string name, int rangeScoreValue, int importance, Score subScore) {
             _name = name;
             _rangeScoreValue = rangeScoreValue;
             _importance = importance;

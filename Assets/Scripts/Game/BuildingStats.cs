@@ -13,7 +13,7 @@ namespace Game
         public const Type DEFAULT_TYPE = Type.Education;
         
         public string _name;
-        private List<MainScore> _scores;
+        private List<Score> _scores;
         private int _cost;
         private int _capacity;
         private int _resaleValue;
@@ -31,7 +31,7 @@ namespace Game
             _capacity = capacity ?? DEFAULT_CAPACITY;
             _resaleValue = resaleValue ?? DEFAULT_RESALEVALUE;
             _owner = null;
-            _scores = new List<MainScore>();
+            _scores = new List<Score>();
 
             if (buildingType == null) {
                 _type = DEFAULT_TYPE;
@@ -46,7 +46,7 @@ namespace Game
             
         }
         
-        public BuildingStats(string name, List<MainScore> scores, int cost, int capacity, int resaleValue, string description, Owner owner, State state, Type type) {
+        public BuildingStats(string name, List<Score> scores, int cost, int capacity, int resaleValue, string description, Owner owner, State state, Type type) {
             _name = name;
             _scores = scores;
             _cost = cost;

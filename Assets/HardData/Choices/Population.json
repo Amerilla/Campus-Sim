@@ -7,19 +7,19 @@
       "moneyChange": -100000,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Environnement",
           "value": -1
         },
         {
-          "subScore": "Vie associative",
+          "score": "Vie associative",
           "value": 1
         },
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 2
         }
       ],
@@ -34,19 +34,19 @@
       "moneyChange": -600000,
       "consequences": [
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 3
         },
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -1
         },
         {
-          "subScore": "Résultat",
+          "score": "Résultat",
           "value": -2
         },
         {
-          "subScore": "Minorités",
+          "score": "Minorités",
           "value": 1
         }
       ],
@@ -60,15 +60,15 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Biodiversité",
+          "score": "Environnement",
           "value": -1
         },
         {
-          "subScore": "Vie associative",
+          "score": "Vie associative",
           "value": 1
         },
         {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": 3
         }
       ],

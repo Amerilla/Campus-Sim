@@ -3,19 +3,19 @@
   {
     "Positive": {
       "name": "Financement indépendant",
-      "description": " ",
+      "description": null,
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Economie",
           "value": -2
         },
         {
-          "subScore": "Publication",
+          "score": "Académique",
           "value": 3
         },
         {
-          "subScore": "Diversité",
+          "score": "Population",
           "value": 2
         }
       ],
@@ -25,16 +25,16 @@
     },
     
     "Negative": {
-      "name": " Privatisation du financement",
-      "description": " ",
+      "name": "Privatisation du financement",
+      "description": null,
       "moneyChange": -400000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Economie",
           "value": 2
         },
         {
-          "subScore": "Publication",
+          "score": "Académique",
           "value": -1
         }
       ],
@@ -44,16 +44,16 @@
     }, 
     "Random": {
       "name": "Tirage au sort",
-      "description": " ",
+      "description": null,
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Vie associative",
+          "score": "Culture",
           "value": 1
         },
   
         {
-          "subScore": "Publication",
+          "score": "Academique",
           "value": -1
         }
       ],

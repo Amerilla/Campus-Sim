@@ -6,11 +6,11 @@
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 4
         }
       ],
@@ -25,11 +25,11 @@
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 3
         }
       ],
@@ -44,12 +44,12 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Biodiversité",
+          "score": "Environnement",
           "value": 1
         },
   
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": -1
         }
       ],
@@ -67,19 +67,19 @@
       "moneyChange": 200000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": -1
         },
         {
-          "subScore": "Résultat",
+          "score": "Résultat",
           "value": -1
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": 1
         }
       ],
@@ -94,15 +94,15 @@
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 1
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -1
         }
       ],
@@ -117,16 +117,16 @@
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Pollution",
           "value": -1
         },
   
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 1
         }
       ],
@@ -143,15 +143,15 @@
       "moneyChange": 5000000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": -2
         },
         {
-          "subScore": "Résultat",
+          "score": "Résultat",
           "value": 1
         }
       ],
@@ -166,11 +166,11 @@
       "moneyChange": 100000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -3
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 2
         }
       ],
@@ -185,12 +185,12 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Publication",
+          "score": "Publication",
           "value": -1
         },
   
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         }
       ],
@@ -206,19 +206,19 @@
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Minorités",
+          "score": "Minorités",
           "value": -1
         },
         {
-          "subScore": "Variété de l'offre",
+          "score": "Variété de l'offre",
           "value": 2
         },
         {
-          "subScore": "Biodiversité",
+          "score": "Biodiversité",
           "value": 2
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": 1
         }
       ],
@@ -233,15 +233,15 @@
       "moneyChange": -4000000,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Pollution",
           "value": -2
         },
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -1
         },
         {
-          "subScore": "Minorités",
+          "score": "Minorités",
           "value": 1
         }
       ],
@@ -255,16 +255,16 @@
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Variété de l'offre",
+          "score": "Variété de l'offre",
           "value": 2
         },
   
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -2
         },
         {
-          "subScore": "Résultat",
+          "score": "Résultat",
           "value": -2
         }
       ],

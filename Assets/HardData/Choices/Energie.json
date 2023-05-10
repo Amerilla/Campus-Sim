@@ -6,11 +6,11 @@
       "moneyChange": 1000000,
       "consequences": [
         {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": -1
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": 3
         }
       ],
@@ -25,11 +25,11 @@
       "moneyChange": 60000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -1
         }
       ],
@@ -44,20 +44,20 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Environnement",
           "value": -2
         },
   
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": 1
         },
         {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": -2
         }
       ],
@@ -75,11 +75,11 @@
       "moneyChange": -120000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 4
         }
       ],
@@ -94,11 +94,11 @@
       "moneyChange": 60000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": -4
         }
       ],
@@ -113,12 +113,12 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Publication",
+          "score": "Publication",
           "value": -3
         },
   
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 4
         }
       ],
@@ -135,11 +135,11 @@
       "moneyChange": -120000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": 2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 4
         }
       ],
@@ -154,11 +154,11 @@
       "moneyChange": 60000,
       "consequences": [
         {
-          "subScore": "Chiffre d'affaire",
+          "score": "Chiffre d'affaire",
           "value": -2
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": -4
         }
       ],
@@ -173,12 +173,12 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Publication",
+          "score": "Publication",
           "value": -3
         },
   
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 4
         }
       ],

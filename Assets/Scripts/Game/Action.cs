@@ -57,5 +57,11 @@ namespace Game
         {
             Positive, Negative, Random
         }
+
+        public static HashSet<string> OldSubScores() => new HashSet<string>() {
+            "Pollution", "Biodiversité", "Vie associative", "Diversité", "Chiffre d'affaire", "Variété de l'offre",
+            "Consommation", "Production",
+            "Résultat", "Publication", "Bien-être", "Minorités", "Mobilité individuelle", "Transports publics"
+        };
     }
 }

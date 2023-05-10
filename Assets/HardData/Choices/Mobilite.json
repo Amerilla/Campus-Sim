@@ -7,19 +7,19 @@
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Pollution",
           "value": -1
         },
         {
-          "subScore": "Vie associative",
+          "score": "Vie associative",
           "value": 1
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 1
         },
         {
-          "subScore": "Transport public",
+          "score": "Transport public",
           "value": 3
         }
       ],
@@ -34,19 +34,19 @@
       "moneyChange": -400000,
       "consequences": [
         {
-          "subScore": "Pollution",
+          "score": "Pollution",
           "value": -2
         },
         {
-          "subScore": "Vie associative",
+          "score": "Vie associative",
           "value": 1
         },
     {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 2
         },
         {
-          "subScore": "Mobilité individuelle",
+          "score": "Mobilité individuelle",
           "value": -3
         }
       ],
@@ -60,16 +60,16 @@
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -2
         },
   
         {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": -2
         },
         {
-          "subScore": "Mobilité individuelle",
+          "score": "Mobilité individuelle",
           "value": 4
         }
       ],

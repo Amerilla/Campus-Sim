@@ -1,0 +1,43 @@
+﻿[
+  {
+    "name": "Environnement",
+    "coefficient": 1,
+    "initialValue": 20
+  },
+
+  {
+    "name": "Culture",
+    "coefficient": 1,
+    "initialValue": 20
+  },
+
+  {
+    "name": "Economie",
+    "coefficient": 1,
+    "initialValue": 70
+  },
+
+  {
+    "name": "Energie",
+    "coefficient": 1,
+    "initialValue": 70
+  },
+
+  {
+    "name": "Académique",
+    "coefficient": 1,
+    "initialValue": 70
+  },
+
+  {
+    "name": "Population",
+    "coefficient": 1,
+    "initialValue": 20
+  },
+
+  {
+    "name": "Mobilité",
+    "coefficient": 1,
+    "initialValue": 20
+  }
+]

@@ -7,19 +7,19 @@
       "moneyChange": -1000000,
       "consequences": [
         {
-          "subScore": "Résultat",
+          "score": "Résultat",
           "value": -1
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
           "value": 2
         },
         {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": 1
         },    
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -2
         }
       ],
@@ -34,15 +34,15 @@
       "moneyChange": -400000,
       "consequences": [
         {
- "subScore": "Consommation",
+ "score": "Consommation",
           "value": 2
         },
         {
- "subScore": "Résultat",
+ "score": "Résultat",
           "value": 1
         },
     {
-          "subScore": "Bien-être",
+          "score": "Bien-être",
           "value": -1
         }
       ],
@@ -56,16 +56,16 @@
       "moneyChange": 0,
       "consequences": [
         {
-          "subScore": "Consommation",
+          "score": "Consommation",
           "value": -2
         },
   
         {
-"subScore": "Pollution",
+"score": "Pollution",
           "value": -1
         },
         {
-          "subScore": "Diversité",
+          "score": "Diversité",
  "value": 3
         }
       ],

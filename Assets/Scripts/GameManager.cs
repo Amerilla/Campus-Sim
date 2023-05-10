@@ -19,28 +19,31 @@ public class GameManager : MonoBehaviour
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _UI = GameObject.Find("Game Information").GetComponent<UIBehaviour>();
-        _scoresHandler = new ScoresHandler(DeserializeList<MainScore>("HardData/ScoreCategories.json"));
+        _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
         _actionsToDo = new List<Action>();
 
         string root = "HardData/Choices";
-        var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
-        var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
-        var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
+        //var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
+        //var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
+        //var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
         //var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
-        var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
-        var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
+        //var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
+        //var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
         var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
-        Dictionary<MainCategory, List<Choice>> choices = new Dictionary<MainCategory, List<Choice>>() {
-            { MainCategory.CULTURE, choicesCult },
-            { MainCategory.ENERGIE, choicesEne },
-            { MainCategory.ECONOMIE, choicesEco },
-            { MainCategory.MOBILITE, choicesMob },
-            { MainCategory.ACADEMIQUE, choicesAca }
+        Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
+            //{ ScoreType.CULTURE, choicesCult },
+            //{ ScoreType.ENERGIE, choicesEne },
+            //{ ScoreType.ECONOMIE, choicesEco },
+            //{ ScoreType.MOBILITE, choicesMob },
+            { ScoreType.ACADEMIQUE, choicesAca },
+            //{ ScoreType.POPULATION, choicesPop},
+            //{ ScoreType.ENVIRONNEMENT, choicesEnv}
         };
         _choiceGen = new ChoiceGenerator(choices);
         var p = 0;
-        _UI.CreateActions(choicesEco,MainCategory.ECONOMIE);
-        _UI.CreateActions(choicesEnv,MainCategory.ENVIRONNEMENT);
+        //_UI.CreateActions(choicesEco,ScoreType.ECONOMIE);
+        //_UI.CreateActions(choicesEnv,ScoreType.ENVIRONNEMENT);
+        _UI.CreateActions(choicesAca, ScoreType.ACADEMIQUE);
         
         NextTurn();
     }
@@ -48,10 +51,6 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         
-    }
-
-    public SubScore GetSubScore(string name) {
-        return _scoresHandler.GetSubScore(name);
     }
 
     private List<T> DeserializeList<T>(string path) {
@@ -67,14 +66,16 @@ public class GameManager : MonoBehaviour
         string json = r.ReadToEnd();
         return JsonConvert.DeserializeObject<T>(json);
     }
+
+    public Score GetScore(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
         ExecuteActions();
-        _scoresHandler.UpdateScores();  
+        //_scoresHandler.UpdateScores();  
         _campus.UpdateBalance();
         
         
-        _UI.UpdateProgressBars(_scoresHandler.GetScores());
+        //_UI.UpdateProgressBars(_scoresHandler.GetScores());
         _UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
         _UI.UpdateTurn(_currentTurn);

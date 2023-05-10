@@ -11,7 +11,7 @@ public class UIBehaviour : MonoBehaviour
 {
     private GameManager _gameManager;
 
-    private MainCategory _shownCategory;
+    private ScoreType _shownCategory;
     private bool _shown;
     
     private VisualElement _root;
@@ -134,13 +134,13 @@ public class UIBehaviour : MonoBehaviour
         
         
         
-        _environmentButton.clicked += () => ShowScore(MainCategory.ENVIRONNEMENT);
-        _energyButton.clicked += () => ShowScore(MainCategory.ENERGIE);
-        _academicButton.clicked += () => ShowScore(MainCategory.ACADEMIQUE);
-        _mobilityButton.clicked += () => ShowScore(MainCategory.MOBILITE);
-        _economyButton.clicked += () => ShowScore(MainCategory.ECONOMIE);
-        _populationButton.clicked += () => ShowScore(MainCategory.POPULATION);
-        _cultureButton.clicked += () => ShowScore(MainCategory.CULTURE);
+        _environmentButton.clicked += () => ShowScore(ScoreType.ENVIRONNEMENT);
+        _energyButton.clicked += () => ShowScore(ScoreType.ENERGIE);
+        _academicButton.clicked += () => ShowScore(ScoreType.ACADEMIQUE);
+        _mobilityButton.clicked += () => ShowScore(ScoreType.MOBILITE);
+        _economyButton.clicked += () => ShowScore(ScoreType.ECONOMIE);
+        _populationButton.clicked += () => ShowScore(ScoreType.POPULATION);
+        _cultureButton.clicked += () => ShowScore(ScoreType.CULTURE);
 
         _nextTurn.clicked += () => _gameManager.NextTurn();
 
@@ -167,7 +167,7 @@ public class UIBehaviour : MonoBehaviour
 
     }
 
-    private void ShowScore(MainCategory name) {
+    private void ShowScore(ScoreType name) {
         if (name == _shownCategory && _shown) {
             HideUI();
             return;
@@ -177,27 +177,27 @@ public class UIBehaviour : MonoBehaviour
         _shownCategory = name;
         _shown = true;
         switch (name) {
-            case MainCategory.ENVIRONNEMENT: 
+            case ScoreType.ENVIRONNEMENT: 
                 _title.text = "Environnement";
                 _environmentActions.style.display = DisplayStyle.Flex;
                 break;
-            case MainCategory.ENERGIE:
+            case ScoreType.ENERGIE:
                 _title.text = "Energie";
                 break;
-            case MainCategory.ACADEMIQUE:
+            case ScoreType.ACADEMIQUE:
                 _title.text = "Académique";
                 break;
-            case MainCategory.MOBILITE:
+            case ScoreType.MOBILITE:
                 _title.text = "Mobilité";
                 break;
-            case MainCategory.ECONOMIE:
+            case ScoreType.ECONOMIE:
                 _title.text = "Economie";
                 _economyActions.style.display = DisplayStyle.Flex;
                 break;
-            case MainCategory.POPULATION:
+            case ScoreType.POPULATION:
                 _title.text = "Population";
                 break;
-            case MainCategory.CULTURE:
+            case ScoreType.CULTURE:
                 _title.text = "Culture";
                 break;
             default:
@@ -206,7 +206,7 @@ public class UIBehaviour : MonoBehaviour
         
     }
 
-    public void CreateActions(List<Choice> choices, MainCategory score) {
+    public void CreateActions(List<Choice> choices, ScoreType score) {
 
         
 
@@ -236,7 +236,7 @@ public class UIBehaviour : MonoBehaviour
             randomButton.style.width = new StyleLength(250);
         
             switch (score) {
-                case MainCategory.ENVIRONNEMENT:
+                case ScoreType.ENVIRONNEMENT:
                     _environmentActions.contentContainer.Add(posButton);
                     _environmentActions.contentContainer.Add(negButton);
                     _environmentActions.contentContainer.Add(randomButton);
@@ -249,7 +249,7 @@ public class UIBehaviour : MonoBehaviour
                     
                     
                     break;
-                case MainCategory.ECONOMIE:
+                case ScoreType.ECONOMIE:
                     _economyActions.contentContainer.Add(posButton);
                     _economyActions.contentContainer.Add(negButton);
                     _economyActions.contentContainer.Add(randomButton);

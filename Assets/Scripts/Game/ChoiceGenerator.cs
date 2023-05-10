@@ -5,9 +5,9 @@ namespace Game
 {
     public class ChoiceGenerator
     {
-        private Dictionary<MainCategory, List<Choice>> _choices;
+        private Dictionary<ScoreType, List<Choice>> _choices;
 
-        public ChoiceGenerator(Dictionary<MainCategory, List<Choice>> choices) {
+        public ChoiceGenerator(Dictionary<ScoreType, List<Choice>> choices) {
             _choices = choices;
         }
     }
