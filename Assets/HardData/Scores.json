@@ -20,7 +20,7 @@
   {
     "name": "Energie",
     "coefficient": 1,
-    "initialValue": 70
+    "initialValue": 20
   },
 
   {
@@ -32,12 +32,12 @@
   {
     "name": "Population",
     "coefficient": 1,
-    "initialValue": 20
+    "initialValue": 30
   },
 
   {
     "name": "Mobilité",
     "coefficient": 1,
-    "initialValue": 20
+    "initialValue": 30
   }
 ]
