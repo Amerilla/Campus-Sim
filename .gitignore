@@ -25,3 +25,6 @@ obj/
 .idea/
 UserSettings/
 *.xml
+
+# MAC-OS specific files
+.DS_Store
