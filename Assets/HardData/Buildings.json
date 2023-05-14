@@ -198,7 +198,7 @@
   },
    
   {
-    "name": "ODY",
+    "name": "EPFL_ODY",
     "description": "",
     "cost": ,
     "capacity": ,
@@ -217,7 +217,7 @@
    
   {
     "name": "EPFL_Rolex",
-    "description": "",
+    "description": "Bâtiment à l'architecture cocasse rappelant celle d'une tranche d'emmental, c'est à cet endroit précis que les étudiants perdent foi en eux-mêmes",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -244,7 +244,7 @@
    
   {
     "name": "MISC_CentreSportif",
-    "description": "",
+    "description": "C'est un endroit où les gens transpirent pour avoir l'air bien en maillot de bain pendant deux semaines en été, avant de reprendre leur régime de pizzas et de bière.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -253,7 +253,7 @@
    
   {
     "name": "MISC_Estudiantines",
-    "description": "",
+    "description": "Un 12 mètres carrés au prix d'une maison dans le jura ? Je prends !",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -271,7 +271,7 @@
    
   {
     "name": "MISC_StarlingHotel",
-    "description": "",
+    "description": "Un hôtel 4* au bord du lac avec une vue imprenable sur... Le Rolex learning center !",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -289,7 +289,7 @@
    
   {
     "name": "MISC_Vortex",
-    "description": "",
+    "description": "Un bâtiment d'habitations pour étudiants à loyer démodéré. Le Vortex ferait presque de l'ombre au CERN par sa forme circulaire.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -307,7 +307,7 @@
    
   {
     "name": "UNIL_Amphipole",
-    "description": "",
+    "description": "Comme le dit son nom, ce bâtiment est principalement composé de amphis, ce qui en fait un lieu parfait pour les cours de première année bondés.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -316,7 +316,7 @@
    
   {
     "name": "UNIL_Batochime",
-    "description": "",
+    "description": "Ce vaste bâtiment rappelle un peu par son architecture un paquebot. Son équipage se compose principalement de chimistes et de mathématiciens de l'EPFL, mais également des Sherlock Holmes de la police scientifique de l'Université de Lausanne.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -325,7 +325,7 @@
    
   {
     "name": "UNIL_Biophore",
-    "description": "",
+    "description": "Le Biophore est un bâtiment attribué principalement aux étudiants en biologie et médecine. Attention, à ne par confondre avec le Beaufort , qui lui, a une tout autre odeur.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -334,7 +334,7 @@
    
   {
     "name": "UNIL_Chateau",
-    "description": "",
+    "description": "Véritable édifice du 18ème siècle, ce bâtiment n'accueil pas de souverain, mais un groupe qui pourrait bien s'y apparenter, les service de la direction de l'unil par exemple.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -343,7 +343,7 @@
    
   {
     "name": "UNIL_Cubotron",
-    "description": "",
+    "description": "Véritable enclave de l'EPFL sur le territoire de l'Unil, le Cubotron est la première conquète de l'EPFL sur sa grand rivale. Peut-être y en aura-t-il d'autres ?",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
