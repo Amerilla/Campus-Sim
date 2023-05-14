@@ -33,5 +33,394 @@
     "capacity": 2000,
     "resaleValue": 10000,
     "buildingType": "Education"
-  }
+  },
+  
+  {
+    "name": "EPFL_AR",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Artlab",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BI",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BP",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BS",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CE",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CH",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CM",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CO",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_EL",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Garderie",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_GC",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_GR",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Innovation_Park_1",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Innovation_Park_2",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_MA",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_ME",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_MX",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "ODY",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_PH",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Rolex",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_SV",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Village",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_CentreSportif",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Estudiantines",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Ochettes",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_StarlingHotel",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Triaudes",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Vortex",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "RTS",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Amphipole",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Batochime",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Biophore",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Chateau",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Cubotron",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_DroitComparé",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Extranef",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Ferme",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Genopode",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Geopolis",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Internef",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Synathlon",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Unicentre",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+  
+  
 ]
