@@ -5,6 +5,12 @@
       "name": "Financement indépendant",
       "description": null,
       "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": 60
+        }
+      ],
       "consequences": [
         {
           "score": "Economie",
