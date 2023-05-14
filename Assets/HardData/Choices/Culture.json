@@ -23,8 +23,8 @@
           "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 1,
+      "cooldown": 6,
       "delay": 0
     },
     
@@ -46,14 +46,14 @@
           "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 12,
+      "cooldown": 0,
       "delay": 0
 }, 
     "Random": {
       "name": "Festival de musique en mongolfière ",
       "description": " ",
-      "moneyChange": 0,
+      "moneyChange": 1000000,
       "consequences": [
         {
           "score": "Consommation",
@@ -69,8 +69,8 @@
  "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 1,
+      "cooldown": 6,
       "delay": 0
     }
   }
