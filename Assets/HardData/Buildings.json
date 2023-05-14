@@ -217,7 +217,7 @@
    
   {
     "name": "EPFL_Rolex",
-    "description": "Bâtiment à l'architecture cocasse rappelant celle d'une tranche d'emmental, c'est à cet endroit précis que les étudiants perdent foi en eux-mêmes",
+    "description": "Bâtiment à l'architecture cocasse rappelant celle d'une tranche d'emmental, c'est à cet endroit précis que les étudiants perdent foi en eux-mêmes et voient les rêves d'une belle montre s'en aller.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -253,7 +253,7 @@
    
   {
     "name": "MISC_Estudiantines",
-    "description": "Un 12 mètres carrés au prix d'une maison dans le jura ? Je prends !",
+    "description": "Un 12 mètres carrés au prix d'une maison dans le jura ? Il n'y a pas mieux dans la région !",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -361,7 +361,7 @@
    
   {
     "name": "UNIL_Extranef",
-    "description": "",
+    "description": "Petit frère d'Internef (drôle de nom de famille qu'est NEF), on y trouve le département des finances et des sciences actuarielles des HEC. Autant dire que l'ambiance doit être au RDV. ",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -379,7 +379,7 @@
    
   {
     "name": "UNIL_Genopode",
-    "description": "",
+    "description": "Bâtiment d'architecture moderne, le Génopode abrite l'Institut suisse de bioinformatique et une partie du Centre intégratif de génomique. Oui, nous ne savons pas non plus ce que c'est.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -388,7 +388,7 @@
    
   {
     "name": "UNIL_Geopolis",
-    "description": "",
+    "description": "Geopolis, c'est la maison de la science des cailloux et des sciences sociales/politiques. Dans les faits, on y va surtout pour manger et boire des verres.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -397,7 +397,7 @@
    
   {
     "name": "UNIL_Internef",
-    "description": "",
+    "description": "Seul endroit du quartier Chamberonne avec un bancomat, l'architecture extérieur du bâtiment laisse à désirer. Toutefois, on peut y trouver un labyrinthe souterrain et quelques centaines d'étudiants en détresse lors des périodes d'examens.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -406,7 +406,7 @@
    
   {
     "name": "UNIL_Synathlon",
-    "description": "",
+    "description": "Le Synathlon a simplement été construit afin d'offrir aux sportif des bureaux pour qu'ils puissent organiser leurs séances de sport. Heureusement que ce bâtiment est là, comment auraient-ils fait autrement ?",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
@@ -415,7 +415,7 @@
    
   {
     "name": "UNIL_Unicentre",
-    "description": "",
+    "description": "L'Unicentre est situé dans le prolongement de l'Unithèque. C'est un peu le pédoncule de la banane. Siège administratif de la Direction de l'Université, on y trouve le Service des immatriculations et inscriptions, étape obligée avant toutes études à l'unil.",
     "cost": ,
     "capacity": ,
     "resaleValue": ,
