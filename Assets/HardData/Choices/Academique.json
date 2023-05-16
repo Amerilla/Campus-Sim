@@ -35,14 +35,21 @@
     "Negative": {
       "name": "Privatisation du financement",
       "description": null,
-      "moneyChange": -400000,
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": 50
+        }
+      ],
       "consequences": [
         {
           "score": "Economie",
+          "isByTurn": false,
           "value": 2
         },
         {
           "score": "Académique",
+          "isByTurn": true,
           "value": -1
         }
       ],
@@ -50,18 +57,26 @@
       "cooldown": null,
       "delay": 0
     }, 
+    
     "Random": {
       "name": "Tirage au sort",
       "description": null,
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Culture",
+          "minRequired": 30
+        }
+      ],
       "consequences": [
         {
           "score": "Culture",
+          "isByTurn": false,
           "value": 1
         },
   
         {
           "score": "Academique",
+          "isByTurn": true,
           "value": -1
         }
       ],
