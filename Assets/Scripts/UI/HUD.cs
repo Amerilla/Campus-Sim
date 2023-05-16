@@ -43,10 +43,11 @@ public class HUD : MonoBehaviour
 
     public void UpdateHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
         (int, int) cult, (int, int) mob, int currentTurn) {
-        ScoreGroupBoxUpdate();
+        ScoresUpdate(env,pop,eco,ener,aca,cult,mob);
+        TurnUpdate(currentTurn);
     }
     
-    public void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+    private void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
         (int, int) cult, (int, int) mob) {
         ScoreGroupBoxUpdate(env.Item1,env.Item2, _environmentGroupBox);
         ScoreGroupBoxUpdate(pop.Item1,pop.Item2,_populationGroupBox);
@@ -67,12 +68,20 @@ public class HUD : MonoBehaviour
             pbCurrentBack.style.color = Color.blue;
             pbCurrentFront.style.backgroundColor = Color.clear;
             pbCurrentFront.style.color = Color.red;
+            pbCurrentFront.value = nextValue;
+            pbCurrentBack.value = value;
         }
         else {
             pbCurrentBack.style.color = Color.green;
             pbCurrentFront.style.backgroundColor = Color.clear;
             pbCurrentFront.style.color = Color.blue;
+            pbCurrentFront.value = value;
+            pbCurrentBack.value = nextValue;
         }
+    }
+
+    private void TurnUpdate(int currentTurn) {
+        ScoreGroupBoxUpdate(currentTurn,currentTurn,_turnGroupBox);
     }
     
 }

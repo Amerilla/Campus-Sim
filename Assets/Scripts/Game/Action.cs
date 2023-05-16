@@ -9,7 +9,7 @@ namespace Game
         private string _name;
         private List<Consequence> _consequences;
         private ActionType _actionType;
-        private Requirement _requirement;
+        private List<Requirement> _requirements;
         private int _duration;
         private int _cooldown;
         private int _delay;
@@ -45,11 +45,16 @@ namespace Game
             if (_cooldown < 0 || _duration < 0) {
                 return false;
             }
-            return _delay + _duration + _cooldown <= _lastCall;
+            return _delay + _duration + _cooldown <= _lastCall + currentTurn;
         }
         
-        public List<Consequence> Execute(int currentTurn, Campus campus) {
+        public List<Consequence> Execute(int currentTurn) {
             List<Consequence> remainingConsequences = new List<Consequence>();
+            foreach (var requirement in _requirements) {
+                if (!requirement.HasRequirement()) {
+                    return remainingConsequences;
+                }
+            }
             if (CanBeExecuted(currentTurn)) {
                 foreach (var consequence in _consequences) {
                     consequence.SetDelay(_delay);

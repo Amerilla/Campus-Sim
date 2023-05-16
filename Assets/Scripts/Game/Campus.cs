@@ -12,7 +12,6 @@ namespace Game
 
        public Campus(string name, float overallScore, int balance, int revenue, int expenses, int population, State state, BuildingsHandler buildingsHandler) {
            _name = name;
-
            _state = state;
            _buildingsHandler = buildingsHandler;
        }
