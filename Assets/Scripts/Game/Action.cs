@@ -7,9 +7,9 @@ namespace Game
     public class Action
     {
         private string _name;
-        private int _moneyChange;
         private List<Consequence> _consequences;
         private ActionType _actionType;
+        private Requirement _requirement;
         private int _duration;
         private int _cooldown;
         private int _delay;
@@ -17,10 +17,9 @@ namespace Game
         private string _description;
 
         [JsonConstructor]
-        private Action(string name, [CanBeNull] string description, int? moneyChange, List<Consequence> consequences, int? duration, int? cooldown, int? delay) {
+        private Action(string name, [CanBeNull] string description, List<Consequence> consequences, int? duration, int? cooldown, int? delay) {
             _name = name;
             _description = description;
-            _moneyChange = moneyChange ?? 0;
             _consequences = consequences;
             _duration = duration ?? 0;
             _cooldown = cooldown ?? 0;
@@ -30,8 +29,7 @@ namespace Game
         public string GetName() => _name;
 
         public string GetDescription() => _description;
-
-        public float GetMoneyChange() => _moneyChange;
+        
 
         public float GetDuration() => _duration;
 
@@ -43,15 +41,28 @@ namespace Game
             _actionType = actionType;
         }
 
-        public ActionType GetActionType() => _actionType;
-
-        public void Execute(int currentTurn, Campus campus) {
-            if (_lastCall + _duration + _cooldown >= currentTurn) return;
-            if (!campus.Spend(-_moneyChange)) return;
-            foreach (Consequence consequence in _consequences) {
-                consequence.Apply();
+        public bool CanBeExecuted(int currentTurn) {
+            if (_cooldown < 0 || _duration < 0) {
+                return false;
             }
+            return _delay + _duration + _cooldown <= _lastCall;
         }
+        
+        public List<Consequence> Execute(int currentTurn, Campus campus) {
+            List<Consequence> remainingConsequences = new List<Consequence>();
+            if (CanBeExecuted(currentTurn)) {
+                foreach (var consequence in _consequences) {
+                    consequence.SetDelay(_delay);
+                    consequence.SetRemainingTurns(_duration);
+                    if (!consequence.Update()) {
+                        remainingConsequences.Add(consequence);
+                    }
+                }
+            }
+            return remainingConsequences;
+        }
+
+        public ActionType GetActionType() => _actionType;
 
         public enum ActionType
         {

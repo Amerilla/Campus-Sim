@@ -23,33 +23,49 @@ namespace Game
         public Score GetScore(string score) {
             return _scores[Utilities.RemoveAccents(score)];
         }
+
+        public void UpdateScores() {
+            foreach (var score in _scores) {
+                score.Value.UpdateScore();
+            }
+        }
         
     }
     
     public class Score
     {
-        internal string _name;
-        internal float _value;
-        internal float _coeff;
+        private readonly string _name;
+        private int _value;
+        private int _byTurn;
+        private int _coefficient;
 
         [JsonConstructor]
-        private Score(string name, float? coefficient, float? initialValue) {
+        private Score(string name, int? byturn, int? initialValue) {
             _name = Utilities.RemoveAccents(name);
-            _coeff = coefficient ?? 0;
+            _byTurn = byturn ?? 0;
             _value = initialValue ?? 50;
         }
 
-        public void AddScore(float added) {
-            _value += added;
+        public void AddScore(int added) {
+            _value += added*_coefficient;
+        }
+
+        public void AddByTurn(int added) {
+            _byTurn += added*_coefficient;
         }
         public float GetScore => _value;
 
-        public void SetScore(float score) {
-            _value = score;
+        public void SetScore(int score) {
+            _value = score*_coefficient;
+        }
+
+        public void UpdateScore() {
+            _value += _byTurn;
         }
 
         public string GetName() => _name;
-        
+
+        public (int, int) GetCurrentAndNextScore => (_value, _value + _byTurn);
     }
     
     public enum ScoreType

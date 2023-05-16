@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour
     private ScoresHandler _scoresHandler;
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
+    private int _maxScoreValue;
     private Campus _campus;
     private UIBehaviour _UI;
     private List<Action> _actionsToDo;
+    private List<Consequence> _remainingConsequences;
 
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
@@ -71,10 +73,10 @@ public class GameManager : MonoBehaviour
     
     public void NextTurn() {
         ExecuteActions();
-        //_scoresHandler.UpdateScores();  
-        _campus.UpdateBalance();
-        
-        
+        UpdateRemainingConsequences();
+        _scoresHandler.UpdateScores();  
+
+
         //_UI.UpdateProgressBars(_scoresHandler.GetScores());
         //_UI.UpdateMoney(_campus.GetBalance());
         _currentTurn++;
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void ExecuteActions() {
         foreach (Action action in _actionsToDo) {
-            action.Execute(_currentTurn,_campus);
+            AddRemainingConsequences(action.Execute(_currentTurn,_campus));
         }
         _actionsToDo.Clear();
     }
@@ -92,5 +94,18 @@ public class GameManager : MonoBehaviour
     public void AddActionToDo(Action action) {
         _actionsToDo.Add(action);
     }
+    
+    private void AddRemainingConsequences(List<Consequence> consequences) {
+        _remainingConsequences.AddRange(consequences);
+    }
+
+    private void UpdateRemainingConsequences() {
+        foreach (var consequence in _remainingConsequences) {
+            if(consequence.Update()) {
+                _remainingConsequences.Remove(consequence);
+            }
+        }
+    }
+    
 }
 
