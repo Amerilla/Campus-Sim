@@ -10,6 +10,8 @@ using UnityEditor.UI;
 using Action = System.Action;
 public class HUD : MonoBehaviour
 {
+    private GameManager _gameManager;
+    
     private VisualElement _root;
     private GroupBox _environmentGroupBox;
     private GroupBox _populationGroupBox;
@@ -33,6 +35,8 @@ public class HUD : MonoBehaviour
         _mobilityGroupBox = _root.Q<GroupBox>("Mob");
 
         _turnGroupBox = _root.Q<GroupBox>("Turn");
+
+
     }
 
     // Update is called once per frame
@@ -44,7 +48,25 @@ public class HUD : MonoBehaviour
     public void UpdateHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
         (int, int) cult, (int, int) mob, int currentTurn) {
         ScoresUpdate(env,pop,eco,ener,aca,cult,mob);
-        TurnUpdate(currentTurn);
+        ScoreGroupBoxUpdate(currentTurn,currentTurn,_turnGroupBox);
+        
+    }
+
+    public void InitHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+        (int, int) cult, (int, int) mob,(int,int) turn) {
+        ScoresInit(env,pop,eco,ener,aca,cult,mob);
+        ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox);
+    }
+
+    public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+        (int, int) cult, (int, int) mob) {
+        ScoreGroupBoxInit(env.Item1,env.Item2, _environmentGroupBox);
+        ScoreGroupBoxInit(pop.Item1,pop.Item2,_populationGroupBox);
+        ScoreGroupBoxInit(eco.Item1,eco.Item2, _economyGroupBox);
+        ScoreGroupBoxInit(ener.Item1,ener.Item2,_energyGroupBox);
+        ScoreGroupBoxInit(aca.Item1,aca.Item2,_academicGroupBox);
+        ScoreGroupBoxInit(cult.Item1,cult.Item2,_cultureGroupBox);
+        ScoreGroupBoxInit(mob.Item1,mob.Item2,_mobilityGroupBox);
     }
     
     private void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
@@ -56,6 +78,7 @@ public class HUD : MonoBehaviour
         ScoreGroupBoxUpdate(aca.Item1,aca.Item2,_academicGroupBox);
         ScoreGroupBoxUpdate(cult.Item1,cult.Item2,_cultureGroupBox);
         ScoreGroupBoxUpdate(mob.Item1,mob.Item2,_mobilityGroupBox);
+        
     }
     
     private void ScoreGroupBoxUpdate(int value, int nextValue, GroupBox groupBox) {
@@ -79,9 +102,25 @@ public class HUD : MonoBehaviour
             pbCurrentBack.value = nextValue;
         }
     }
+    
+    private void ScoreGroupBoxInit(int value, int maxValue, GroupBox groupBox) {
+        Label label = groupBox.Q<Label>("Value");
+        ProgressBar pbCurrentFront = groupBox.Q<ProgressBar>("ProgressbarCurrentFront");
+        ProgressBar pbCurrentBack = groupBox.Q<ProgressBar>("ProgressbarCurrentBack");
 
-    private void TurnUpdate(int currentTurn) {
-        ScoreGroupBoxUpdate(currentTurn,currentTurn,_turnGroupBox);
+        label.text = $"{value}";
+        
+        pbCurrentBack.style.color = Color.blue;
+        pbCurrentFront.style.backgroundColor = Color.clear;
+        pbCurrentFront.style.color = Color.blue;
+        pbCurrentFront.value = value;
+        pbCurrentFront.value = maxValue;
+        pbCurrentBack.value = value;
+        pbCurrentBack.highValue = maxValue;
+        
     }
+
+    
+    
     
 }

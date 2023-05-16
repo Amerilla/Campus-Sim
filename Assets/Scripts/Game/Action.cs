@@ -44,7 +44,7 @@ namespace Game
 
         public bool CanBeExecuted(int currentTurn) {
             if (_cooldown < 0 || _duration < 0) {
-                return false;
+                return _lastCall < currentTurn;
             }
             return _delay + _duration + _cooldown <= _lastCall + currentTurn;
         }

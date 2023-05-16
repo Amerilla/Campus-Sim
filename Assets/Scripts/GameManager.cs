@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     private ScoresHandler _scoresHandler;
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
-    private int _maxScoreValue;
+    private const int MaxScore = 100;
+    private const int MaxTurn = 100;
     private Campus _campus;
     //private UIBehaviour _UI;
     private List<Action> _actionsToDo = new();
