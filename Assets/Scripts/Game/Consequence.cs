@@ -9,6 +9,9 @@ namespace Game
     {
         private readonly Score _score;
         private readonly int _value;
+        private readonly bool _isByTurn;
+        private int _remainingTurns;
+        private int _delayRemaining;
 
         [JsonConstructor]
         private Consequence(string score, int? value) {
@@ -22,10 +25,41 @@ namespace Game
             _score = GameObject.Find("Game Manager").GetComponent<GameManager>().GetScore(Utilities.RemoveAccents(score));
             _value = value ?? 0;
         }
-
-        public void Apply() {
-            _score.AddScore(_value);
+        
+        private void Apply() {
+            if (_isByTurn) {
+                _score.AddByTurn(_value);
+            }
+            else {
+                _score.AddScore(_value);
+            }
+            
         }
+
+        public void SetDelay(int delay) {
+            _delayRemaining = delay;
+        }
+
+        public void SetRemainingTurns(int turns) {
+            _remainingTurns = turns;
+        }
+
+        /*
+         * Update function return true if the consequence is finished
+         */
+        public bool Update() {
+            if (_delayRemaining > 0) {
+                _delayRemaining -= 1;
+                return false;
+            }
+            if (_remainingTurns == 0) {
+                    return true;
+            }
+            Apply();
+            _remainingTurns -= 1;
+            return false;
+            }
+        
         
     }
 }

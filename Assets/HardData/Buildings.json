@@ -33,5 +33,394 @@
     "capacity": 2000,
     "resaleValue": 10000,
     "buildingType": "Education"
-  }
+  },
+  
+  {
+    "name": "EPFL_AR",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Artlab",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BI",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BP",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_BS",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CE",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CH",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CM",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_CO",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_EL",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Garderie",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_GC",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_GR",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Innovation_Park_1",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Innovation_Park_2",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_MA",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_ME",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_MX",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_ODY",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_PH",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Rolex",
+    "description": "Bâtiment à l'architecture cocasse rappelant celle d'une tranche d'emmental, c'est à cet endroit précis que les étudiants perdent foi en eux-mêmes et voient les rêves d'une belle montre s'en aller.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_SV",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "EPFL_Village",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_CentreSportif",
+    "description": "C'est un endroit où les gens transpirent pour avoir l'air bien en maillot de bain pendant deux semaines en été, avant de reprendre leur régime de pizzas et de bière.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Estudiantines",
+    "description": "Un 12 mètres carrés au prix d'une maison dans le jura ? Il n'y a pas mieux dans la région !",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Ochettes",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_StarlingHotel",
+    "description": "Un hôtel 4* au bord du lac avec une vue imprenable sur... Le Rolex learning center !",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Triaudes",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "MISC_Vortex",
+    "description": "Un bâtiment d'habitations pour étudiants à loyer démodéré. Le Vortex ferait presque de l'ombre au CERN par sa forme circulaire.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "RTS",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Amphipole",
+    "description": "Comme le dit son nom, ce bâtiment est principalement composé d'amphis, ce qui en fait un lieu parfait pour entasser les étudiants de première année.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Batochime",
+    "description": "Ce vaste bâtiment rappelle un peu par son architecture un paquebot. Son équipage se compose principalement de chimistes et de mathématiciens de l'EPFL, mais également des Sherlock Holmes de la police scientifique de l'Université de Lausanne.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Biophore",
+    "description": "Le Biophore est un bâtiment attribué principalement aux étudiants en biologie et médecine. Attention, à ne pas confondre avec le Beaufort qui, lui, a une toute autre odeur.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Chateau",
+    "description": "Véritable édifice du 18ème siècle, ce bâtiment n'accueille pas de souverain, mais un groupe qui pourrait bien s'y apparenter, les service de la direction de l'unil par exemple.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Cubotron",
+    "description": "Véritable enclave de l'EPFL sur le territoire de l'Unil, le Cubotron est la première conquète de l'EPFL sur sa grande rivale. Peut-être y en aura-t-il d'autres ?",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_DroitComparé",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Extranef",
+    "description": "Petit frère d'Internef (drôle de nom de famille qu'est NEF), on y trouve le département des finances et des sciences actuarielles des HEC. Autant dire que l'ambiance doit être au RDV. ",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Ferme",
+    "description": "",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Genopode",
+    "description": "Bâtiment d'architecture moderne, le Génopode abrite l'Institut suisse de bioinformatique et une partie du Centre intégratif de génomique. Oui, nous ne savons pas non plus ce que c'est.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Geopolis",
+    "description": "Geopolis, c'est la maison de la science des cailloux et des sciences sociales/politiques. Dans les faits, on y va surtout pour manger et boire des verres.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Internef",
+    "description": "Seul endroit du quartier Chamberonne avec un bancomat, l'architecture extérieur du bâtiment laisse à désirer. Toutefois, on peut y trouver un labyrinthe souterrain et quelques centaines d'étudiants en détresse lors des périodes d'examens.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Synathlon",
+    "description": "Le Synathlon a simplement été construit afin d'offrir aux sportif des bureaux pour qu'ils puissent organiser leurs séances de sport. Heureusement que ce bâtiment est là, comment auraient-ils fait autrement ?",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+   
+  {
+    "name": "UNIL_Unicentre",
+    "description": "L'Unicentre est situé dans le prolongement de l'Unithèque. C'est un peu le pédoncule de la banane. Siège administratif de la Direction de l'Université, on y trouve le Service des immatriculations et inscriptions, étape obligée avant toutes études à l'unil.",
+    "cost": ,
+    "capacity": ,
+    "resaleValue": ,
+    "buildingType": "Education"
+  },
+  
+  
 ]
