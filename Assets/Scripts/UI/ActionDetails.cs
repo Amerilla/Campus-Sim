@@ -10,13 +10,13 @@ public class ActionDetails : MonoBehaviour
     
     private ScrollView _actions;
     private VisualElement _details;
-    private List<Button> _environmentActions;
-    private List<Button> _populationActions;
-    private List<Button> _economyActions;
-    private List<Button> _energyActions;
-    private List<Button> _academicActions;
-    private List<Button> _cultureActions;
-    private List<Button> _mobilityActions;
+    private List<Button> _environmentActions = new List<Button>();
+    private List<Button> _populationActions = new List<Button>();
+    private List<Button> _economyActions = new List<Button>();
+    private List<Button> _energyActions = new List<Button>();
+    private List<Button> _academicActions = new List<Button>();
+    private List<Button> _cultureActions = new List<Button>();
+    private List<Button> _mobilityActions = new List<Button>();
 
 
 

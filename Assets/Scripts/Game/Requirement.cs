@@ -9,7 +9,7 @@ namespace Game
         private readonly int _value;
         
         public bool HasRequirement() {
-            return _score.GetScore >= _value;
+            return _score.GetValue() >= _value;
         }
 
     }

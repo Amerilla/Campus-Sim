@@ -50,7 +50,16 @@ public class GameManager : MonoBehaviour
             _uiActionDetails.CreateActions(choice.Value,choice.Key);
         }
 
-        
+        _uiHUD.InitHud(
+            (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
+            (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
+            (_currentTurn, MaxTurn));
+
     }
     
 
