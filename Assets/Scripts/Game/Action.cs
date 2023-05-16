@@ -49,8 +49,13 @@ namespace Game
             return _delay + _duration + _cooldown <= _lastCall + currentTurn;
         }
         
-        public List<Consequence> Execute(int currentTurn, Campus campus) {
+        public List<Consequence> Execute(int currentTurn) {
             List<Consequence> remainingConsequences = new List<Consequence>();
+            foreach (var requirement in _requirements) {
+                if (!requirement.HasRequirement()) {
+                    return remainingConsequences;
+                }
+            }
             if (CanBeExecuted(currentTurn)) {
                 foreach (var consequence in _consequences) {
                     consequence.SetDelay(_delay);
