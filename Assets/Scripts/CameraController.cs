@@ -10,12 +10,48 @@ public class CameraController : MonoBehaviour
     private const float MIN_Y = 250;
     private const float MAX_Y = 400;
     private Transform transform;
+    private float speed = 200.0f; // speed of camera movement
 
     void Start() 
     {
         transform = GameObject.Find("Main Camera").transform;
     }
 
+    void Update() {
+        Vector3 previousPos = transform.position;
+        
+        // Move camera along local X axis with 'A' key
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(-Vector3.right * speed * Time.deltaTime);
+        } else if (Input.GetKey(KeyCode.D)) {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+
+        // Move camera along local Z axis with 'Z' key
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(-Vector3.forward * speed * Time.deltaTime, Space.World);
+        } else if (Input.GetKey(KeyCode.S)) {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        }
+        
+
+
+        // Move camera forward (zoom in) with 'Q' key
+        if (Input.GetKey(KeyCode.Q)) {
+            transform.Translate(-Vector3.forward * speed * Time.deltaTime);
+        } else if (Input.GetKey(KeyCode.E)) {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+
+        Vector3 newPos = transform.position;
+        if (newPos.y > MAX_Y || newPos.y < MIN_Y) {
+            transform.position = previousPos;
+        }
+    }
+    
+    /*
     void Update() 
     {
         // Movement
@@ -42,6 +78,8 @@ public class CameraController : MonoBehaviour
             transform.position = newPos;
         }
     }
+    
+    */
 }
 
 

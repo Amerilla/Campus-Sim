@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     private int _currentTurn;
     private int _maxScoreValue;
     private Campus _campus;
-    private UIBehaviour _UI;
-    private List<Action> _actionsToDo;
-    private List<Consequence> _remainingConsequences;
+    //private UIBehaviour _UI;
+    private List<Action> _actionsToDo = new();
+    private List<Consequence> _remainingConsequences = new();
 
     void Start() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void ExecuteActions() {
         foreach (Action action in _actionsToDo) {
-            AddRemainingConsequences(action.Execute(_currentTurn,_campus));
+            AddRemainingConsequences(action.Execute(_currentTurn));
         }
         _actionsToDo.Clear();
     }

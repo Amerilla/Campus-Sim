@@ -7,6 +7,7 @@ using Game;
 using UnityEditor.UI;
 using Action = System.Action;
 
+/*
 public class UIBehaviour : MonoBehaviour
 {
     private GameManager _gameManager;
@@ -219,6 +220,7 @@ public class UIBehaviour : MonoBehaviour
             Game.Action randomAction = choice.GetRandom();
             
 
+            
             Button posButton = new Button();
             posButton.name = posAction.GetName();
             posButton.text = posAction.GetName();
@@ -310,6 +312,7 @@ public class UIBehaviour : MonoBehaviour
         
     }
 
+    
     private void ActionDetail(Game.Action action) {
         _actionDescription.text = action.GetDescription();
         _actionDescription.style.display = DisplayStyle.Flex;
@@ -328,4 +331,6 @@ public class UIBehaviour : MonoBehaviour
         _go.clicked += () => _gameManager.AddActionToDo(action);
 
     }
+    
 }
+*/
