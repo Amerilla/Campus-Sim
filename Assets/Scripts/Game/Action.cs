@@ -9,7 +9,7 @@ namespace Game
         private string _name;
         private List<Consequence> _consequences;
         private ActionType _actionType;
-        private Requirement _requirement;
+        private List<Requirement> _requirements;
         private int _duration;
         private int _cooldown;
         private int _delay;
@@ -17,13 +17,14 @@ namespace Game
         private string _description;
 
         [JsonConstructor]
-        private Action(string name, [CanBeNull] string description, List<Consequence> consequences, int? duration, int? cooldown, int? delay) {
+        private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
+            int? delay, int? duration, int? cooldown) {
             _name = name;
-            _description = description;
-            _consequences = consequences;
-            _duration = duration ?? 0;
-            _cooldown = cooldown ?? 0;
+            _consequences = consequences ?? new List<Consequence>();
+            _requirements = requirements ?? new List<Requirement>();
             _delay = delay ?? 0;
+            _duration = duration ?? -1;
+            _cooldown = cooldown ?? 0;
         }
 
         public string GetName() => _name;
@@ -45,7 +46,7 @@ namespace Game
             if (_cooldown < 0 || _duration < 0) {
                 return false;
             }
-            return _delay + _duration + _cooldown <= _lastCall;
+            return _delay + _duration + _cooldown <= _lastCall + currentTurn;
         }
         
         public List<Consequence> Execute(int currentTurn, Campus campus) {
