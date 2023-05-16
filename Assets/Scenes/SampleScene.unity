@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3681416, g: 0.78847057, b: 0.88405, a: 1}
+  m_IndirectSpecularColor: {r: 0.36814147, g: 0.7884706, b: 0.88405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f82c1865c715dfb45b490bed729411d1, type: 3}
       propertyPath: m_Name
-      value: UNIL_Grange
+      value: UNIL_Chateau
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82c1865c715dfb45b490bed729411d1, type: 3}
