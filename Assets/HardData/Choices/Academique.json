@@ -4,7 +4,6 @@
     "Positive": {
       "name": "Financement indépendant",
       "description": null,
-      "moneyChange": 0,
       "requirements": [
         {
           "score": "Economie",
@@ -14,20 +13,23 @@
       "consequences": [
         {
           "score": "Economie",
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Académique",
+          "isByTurn": false,
           "value": 3
         },
         {
           "score": "Population",
+          "isByTurn": false,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "delay": 0,
+      "duration": 0,
+      "cooldown": null
     },
     
     "Negative": {
