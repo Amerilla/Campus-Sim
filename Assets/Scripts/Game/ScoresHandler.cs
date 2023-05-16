@@ -53,7 +53,7 @@ namespace Game
         public void AddByTurn(int added) {
             _byTurn += added*_coefficient;
         }
-        public float GetScore => _value;
+        public float GetScore() => _value;
 
         public void SetScore(int score) {
             _value = score*_coefficient;
@@ -72,5 +72,4 @@ namespace Game
     {
         CULTURE, ECONOMIE, POPULATION, MOBILITE, ACADEMIQUE, ENVIRONNEMENT, ENERGIE
     }
-
 }
