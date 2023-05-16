@@ -44,8 +44,9 @@ public class ActionDetails : MonoBehaviour
         button.style.width = new StyleLength(250);
         return button;
     }
+    
 
-    private void CreateActions(List<Choice> choices, ScoreType score) {
+    public void CreateActions(List<Choice> choices, ScoreType score) {
         List<Button> buttons = new();
         foreach (var choice in choices) {
             buttons.Add(CreateActionButton(choice.GetPositive()));
