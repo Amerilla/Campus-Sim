@@ -13,28 +13,28 @@ public class HUD : MonoBehaviour
     private GameManager _gameManager;
     
     private VisualElement _root;
-    private GroupBox _environmentGroupBox;
-    private GroupBox _populationGroupBox;
-    private GroupBox _economyGroupBox;
-    private GroupBox _energyGroupBox;
-    private GroupBox _academicGroupBox;
-    private GroupBox _cultureGroupBox;
-    private GroupBox _mobilityGroupBox;
+    private VisualElement _environmentGroupBox;
+    private VisualElement _populationGroupBox;
+    private VisualElement _economyGroupBox;
+    private VisualElement _energyGroupBox;
+    private VisualElement _academicGroupBox;
+    private VisualElement _cultureGroupBox;
+    private VisualElement _mobilityGroupBox;
 
-    private GroupBox _turnGroupBox;
+    private VisualElement _turnGroupBox;
     
     // Start is called before the first frame update
     void Start() {
         _root = GetComponent<UIDocument>().rootVisualElement;
-        _environmentGroupBox = _root.Q<GroupBox>("Env");
-        _populationGroupBox = _root.Q<GroupBox>("Pop");
-        _economyGroupBox = _root.Q<GroupBox>("Eco");
-        _energyGroupBox = _root.Q<GroupBox>("Ener");
-        _academicGroupBox = _root.Q<GroupBox>("Aca");
-        _cultureGroupBox = _root.Q<GroupBox>("Cult");
-        _mobilityGroupBox = _root.Q<GroupBox>("Mob");
+        _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Env");
+        _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Pop");
+        _economyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Eco");
+        _energyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Ener");
+        _academicGroupBox = _root.Q("Toolbar").Q<VisualElement>("Aca");
+        _cultureGroupBox = _root.Q("Toolbar").Q<VisualElement>("Cult");
+        _mobilityGroupBox = _root.Q("Toolbar").Q<VisualElement>("Mob");
 
-        _turnGroupBox = _root.Q<GroupBox>("Turn");
+        _turnGroupBox = _root.Q("Toolbar").Q<VisualElement>("Turn");
 
 
     }
@@ -81,10 +81,10 @@ public class HUD : MonoBehaviour
         
     }
     
-    private void ScoreGroupBoxUpdate(int value, int nextValue, GroupBox groupBox) {
-        Label label = groupBox.Q<Label>("Value");
-        ProgressBar pbCurrentFront = groupBox.Q<ProgressBar>("ProgressbarCurrentFront");
-        ProgressBar pbCurrentBack = groupBox.Q<ProgressBar>("ProgressbarCurrentBack");
+    private void ScoreGroupBoxUpdate(int value, int nextValue, VisualElement groupBox) {
+        Label label = groupBox.Q("Score").Q<Label>("Value");
+        ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
+        ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
 
         label.text = $"{value}";
         if (value > nextValue) {
@@ -103,10 +103,10 @@ public class HUD : MonoBehaviour
         }
     }
     
-    private void ScoreGroupBoxInit(int value, int maxValue, GroupBox groupBox) {
-        Label label = groupBox.Q<Label>("Value");
-        ProgressBar pbCurrentFront = groupBox.Q<ProgressBar>("ProgressbarCurrentFront");
-        ProgressBar pbCurrentBack = groupBox.Q<ProgressBar>("ProgressbarCurrentBack");
+    private void ScoreGroupBoxInit(int value, int maxValue, VisualElement groupBox) {
+        Label label = groupBox.Q("Score").Q<Label>("Value");
+        ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
+        ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
 
         label.text = $"{value}";
         
