@@ -41,12 +41,7 @@ namespace UI
         }
 
         public void InitDetails() {
-            _actions.visible = false;
-            _showedScoreType = null;
-            _details.visible = false;
-            HideLabels(_details.Q<GroupBox>("Needed"));
-            HideLabels(_details.Q<GroupBox>("Gain"));
-           
+            Hide();
         }
         
         private Button CreateActionButton(Game.Action action) {
@@ -261,6 +256,14 @@ namespace UI
             LabelUpdate(groupBox.Q<GroupBox>("Aca"),0);
             LabelUpdate(groupBox.Q<GroupBox>("Cult"),0);
             LabelUpdate(groupBox.Q<GroupBox>("Mob"),0);
+        }
+
+        public void Hide() {
+            _actions.visible = false;
+            _showedScoreType = null;
+            _details.visible = false;
+            HideLabels(_details.Q<GroupBox>("Needed"));
+            HideLabels(_details.Q<GroupBox>("Gain"));
         }
     }
 }

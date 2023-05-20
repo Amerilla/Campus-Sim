@@ -52,8 +52,8 @@ namespace Game
                 _delayRemaining -= 1;
                 return false;
             }
-            if (_remainingTurns == 0) {
-                    return true;
+            if (_remainingTurns < 0) {
+                return true;
             }
             Apply();
             _remainingTurns -= 1;

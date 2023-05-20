@@ -88,14 +88,17 @@ public class GameManager : MonoBehaviour
     public void NextTurn() {
         ExecuteActions();
         UpdateRemainingConsequences();
-        _scoresHandler.UpdateScores();  
-
-
-        //_UI.UpdateProgressBars(_scoresHandler.GetScores());
-        //_UI.UpdateMoney(_campus.GetBalance());
+        _scoresHandler.UpdateScores();
+        _uiActionDetails.Hide();
+        _uiHUD.UpdateHud(_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
-        //_UI.UpdateTurn(_currentTurn);
-        _actionsToDo.Clear();   
+        _actionsToDo.Clear();
     }
 
     private void ExecuteActions() {
@@ -119,8 +122,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateRemainingConsequences() {
-        foreach (var consequence in _remainingConsequences) {
-            if(consequence.Update()) {
+        List<Consequence> copy = _remainingConsequences;
+        foreach (var consequence in copy) {
+            if (consequence.Update()) {
                 _remainingConsequences.Remove(consequence);
             }
         }

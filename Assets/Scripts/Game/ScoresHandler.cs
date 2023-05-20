@@ -87,7 +87,7 @@ namespace Game
             return null;
         }
 
-        public (int, int) GetCurrentAndNextScore => (_value, _value + _byTurn);
+        public (int, int) GetCurrentAndNextScore() => (_value, _value + _byTurn);
     }
     
     public enum ScoreType

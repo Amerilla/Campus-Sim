@@ -23,6 +23,7 @@ namespace UI
     
         // Start is called before the first frame update
         void Start() {
+            _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
             _root = GetComponent<UIDocument>().rootVisualElement;
             _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Env");
             _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Pop");
@@ -51,6 +52,7 @@ namespace UI
             (int, int) cult, (int, int) mob,(int,int) turn, ActionDetails actionDetails) {
             ScoresInit(env,pop,eco,ener,aca,cult,mob,actionDetails);
             ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox,null,null);
+            _turnGroupBox.clicked += () => _gameManager.NextTurn();
         }
 
         public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
@@ -78,21 +80,23 @@ namespace UI
     
         private void ScoreGroupBoxUpdate(int value, int nextValue, Button groupBox) {
             Label label = groupBox.Q("Score").Q<Label>("Value");
-            ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
-            ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
-
+            ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentFront");
+            var innerPbCFront = pbCurrentFront.Q(className: "unity-progress-bar__progress");
+            ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentBack");
+            var innerPbCBack = pbCurrentBack.Q(className: "unity-progress-bar__progress");
+            Color red = new Color(0.95f, 0.24f, 0.24f);
+            Color green = new Color(0.67f, 0.95f, 0.24f);
+            Color color = new Color(0.58f, 0.72f, 0.82f);
             label.text = $"{value}";
             if (value > nextValue) {
-                pbCurrentBack.style.color = Color.blue;
-                pbCurrentFront.style.backgroundColor = Color.clear;
-                pbCurrentFront.style.color = Color.red;
+                innerPbCFront.style.backgroundColor = color;
+                innerPbCBack.style.backgroundColor = red;
                 pbCurrentFront.value = nextValue;
                 pbCurrentBack.value = value;
             }
             else {
-                pbCurrentBack.style.color = Color.green;
-                pbCurrentFront.style.backgroundColor = Color.clear;
-                pbCurrentFront.style.color = Color.blue;
+                innerPbCFront.style.backgroundColor = green;
+                innerPbCBack.style.backgroundColor = color;
                 pbCurrentFront.value = value;
                 pbCurrentBack.value = nextValue;
             }
@@ -108,15 +112,23 @@ namespace UI
             }
             Label label = groupBox.Q("Score").Q<Label>("Value");
             ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentFront");
+            var innerPbCFront = pbCurrentFront.Q(className: "unity-progress-bar__progress");
+            var backgroundPbCFront = pbCurrentFront.Q(className: "unity-progress-bar__background");
             ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentBack");
+            var innerPbCBack = pbCurrentBack.Q(className: "unity-progress-bar__progress");
+            var backgroundPbCBack = pbCurrentBack.Q(className: "unity-progress-bar__background");
+            
 
+            Color color = new Color(0.58f, 0.72f, 0.82f);
+            
             label.text = $"{value}";
-        
-            pbCurrentBack.style.color = Color.blue;
-            pbCurrentFront.style.backgroundColor = Color.clear;
-            pbCurrentFront.style.color = Color.blue;
+
+            innerPbCFront.style.backgroundColor = color;
+            innerPbCBack.style.backgroundColor = color;
+            backgroundPbCFront.style.backgroundColor = Color.clear;
+            backgroundPbCBack.style.backgroundColor = Color.clear;
             pbCurrentFront.value = value;
-            pbCurrentFront.value = maxValue;
+            pbCurrentFront.highValue = maxValue;
             pbCurrentBack.value = value;
             pbCurrentBack.highValue = maxValue;
         
