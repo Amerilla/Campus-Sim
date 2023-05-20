@@ -178,25 +178,25 @@ namespace UI
             foreach (var requirement in requirements) {
                 switch (requirement.GetRequirementScoreType()) {
                     case ScoreType.CULTURE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Cult"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Cult"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.ECONOMIE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Eco"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Eco"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.ENERGIE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Ener"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Ener"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.ENVIRONNEMENT:
-                        LabelUpdate(groupBox.Q<GroupBox>("Env"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Env"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.MOBILITE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Mob"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Mob"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.ACADEMIQUE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Aca"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Aca"), requirement.GetRequirement(),false);
                         break;
                     case ScoreType.POPULATION:
-                        LabelUpdate(groupBox.Q<GroupBox>("Pop"), requirement.GetRequirement());
+                        LabelUpdate(groupBox.Q<GroupBox>("Pop"), requirement.GetRequirement(),false);
                         break;
                     
                 }
@@ -211,32 +211,32 @@ namespace UI
             foreach (var gain in gains) {
                 switch (gain.GetConsequenceScoreType()) {
                     case ScoreType.CULTURE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Cult"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Cult"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.ECONOMIE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Eco"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Eco"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.ENERGIE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Ener"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Ener"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.ENVIRONNEMENT:
-                        LabelUpdate(groupBox.Q<GroupBox>("Env"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Env"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.MOBILITE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Mob"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Mob"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.ACADEMIQUE:
-                        LabelUpdate(groupBox.Q<GroupBox>("Aca"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Aca"), gain.GetValue(),gain.isByTrun());
                         break;
                     case ScoreType.POPULATION:
-                        LabelUpdate(groupBox.Q<GroupBox>("Pop"), gain.GetValue());
+                        LabelUpdate(groupBox.Q<GroupBox>("Pop"), gain.GetValue(),gain.isByTrun());
                         break;
                                 
                 }
             }
         }
         
-        private void LabelUpdate(GroupBox groupBox,int value) {
+        private void LabelUpdate(GroupBox groupBox,int value, bool byturn) {
             Label label = groupBox.Q<Label>("Value");
             if (value == 0) {
                 groupBox.SetEnabled(false);
@@ -245,17 +245,19 @@ namespace UI
             }
             groupBox.SetEnabled(true);
             label.text = $"{value}";
+            if(byturn)
+                label.text += $" / tour";
 
         }
 
         private void HideLabels(GroupBox groupBox) {
-            LabelUpdate(groupBox.Q<GroupBox>("Env"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Pop"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Ener"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Eco"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Aca"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Cult"),0);
-            LabelUpdate(groupBox.Q<GroupBox>("Mob"),0);
+            LabelUpdate(groupBox.Q<GroupBox>("Env"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Pop"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Ener"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Eco"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Aca"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Cult"),0,false);
+            LabelUpdate(groupBox.Q<GroupBox>("Mob"),0,false);
         }
 
         public void Hide() {

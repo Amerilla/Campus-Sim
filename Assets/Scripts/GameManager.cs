@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             _uiActionDetails.CreateActions(choice.Value,choice.Key);
         }
 
+        _currentTurn++;
         _uiHUD.InitHud(
         (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
         (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
@@ -86,8 +87,8 @@ public class GameManager : MonoBehaviour
     public Score GetScore(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
-        ExecuteActions();
         UpdateRemainingConsequences();
+        ExecuteActions();
         _scoresHandler.UpdateScores();
         _uiActionDetails.Hide();
         _uiHUD.UpdateHud(_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetCurrentAndNextScore(),
@@ -99,12 +100,15 @@ public class GameManager : MonoBehaviour
             _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
         _actionsToDo.Clear();
+        
+        
     }
 
     private void ExecuteActions() {
         foreach (Action action in _actionsToDo) {
             AddRemainingConsequences(action.Execute(_currentTurn));
         }
+
         _actionsToDo.Clear();
     }
     
@@ -122,11 +126,14 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateRemainingConsequences() {
-        List<Consequence> copy = _remainingConsequences;
-        foreach (var consequence in copy) {
+        List<Consequence> toRemove = new List<Consequence>();
+        foreach (var consequence in _remainingConsequences) {
             if (consequence.Update()) {
-                _remainingConsequences.Remove(consequence);
+                toRemove.Add(consequence);
             }
+        }
+        foreach (var consequence in toRemove) {
+            _remainingConsequences.Remove(consequence);
         }
     }
 

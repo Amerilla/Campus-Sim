@@ -91,14 +91,14 @@ namespace UI
             if (value > nextValue) {
                 innerPbCFront.style.backgroundColor = color;
                 innerPbCBack.style.backgroundColor = red;
-                pbCurrentFront.value = nextValue;
-                pbCurrentBack.value = value;
+                pbCurrentFront.value = value ;
+                pbCurrentBack.value = nextValue;
             }
             else {
                 innerPbCFront.style.backgroundColor = green;
                 innerPbCBack.style.backgroundColor = color;
-                pbCurrentFront.value = value;
-                pbCurrentBack.value = nextValue;
+                pbCurrentFront.value = nextValue;
+                pbCurrentBack.value = value;
             }
         }
     

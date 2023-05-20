@@ -40,13 +40,14 @@ namespace Game
         private readonly string _name;
         private int _value;
         private int _byTurn;
-        private int _coefficient;
+        private int _coefficient = 1 ;
 
         [JsonConstructor]
-        private Score(string name, int? byturn, int? initialValue) {
+        private Score(string name, int? byturn, int? initialValue, int? coefficient) {
             _name = Utilities.RemoveAccents(name);
             _byTurn = byturn ?? 0;
             _value = initialValue ?? 50;
+            _coefficient = coefficient ?? 1;
         }
 
         public void AddScore(int added) {

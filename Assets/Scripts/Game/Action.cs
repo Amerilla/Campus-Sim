@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Game
 {
@@ -26,6 +27,12 @@ namespace Game
             _delay = delay ?? 0;
             _duration = duration ?? -1;
             _cooldown = cooldown ?? 0;
+
+            if (_cooldown < 0 || _duration < 0)
+                _lastCall = -1;
+            else
+                _lastCall = _delay + _duration + _cooldown;
+
         }
 
         public string GetName() => _name;
