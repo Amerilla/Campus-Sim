@@ -1,126 +1,177 @@
-using System;
-using TMPro;
+using Game;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UIElements;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using Game;
-using UnityEditor.UI;
-using Action = System.Action;
-public class HUD : MonoBehaviour
+
+namespace UI
 {
-    private GameManager _gameManager;
-    
-    private VisualElement _root;
-    private VisualElement _environmentGroupBox;
-    private VisualElement _populationGroupBox;
-    private VisualElement _economyGroupBox;
-    private VisualElement _energyGroupBox;
-    private VisualElement _academicGroupBox;
-    private VisualElement _cultureGroupBox;
-    private VisualElement _mobilityGroupBox;
-
-    private VisualElement _turnGroupBox;
-    
-    // Start is called before the first frame update
-    void Start() {
-        _root = GetComponent<UIDocument>().rootVisualElement;
-        _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Env");
-        _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Pop");
-        _economyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Eco");
-        _energyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Ener");
-        _academicGroupBox = _root.Q("Toolbar").Q<VisualElement>("Aca");
-        _cultureGroupBox = _root.Q("Toolbar").Q<VisualElement>("Cult");
-        _mobilityGroupBox = _root.Q("Toolbar").Q<VisualElement>("Mob");
-
-        _turnGroupBox = _root.Q("Toolbar").Q<VisualElement>("Turn");
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
+    public class HUD : MonoBehaviour
     {
-        
-    }
-
-    public void UpdateHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
-        (int, int) cult, (int, int) mob, int currentTurn) {
-        ScoresUpdate(env,pop,eco,ener,aca,cult,mob);
-        ScoreGroupBoxUpdate(currentTurn,currentTurn,_turnGroupBox);
-        
-    }
-
-    public void InitHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
-        (int, int) cult, (int, int) mob,(int,int) turn) {
-        ScoresInit(env,pop,eco,ener,aca,cult,mob);
-        ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox);
-    }
-
-    public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
-        (int, int) cult, (int, int) mob) {
-        ScoreGroupBoxInit(env.Item1,env.Item2, _environmentGroupBox);
-        ScoreGroupBoxInit(pop.Item1,pop.Item2,_populationGroupBox);
-        ScoreGroupBoxInit(eco.Item1,eco.Item2, _economyGroupBox);
-        ScoreGroupBoxInit(ener.Item1,ener.Item2,_energyGroupBox);
-        ScoreGroupBoxInit(aca.Item1,aca.Item2,_academicGroupBox);
-        ScoreGroupBoxInit(cult.Item1,cult.Item2,_cultureGroupBox);
-        ScoreGroupBoxInit(mob.Item1,mob.Item2,_mobilityGroupBox);
-    }
+        private GameManager _gameManager;
     
-    private void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
-        (int, int) cult, (int, int) mob) {
-        ScoreGroupBoxUpdate(env.Item1,env.Item2, _environmentGroupBox);
-        ScoreGroupBoxUpdate(pop.Item1,pop.Item2,_populationGroupBox);
-        ScoreGroupBoxUpdate(eco.Item1,eco.Item2, _economyGroupBox);
-        ScoreGroupBoxUpdate(ener.Item1,ener.Item2,_energyGroupBox);
-        ScoreGroupBoxUpdate(aca.Item1,aca.Item2,_academicGroupBox);
-        ScoreGroupBoxUpdate(cult.Item1,cult.Item2,_cultureGroupBox);
-        ScoreGroupBoxUpdate(mob.Item1,mob.Item2,_mobilityGroupBox);
-        
-    }
-    
-    private void ScoreGroupBoxUpdate(int value, int nextValue, VisualElement groupBox) {
-        Label label = groupBox.Q("Score").Q<Label>("Value");
-        ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
-        ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
+        private VisualElement _root;
+        private Button _environmentGroupBox;
+        private Button _populationGroupBox;
+        private Button _economyGroupBox;
+        private Button _energyGroupBox;
+        private Button _academicGroupBox;
+        private Button _cultureGroupBox;
+        private Button _mobilityGroupBox;
 
-        label.text = $"{value}";
-        if (value > nextValue) {
-            pbCurrentBack.style.color = Color.blue;
-            pbCurrentFront.style.backgroundColor = Color.clear;
-            pbCurrentFront.style.color = Color.red;
-            pbCurrentFront.value = nextValue;
-            pbCurrentBack.value = value;
+        private Button _turnGroupBox;
+        private ScoreType? _showedScoreType = null;
+    
+        // Start is called before the first frame update
+        void Start() {
+            _root = GetComponent<UIDocument>().rootVisualElement;
+            _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Env");
+            _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Pop");
+            _economyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Eco");
+            _energyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Ener");
+            _academicGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Aca");
+            _cultureGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Cult");
+            _mobilityGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Mob");
+            _turnGroupBox = _root.Q("Toolbar").Q<Button>("Turn");
         }
-        else {
-            pbCurrentBack.style.color = Color.green;
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
+
+        public void UpdateHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+            (int, int) cult, (int, int) mob, int currentTurn) {
+            ScoresUpdate(env,pop,eco,ener,aca,cult,mob);
+            ScoreGroupBoxUpdate(currentTurn,currentTurn,_turnGroupBox);
+        
+        }
+
+        public void InitHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+            (int, int) cult, (int, int) mob,(int,int) turn, ActionDetails actionDetails) {
+            ScoresInit(env,pop,eco,ener,aca,cult,mob,actionDetails);
+            ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox,null,null);
+        }
+
+        public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+            (int, int) cult, (int, int) mob, ActionDetails actionDetails) {
+            ScoreGroupBoxInit(env.Item1,env.Item2, _environmentGroupBox,ScoreType.ENVIRONNEMENT,actionDetails);
+            ScoreGroupBoxInit(pop.Item1,pop.Item2,_populationGroupBox,ScoreType.POPULATION,actionDetails);
+            ScoreGroupBoxInit(eco.Item1,eco.Item2, _economyGroupBox,ScoreType.ECONOMIE,actionDetails);
+            ScoreGroupBoxInit(ener.Item1,ener.Item2,_energyGroupBox,ScoreType.ENERGIE,actionDetails);
+            ScoreGroupBoxInit(aca.Item1,aca.Item2,_academicGroupBox,ScoreType.ACADEMIQUE,actionDetails);
+            ScoreGroupBoxInit(cult.Item1,cult.Item2,_cultureGroupBox, ScoreType.CULTURE,actionDetails);
+            ScoreGroupBoxInit(mob.Item1,mob.Item2,_mobilityGroupBox, ScoreType.MOBILITE,actionDetails);
+        }
+    
+        private void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
+            (int, int) cult, (int, int) mob) {
+            ScoreGroupBoxUpdate(env.Item1,env.Item2, _environmentGroupBox);
+            ScoreGroupBoxUpdate(pop.Item1,pop.Item2,_populationGroupBox);
+            ScoreGroupBoxUpdate(eco.Item1,eco.Item2, _economyGroupBox);
+            ScoreGroupBoxUpdate(ener.Item1,ener.Item2,_energyGroupBox);
+            ScoreGroupBoxUpdate(aca.Item1,aca.Item2,_academicGroupBox);
+            ScoreGroupBoxUpdate(cult.Item1,cult.Item2,_cultureGroupBox);
+            ScoreGroupBoxUpdate(mob.Item1,mob.Item2,_mobilityGroupBox);
+        
+        }
+    
+        private void ScoreGroupBoxUpdate(int value, int nextValue, Button groupBox) {
+            Label label = groupBox.Q("Score").Q<Label>("Value");
+            ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
+            ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
+
+            label.text = $"{value}";
+            if (value > nextValue) {
+                pbCurrentBack.style.color = Color.blue;
+                pbCurrentFront.style.backgroundColor = Color.clear;
+                pbCurrentFront.style.color = Color.red;
+                pbCurrentFront.value = nextValue;
+                pbCurrentBack.value = value;
+            }
+            else {
+                pbCurrentBack.style.color = Color.green;
+                pbCurrentFront.style.backgroundColor = Color.clear;
+                pbCurrentFront.style.color = Color.blue;
+                pbCurrentFront.value = value;
+                pbCurrentBack.value = nextValue;
+            }
+        }
+    
+        private void ScoreGroupBoxInit(int value, int maxValue, Button groupBox,ScoreType? scoreType,
+                                        [CanBeNull] ActionDetails actionDetails) {
+            if (scoreType != null && actionDetails != null) {
+                groupBox.clicked += () => {
+                    actionDetails.ShowActions((ScoreType)scoreType);
+                    ScoreGroupBoxHighlight((ScoreType)scoreType);
+                };
+            }
+            Label label = groupBox.Q("Score").Q<Label>("Value");
+            ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentFront");
+            ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressCurrentBack");
+
+            label.text = $"{value}";
+        
+            pbCurrentBack.style.color = Color.blue;
             pbCurrentFront.style.backgroundColor = Color.clear;
             pbCurrentFront.style.color = Color.blue;
             pbCurrentFront.value = value;
-            pbCurrentBack.value = nextValue;
+            pbCurrentFront.value = maxValue;
+            pbCurrentBack.value = value;
+            pbCurrentBack.highValue = maxValue;
+        
         }
-    }
-    
-    private void ScoreGroupBoxInit(int value, int maxValue, VisualElement groupBox) {
-        Label label = groupBox.Q("Score").Q<Label>("Value");
-        ProgressBar pbCurrentFront = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentFront");
-        ProgressBar pbCurrentBack = groupBox.Q("ProgressBar").Q<ProgressBar>("ProgressbarCurrentBack");
 
-        label.text = $"{value}";
-        
-        pbCurrentBack.style.color = Color.blue;
-        pbCurrentFront.style.backgroundColor = Color.clear;
-        pbCurrentFront.style.color = Color.blue;
-        pbCurrentFront.value = value;
-        pbCurrentFront.value = maxValue;
-        pbCurrentBack.value = value;
-        pbCurrentBack.highValue = maxValue;
-        
-    }
+        private void ScoreGroupBoxHighlight(ScoreType scoreType) {
+            ScoreGroupBoxClearBorder(_environmentGroupBox);
+            ScoreGroupBoxClearBorder(_populationGroupBox);
+            ScoreGroupBoxClearBorder(_academicGroupBox);
+            ScoreGroupBoxClearBorder(_economyGroupBox);
+            ScoreGroupBoxClearBorder(_energyGroupBox);
+            ScoreGroupBoxClearBorder(_cultureGroupBox);
+            ScoreGroupBoxClearBorder(_mobilityGroupBox);
+            if (scoreType == _showedScoreType) {
+                _showedScoreType = null;
+                return;
+            }
 
+            _showedScoreType = scoreType;
+            switch (scoreType) {
+                case ScoreType.ENVIRONNEMENT:
+                    ScoreGroupBoxShowBorder(_environmentGroupBox);
+                    break;
+                case ScoreType.POPULATION:
+                    ScoreGroupBoxShowBorder(_populationGroupBox);
+                    break;
+                case ScoreType.ECONOMIE:
+                    ScoreGroupBoxShowBorder(_economyGroupBox);
+                    break;
+                case ScoreType.ENERGIE :
+                    ScoreGroupBoxShowBorder(_energyGroupBox);
+                    break;
+                case ScoreType.ACADEMIQUE:
+                    ScoreGroupBoxShowBorder(_academicGroupBox);
+                    break;
+                case ScoreType.CULTURE:
+                    ScoreGroupBoxShowBorder(_cultureGroupBox);
+                    break;
+                case ScoreType.MOBILITE:
+                    ScoreGroupBoxShowBorder(_mobilityGroupBox);
+                    break;
+                    
+            }
+        }
+
+        private void ScoreGroupBoxClearBorder(Button groupBox) {
+            groupBox.Q("ProgressBar").style.borderBottomWidth = 0;
+        }
+
+        private void ScoreGroupBoxShowBorder(Button groupBox) {
+            groupBox.Q("ProgressBar").style.borderBottomWidth = 10;
+            groupBox.Q("ProgressBar").style.borderBottomRightRadius = 10;
+            groupBox.Q("ProgressBar").style.borderBottomLeftRadius = 10;
+        }
     
     
-    
+    }
 }

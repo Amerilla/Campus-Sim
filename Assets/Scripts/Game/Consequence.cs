@@ -58,8 +58,10 @@ namespace Game
             Apply();
             _remainingTurns -= 1;
             return false;
-            }
-        
-        
+        }
+
+        public int GetValue() => _value;
+
+        public ScoreType? GetConsequenceScoreType() => _score.GetScoreType();
     }
 }

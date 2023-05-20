@@ -4,6 +4,7 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using Game;
 using Newtonsoft.Json;
+using UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -51,15 +52,16 @@ public class GameManager : MonoBehaviour
         }
 
         _uiHUD.InitHud(
-            (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
-            (_currentTurn, MaxTurn));
-
+        (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
+        (_currentTurn, MaxTurn),_uiActionDetails);
+        _uiActionDetails.InitDetails();
+        
     }
     
 
@@ -104,7 +106,12 @@ public class GameManager : MonoBehaviour
     }
     
     public void AddActionToDo(Action action) {
-        _actionsToDo.Add(action);
+        if (action.CanBeExecuted(_currentTurn)) {
+            _actionsToDo.Add(action);
+            action.SetWaiting(true);
+            return;
+        }
+        action.SetWaiting(false);
     }
     
     private void AddRemainingConsequences(List<Consequence> consequences) {
@@ -118,6 +125,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    public int GetCurrentTurn() => _currentTurn;
+
 }
 
