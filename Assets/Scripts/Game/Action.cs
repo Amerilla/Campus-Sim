@@ -22,6 +22,7 @@ namespace Game
         private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
             int? delay, int? duration, int? cooldown) {
             _name = name;
+            _description = description ?? "";
             _consequences = consequences ?? new List<Consequence>();
             _requirements = requirements ?? new List<Requirement>();
             _delay = delay ?? 0;
