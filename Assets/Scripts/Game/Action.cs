@@ -36,6 +36,13 @@ namespace Game
 
         }
 
+        public void Reset() {
+            if (_cooldown < 0 || _duration < 0)
+                _lastCall = -1;
+            else
+                _lastCall = _delay + _duration + _cooldown;
+        }
+
         public string GetName() => _name;
 
         public string GetDescription() => _description;
