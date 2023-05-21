@@ -3,18 +3,31 @@
     "Positive": {
       "name": "À bas le béton!",
       "description": "Déminéraliser les places publiques, c'est plus de biodiversité, moins d'îlots de chaleur,les petits oiseaux... laisser plus de place à la nature",
-      "moneyChange": -100000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Biodiversité",
+          "score": "Environnement",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Bien-être",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Transport public",
+          "score": "Mobilite",
+          "isByTurn": false,
           "value": -1
         }
       ],
@@ -26,14 +39,26 @@
     "Negative": {
       "name": "Sous la pelouse, les pavés",
       "description": "La pelouse représente trop d'entretien et ça tache les pantalons. Les pavés c'est simple, efficace et confortable!",
-      "moneyChange": -4000000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Biodiversité",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": 1
         }
       ],
@@ -45,19 +70,32 @@
     "Random": {
       "name": "Bétoner la Chamberonne",
       "description": "La mobilité est un enjeu central du campus, il faut fluidifier les relations entre les espaces, La Chamberonne est un cours d'eau de trop!",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Biodiversité",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": -3
         },
   
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Mobilité individuelle",
+          "score": "Mobilite",
+          "isByTurn": false,
           "value": 2
         }
       ],
@@ -72,14 +110,21 @@
     "Positive": {
       "name": "Roi des forêts",
       "description": "La plantation d'arbre apporte de l'ombre, de l'oxigène et enrichit les sols. C'est est un des moyens les plus simples contre le réchauffement climatique!",
-      "moneyChange": -400000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
-          "value": 2
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
         },
         {
           "score": "Diversité",
+          "isByTurn": false,
           "value": 4
         }
       ],
@@ -91,18 +136,31 @@
     "Negative": {
       "name": "Arbre en plastique",
       "description": "Après un premier coût à l'achat ces arbres embelliront les intérieurs, pas besoin d'eau, uniquement un coup de plumeau de temps en temps! ",
-      "moneyChange": 60000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": 1
         },
         {
           "score": "Consommation",
+          "isByTurn": false,
           "value": -2
         }
       ],
@@ -114,15 +172,28 @@
     "Random": {
       "name": "Arbre 'liquide' ",
       "description": "Ces réservoirs d'eau permettront de purifier l'air comme les arbres sans l'embarras d'être planté dans la terre! ",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": -1
         },
   
         {
           "score": "Consommation",
+          "isByTurn": false,
           "value": 1
         }
       ],
@@ -136,18 +207,27 @@
     "Positive": {
       "name": "Mouton-Tondeuse",
       "description": "Augmenter le nombre de moutons pour tondre la pelouse, c'est naturel, et les moutons sont trop mignons",
-      "moneyChange": -200000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
           "score": "Production",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
+          "isByTurn": false,
           "value": 1
         }
       ],
@@ -159,14 +239,27 @@
     "Negative": {
       "name": "Robots aspirateurs",
       "description": "C'est un progrès social de supprimer ces emplois répétitifs grâce aux robots, tout va disparaître!",
-      "moneyChange": 60000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Biodiversité",
+          "score": "Economie",
+          "isByTurn": false,
           "value": -1
         },
         {
-          "score": "Minorités",
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
           "value": -2
         }
       ],
@@ -178,15 +271,28 @@
     "Random": {
       "name": "Champ de fleurs",
       "description": "Arrêter de tondre au profit du biotope, planter des bourgeons pour un décor floral, romantique, et agréable",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Publication",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
           "value": -3
         },
   
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         }
       ],
@@ -200,22 +306,36 @@
     "Positive": {
       "name": "Campus zéro-déchet",
       "description": " Moins de pollution, plus de confort, moins de plastique, plus de tri !",
-      "moneyChange": -200000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": 3
         },
         {
-          "score": "Variété de l'offre",
+          "score": "Economie",
+          "isByTurn": false,
           "value": -1
         },
         {
-          "score": "Consommation",
+          "score": "Energie",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": -1
         }
       ],
@@ -227,14 +347,26 @@
     "Negative": {
       "name": "Supprimer les poubelles",
       "description": "Un confort moindre et un risque d'une accumulation de déchet conséquent",
-      "moneyChange": 60000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
           "value": -3
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": -3
         }
       ],
@@ -246,31 +378,47 @@
     "Random": {
       "name": "Tri des déchets obligatoie",
       "description": "Atelier hebdomadaire de tri déchet obligatoire pour apprendre aux étudiants à trier efficacement, tout en sensibilisant à ses conséquences ! C'est une expérience sociale unique",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
-          "value": -2
-        },
-        {
-          "score": "Diversité",
+          "score": "Economie",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Consommation",
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
           "value": -1
         },
   
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Publication",
+          "score": "Academique",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": -3
         }
       ],
@@ -284,18 +432,26 @@
     "Positive": {
       "name": "Campus potager",
       "description": "Cultiver local, une économie circulaire, et une activité douce à pratique entre ami-es pour former une société universitaire plus solidaires",
-      "moneyChange": -400000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Diversité",
+          "score": "Culture",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Variété de l'offre",
+          "score": "Economie",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Pollution",
+          "score": "Environnement",
+          "isByTurn": false,
           "value": 2
         }
       ],
@@ -307,14 +463,19 @@
     "Negative": {
       "name": "Casser les prix",
       "description": "Importer la nourriture à bas prix pour tous les portes-monnaies!",
-      "moneyChange": 100000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Bien-être",
+          "score": "Population",
           "value": -1
         },
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
           "value": 2
         }
       ],
@@ -326,14 +487,21 @@
     "Random": {
       "name": "Midi selecta",
       "description": "Remplacer les cafétérias par des selectas, service garanti 24h sur 24h",
-      "moneyChange": 400000,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Minorités",
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         }
       ],
@@ -347,22 +515,31 @@
     "Positive": {
       "name": "cours sur l'écologie",
       "description": "intégrer un cours obligatoire sur les enjeux écologiques dans tous les cursus",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Biodiversité",
+          "score": "Environnement",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Vie associative",
+          "score": "Culture",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Résultat",
+          "score": "Academique",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Transport public",
+          "score": "Mobilite",
+          "isByTurn": false,
           "value": 1
         }
       ],
@@ -374,14 +551,21 @@
     "Negative": {
       "name": "cours de profit économique",
       "description": "Intégrer un cours obligatoire pour être un-e entrepreneuse efficace de le système économique actuel",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Pollution",
+          "score": "Environnement",
+          "isByTurn": false,
           "value": -1
         },
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
+          "isByTurn": false,
           "value": 1
         }
       ],
@@ -393,19 +577,27 @@
     "Random": {
       "name": "Cours d'animisme",
       "description": "Intégrer un cours obligatoire sur l'animisme pour une approche plus consciente et connecté au monde ",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Vie associative",
+          "score": "Population",
+          "isByTurn": false,
           "value": 1
         },
   
         {
-          "score": "Minorités",
+          "score": "Culture",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Publication",
+          "score": "Academique",
+          "isByTurn": false,
           "value": -1
         }
       ],
