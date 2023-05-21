@@ -9,6 +9,7 @@ namespace UI
     {
         private GameManager _gameManager;
         private VisualElement _root;
+        private UIDocument _uiDocument;
     
         private ScrollView _actions;
         private VisualElement _details;
@@ -28,9 +29,12 @@ namespace UI
         // Start is called before the first frame update
         void Start() {
             _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-            _root = GetComponent<UIDocument>().rootVisualElement;
+            _uiDocument = GetComponent<UIDocument>();
+            _uiDocument.sortingOrder = 0;
+            _root = _uiDocument.rootVisualElement;
             _actions = _root.Q<GroupBox>("Actions").Q<ScrollView>("Actions");
             _details = _root.Q<GroupBox>("Actions").Q<VisualElement>("Details");
+            
 
         }
 
@@ -38,6 +42,15 @@ namespace UI
         void Update()
         {
         
+        }
+        
+        public void Show(){
+            _uiDocument.sortingOrder = 1;
+        }
+
+        public void Disable() {
+            _uiDocument.sortingOrder = 0;
+            Hide();
         }
 
         public void InitDetails() {
