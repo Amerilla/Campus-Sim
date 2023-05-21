@@ -141,6 +141,7 @@ namespace UI
             _details.visible = true;
             Label description = _details.Q<Label>("Description");
             description.text = action.GetDescription();
+            Debug.Log(action.GetDescription());
             Button validation = _details.Q<Button>("Validation");
             if (action.IsWaiting()) {
                 validation.clicked += null;

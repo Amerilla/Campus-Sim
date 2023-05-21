@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
+        
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
 
         string root = "HardData/Choices";
@@ -36,13 +37,13 @@ public class GameManager : MonoBehaviour
         //var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
         var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
         Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
-           // { ScoreType.CULTURE, choicesCult },
-           //{ ScoreType.ENERGIE, choicesEne },
+            //{ ScoreType.CULTURE, choicesCult },
+            //{ ScoreType.ENERGIE, choicesEne },
             //{ ScoreType.ECONOMIE, choicesEco },
             //{ ScoreType.MOBILITE, choicesMob },
             { ScoreType.ACADEMIQUE, choicesAca },
             //{ ScoreType.POPULATION, choicesPop},
-           // { ScoreType.ENVIRONNEMENT, choicesEnv}
+            //{ ScoreType.ENVIRONNEMENT, choicesEnv}
         };
         _choiceGen = new ChoiceGenerator(choices);
         var p = 0;
