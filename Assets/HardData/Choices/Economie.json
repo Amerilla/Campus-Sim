@@ -68,12 +68,6 @@
           "score": "Environnement",
           "isByTurn": false,
           "value": 1
-        },
-  
-        {
-          "score": "Diversité",
-          "isByTurn": false,
-          "value": -1
         }
       ],
       "duration": null,

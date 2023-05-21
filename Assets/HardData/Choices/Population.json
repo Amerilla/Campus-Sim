@@ -3,19 +3,24 @@
   {
     "Positive": {
       "name": "Nourriture gratuite",
-      "description": " ",
-      "moneyChange": -100000,
+      "description": "Une aide pour les plus précaire, des ventres pleins, pour un cerveau performant mais une demande plus grande au contribuable!",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
           "score": "Environnement",
           "value": -1
         },
         {
-          "score": "Vie associative",
+          "score": "Culture",
           "value": 1
         },
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
           "value": -2
         },
         {
@@ -30,23 +35,28 @@
     
     "Negative": {
       "name": "Alcool gratuit",
-      "description": " ",
-      "moneyChange": -600000,
+      "description": "Tous-tes sont ivres en cours, tout le monde marche de travers, mais on a jamais vu d'aussi joyeux campus, la créativité y est décuplée!",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Diversité",
+          "score": "Culture",
           "value": 3
         },
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
           "value": -1
         },
         {
-          "score": "Résultat",
+          "score": "Academique",
           "value": -2
         },
         {
-          "score": "Minorités",
+          "score": "Population",
           "value": 1
         }
       ],
@@ -56,19 +66,24 @@
     }, 
     "Random": {
       "name": "Deo gratuit",
-      "description": " ",
-      "moneyChange": 0,
+      "description": "Pour un campus qui sent (enfin!) bon la rose. Il y a étrangement d'avantage de personnes qui viennent réviser sur le campus!",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
           "score": "Environnement",
           "value": -1
         },
         {
-          "score": "Vie associative",
+          "score": "Culture",
           "value": 1
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
           "value": 3
         }
       ],
@@ -76,7 +91,485 @@
       "cooldown": null,
       "delay": 0
     }
-  }
+  },
+  {
+    "Positive": {
+      "name": "Élection annuelle de la direction",
+      "description": "Permet d'éviter le monopole par les mêmes personnes, un brassage plus juste et démocratique mais une gestion plus instable car à plus court-terme.",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "La direction obtient les pleins pouvoirs",
+      "description": "Une forme de dictature interne s'installe et personne n'a plus son mot à dire. Les publications académiques sont intensifiées, au travail!",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "École autogérée",
+      "description": "Révolution ! Virer la direction pour rendre le pouvoir aux étudiant-es et obtenir une école à leur échelle, gérée par elleux.",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 3
+        },
+  
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+  {
+    "Positive": {
+      "name": "Meilleure cellule pyschologique",
+      "description": "Une meilleure écoute pour une aide psychologique performante, à l'écoute pour tous-tes celleux qui en ressente le besoin",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Séparation homme-femme",
+      "description": "Moins de discrimination et de situations violentes. La mixité choisie permet d'avoir des chances égales pour chacun et chacune non ? Non ?",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Chiens accompagnants",
+      "description": "Remonter le moral aux étudiants, chercheurs, et enseignants, avec un bon toutou à cajoler quand on a le moral dans les chaussettes",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+  {
+    "Positive": {
+      "name": "Logement subventionnés pour migrants",
+      "description": "Un campus inclusif, aidant, et humain pour plus grande mixité de classes sociales sur le campus universitaire",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Couper les subventions logements",
+      "description": "Chacun-e doit prendre sa responsabilité pour se loger, cela fait partie de l'apprentissage de la vie même si cela signifie parfois venir de plus loin.",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Mobilite",
+          "isByTurn": false,
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Campus de vacances! ",
+      "description": "On vide les casiers l'été, alors pourquoi pas les logements? Les louer à bas prix à vancancier-ères permettrait de rentabiliser la surface disponible au maximum durant l'été!",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+  
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  }, 
+  {
+    "Positive": {
+      "name": "Extérieurs aménagés",
+      "description": "Des esapces adaptés pour reprendre des forces dans des conditions confortables ou partager les connaissances des cours ",
+      "requirements": [
+        {
+          "score": "",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Cours au cours",
+      "description": "L'ofs encourgae, pour une meilleure santé, à bouger régulièrement. Les étudiant-es auront chaque cours dans un bâtiment différents pour plus d'exercice physique!",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Mobilite",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Bar à chat",
+      "description": "Quoi de mieux que les ronrons d'une petite boule de poil adorable pour ne pas perdre espoir entre deux séances d'exercices",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        },
+  
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+  {
+    "Positive": {
+      "name": "Cours de toutes langues",
+      "description": "Améliorer la communication et les relations internationales pour tou-tes les élèves et ne pas priviliégier une langue ou une autre",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+  
+    "Negative": {
+      "name": "Cours de langue payant",
+      "description": "Plus de motivation pour moins d'accessibilité : qu'est-ce qui pèse le plus dans la balance ?",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Cours de langue autogéré par les étudiant-es",
+      "description": "Les étudiant-es offrent des cours dans leur langue natale et cela améliorera les relations sociales entre tout le monde, en plus d'enrichir la culture estudiantine",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  } 
 
   
   
