@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
+using UnityEngine;
+
 
 
 namespace Game
@@ -37,13 +40,14 @@ namespace Game
         private readonly string _name;
         private int _value;
         private int _byTurn;
-        private int _coefficient;
+        private int _coefficient = 1 ;
 
         [JsonConstructor]
-        private Score(string name, int? byturn, int? initialValue) {
+        private Score(string name, int? byturn, int? initialValue, int? coefficient) {
             _name = Utilities.RemoveAccents(name);
             _byTurn = byturn ?? 0;
             _value = initialValue ?? 50;
+            _coefficient = coefficient ?? 1;
         }
 
         public void AddScore(int added) {
@@ -65,7 +69,26 @@ namespace Game
 
         public string GetName() => _name;
 
-        public (int, int) GetCurrentAndNextScore => (_value, _value + _byTurn);
+        public ScoreType? GetScoreType() {
+            if (_name.Equals(ScoreType.ENERGIE.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.ENERGIE;
+            if (_name.Equals(ScoreType.ECONOMIE.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.ECONOMIE;
+            if (_name.Equals(ScoreType.ENVIRONNEMENT.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.ENVIRONNEMENT;
+            if (_name.Equals(ScoreType.POPULATION.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.POPULATION;
+            if (_name.Equals(ScoreType.CULTURE.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.CULTURE;
+            if (_name.Equals(ScoreType.ACADEMIQUE.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.ACADEMIQUE;
+            if (_name.Equals(ScoreType.MOBILITE.ToString(),StringComparison.OrdinalIgnoreCase))
+                return ScoreType.MOBILITE;
+            
+            return null;
+        }
+
+        public (int, int) GetCurrentAndNextScore() => (_value, _value + _byTurn);
     }
     
     public enum ScoreType

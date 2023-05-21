@@ -2,15 +2,27 @@
   {
     "Positive": {
       "name": "Restaurer les bâtiments",
-      "description": " ",
-      "moneyChange": 1000000,
+      "description": "Un meilleure isolation, thermique, phonique... Oui décidément le CM et l'Amphipôle ont besoin de ça, même si ce sont de longs travaux",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Bien-être",
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
           "value": -1
         },
         {
-          "score": "Consommation",
+          "score": "Energie",
+          "isByTurn": false,
           "value": 3
         }
       ],
@@ -21,15 +33,22 @@
     
     "Negative": {
       "name": "Sponsoriser les bâtiments",
-      "description": " ",
-      "moneyChange": 60000,
+      "description": "Des banderoles coca, Tesla, le crédit Suisse... Avoir la sensation d'être dans un terrain de foot en permanence, ça a son petit charme",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": "Economie",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Consommation",
+          "score": "Energie",
+          "isByTurn": false,
           "value": -1
         }
       ],
@@ -40,24 +59,28 @@
 
     "Random": {
       "name": "Abandonner les bâtiments",
-      "description": " ",
-      "moneyChange": 0,
+      "description": "Le swisstech, par exemple, à quoi il sert ? À rien. Abandonnons le afin qu'il retourne à l'état sauvage (ou alors on le transforme en patinoire)",
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Environnement",
+          "score": "Economie",
+          "isByTurn": false,
           "value": -2
         },
   
         {
-          "score": "Chiffre d'affaire",
-          "value": -2
-        },
-        {
-          "score": "Consommation",
+          "score": "Energie",
+          "isByTurn": false,
           "value": 1
         },
         {
-          "score": "Bien-être",
+          "score": "Population",
+          "isByTurn": false,
           "value": -2
         }
       ],
@@ -72,14 +95,21 @@
     "Positive": {
       "name": " ",
       "description": " ",
-      "moneyChange": -120000,
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": " ",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": 4
         }
       ],
@@ -91,14 +121,22 @@
     "Negative": {
       "name": " ",
       "description": " ",
-      "moneyChange": 60000,
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": " ",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": -4
         }
       ],
@@ -110,15 +148,22 @@
     "Random": {
       "name": " ",
       "description": " ",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": " ",
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Publication",
+          "score": " ",
+          "isByTurn": false,
           "value": -3
         },
   
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": 4
         }
       ],
@@ -132,14 +177,22 @@
     "Positive": {
       "name": " ",
       "description": "",
-      "moneyChange": -120000,
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": " ",
+          "isByTurn": false,
           "value": 2
         },
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": 4
         }
       ],
@@ -151,14 +204,22 @@
     "Negative": {
       "name": " ",
       "description": " ",
-      "moneyChange": 60000,
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Chiffre d'affaire",
+          "score": " ",
+          "isByTurn": false,
           "value": -2
         },
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": -4
         }
       ],
@@ -170,15 +231,23 @@
     "Random": {
       "name": " ",
       "description": " ",
-      "moneyChange": 0,
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
       "consequences": [
         {
-          "score": "Publication",
+          "score": " ",
+          "isByTurn": false,
           "value": -3
         },
   
         {
-          "score": "Diversité",
+          "score": " ",
+          "isByTurn": false,
           "value": 4
         }
       ],

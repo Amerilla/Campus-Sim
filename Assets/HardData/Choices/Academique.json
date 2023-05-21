@@ -3,22 +3,22 @@
   {
     "Positive": {
       "name": "Financement indépendant",
-      "description": null,
+      "description": "Pour une cherche plus autonome, sortir des financements privés! De quoi remotiver les chercheur-euses et améliorer les résultats!",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": 60
+          "score": "Academique",
+          "minRequired": null
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": true,
-          "value": -2
+          "value": -1
         },
         {
           "score": "Académique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 3
         },
         {
@@ -28,17 +28,17 @@
         }
       ],
       "delay": 0,
-      "duration": 0,
+      "duration": 4,
       "cooldown": null
     },
     
     "Negative": {
       "name": "Privatisation du financement",
-      "description": null,
+      "description": " Plus de moyens mais au risque de vivre au dépends du bon vouloir de l'investisseur et ses intérêts commerciaux",
       "requirements": [
         {
           "score": "Economie",
-          "minRequired": 50
+          "minRequired": null
         }
       ],
       "consequences": [
@@ -51,6 +51,11 @@
           "score": "Académique",
           "isByTurn": true,
           "value": -1
+        }, 
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
         }
       ],
       "duration": null,
@@ -60,11 +65,11 @@
     
     "Random": {
       "name": "Tirage au sort",
-      "description": null,
+      "description": "On pourrait faire ça sous la forme d'une tambola, comme ça, aucun favoritisme",
       "requirements": [
         {
           "score": "Culture",
-          "minRequired": 30
+          "minRequired": null
         }
       ],
       "consequences": [

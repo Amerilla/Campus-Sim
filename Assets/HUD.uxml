@@ -1,78 +1,78 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <uie:Toolbar name="Toolbar" style="top: 0; height: 13%; align-items: center; background-color: rgb(254, 239, 229); width: 90%; left: 5%; border-left-width: 5px; border-right-width: 5px; border-top-width: 0; border-bottom-width: 5px; border-top-left-radius: 0; border-bottom-left-radius: 50px; border-top-right-radius: 0; border-bottom-right-radius: 50px; justify-content: space-around; border-left-color: rgb(142, 127, 127); border-right-color: rgb(142, 127, 127); border-top-color: rgb(142, 127, 127); border-bottom-color: rgb(142, 127, 127);">
         <ui:VisualElement name="Scores" style="left: 0; width: 1260px; height: 100%; top: 0; justify-content: space-between; align-items: center; flex-direction: row;">
-            <ui:VisualElement name="Env" style="align-items: center; justify-content: center;">
+            <ui:Button display-tooltip-when-elided="true" name="Env" style="background-color: rgba(255, 255, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                     <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/planet.png?fileID=2800000&amp;guid=42dc27f57ad854bfc8305af880fab013&amp;type=3#planet&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Pop" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Pop" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                     <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/population.png?fileID=2800000&amp;guid=8923527a4df5e45c19d7cfe52e554016&amp;type=3#population&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Eco" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Eco" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                     <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/Economy.png?fileID=2800000&amp;guid=b0212eaa733804a9382cba74663eb1b8&amp;type=3#Economy&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Ener" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Ener" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                     <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/Energy.png?fileID=2800000&amp;guid=702be4c1f245e434b8656a03048ea3af&amp;type=3#Energy&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Aca" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Aca" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/acad%C3%A9miqueuuu.png?fileID=2800000&amp;guid=15e5d767141519c4f91edd60a096ad3c&amp;type=3#académiqueuuu&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/acade%CC%81miqueuuu.png?fileID=2800000&amp;guid=15e5d767141519c4f91edd60a096ad3c&amp;type=3#académiqueuuu&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Cult" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Cult" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0);">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                     <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/culture.png?fileID=2800000&amp;guid=d99c09ea9eb05435c8039dd7303f5ad2&amp;type=3#culture&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
-            <ui:VisualElement name="Mob" style="align-items: center; justify-content: center;">
+            </ui:Button>
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Mob" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
                 <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/mobilit%C3%A9.png?fileID=2800000&amp;guid=3694e23c4b8b3408382da1c040611a7e&amp;type=3#mobilité&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Assets/Images/GUI/logos/mobilite%CC%81.png?fileID=2800000&amp;guid=3694e23c4b8b3408382da1c040611a7e&amp;type=3#mobilité&apos;); background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
                 </ui:GroupBox>
-                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                <ui:GroupBox name="ProgressBar" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-bottom-color: rgb(142, 127, 127);">
                     <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                     <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
                 </ui:GroupBox>
-            </ui:VisualElement>
+            </ui:Button>
         </ui:VisualElement>
-        <ui:VisualElement name="Turn" style="align-items: center; justify-content: center;">
+        <ui:Button text="&#10;" display-tooltip-when-elided="true" name="Turn" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(254, 239, 229, 0); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
             <ui:GroupBox name="Score" style="flex-direction: row; justify-content: space-between; align-items: center;">
                 <ui:Button display-tooltip-when-elided="true" name="Button" style="width: 70px; height: 70px; left: 0; top: auto; background-image: url(&apos;project://database/Packages/com.unity.timeline/Editor/StyleSheets/Images/Icons/d_TimelineEditModeRippleOFF.png?fileID=2800000&amp;guid=411e6f19c19fa0546af83aeb59c2ed4b&amp;type=3#d_TimelineEditModeRippleOFF&apos;); background-color: rgba(255, 0, 8, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); margin-bottom: 0; margin-top: 0; bottom: 0; margin-left: 0; margin-right: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; -unity-background-image-tint-color: rgb(0, 0, 0);" />
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="Value" style="font-size: 20px;" />
@@ -81,6 +81,6 @@
                 <ui:ProgressBar value="22" name="ProgressCurrentFront" style="width: 100%;" />
                 <ui:ProgressBar value="22" name="ProgressCurrentBack" style="width: 100%; bottom: 50%;" />
             </ui:GroupBox>
-        </ui:VisualElement>
+        </ui:Button>
     </uie:Toolbar>
 </ui:UXML>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using Game;
 using Newtonsoft.Json;
+using UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -50,16 +51,18 @@ public class GameManager : MonoBehaviour
             _uiActionDetails.CreateActions(choice.Value,choice.Key);
         }
 
+        _currentTurn++;
         _uiHUD.InitHud(
-            (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
-            (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
-            (_currentTurn, MaxTurn));
-
+        (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
+        (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
+        (_currentTurn, MaxTurn),_uiActionDetails);
+        _uiActionDetails.InitDetails();
+        
     }
     
 
@@ -84,27 +87,38 @@ public class GameManager : MonoBehaviour
     public Score GetScore(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
-        ExecuteActions();
         UpdateRemainingConsequences();
-        _scoresHandler.UpdateScores();  
-
-
-        //_UI.UpdateProgressBars(_scoresHandler.GetScores());
-        //_UI.UpdateMoney(_campus.GetBalance());
+        ExecuteActions();
+        _scoresHandler.UpdateScores();
+        _uiActionDetails.Hide();
+        _uiHUD.UpdateHud(_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetCurrentAndNextScore(),
+            _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
-        //_UI.UpdateTurn(_currentTurn);
-        _actionsToDo.Clear();   
+        _actionsToDo.Clear();
+        
+        
     }
 
     private void ExecuteActions() {
         foreach (Action action in _actionsToDo) {
             AddRemainingConsequences(action.Execute(_currentTurn));
         }
+
         _actionsToDo.Clear();
     }
     
     public void AddActionToDo(Action action) {
-        _actionsToDo.Add(action);
+        if (action.CanBeExecuted(_currentTurn)) {
+            _actionsToDo.Add(action);
+            action.SetWaiting(true);
+            return;
+        }
+        action.SetWaiting(false);
     }
     
     private void AddRemainingConsequences(List<Consequence> consequences) {
@@ -112,12 +126,18 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateRemainingConsequences() {
+        List<Consequence> toRemove = new List<Consequence>();
         foreach (var consequence in _remainingConsequences) {
-            if(consequence.Update()) {
-                _remainingConsequences.Remove(consequence);
+            if (consequence.Update()) {
+                toRemove.Add(consequence);
             }
         }
+        foreach (var consequence in toRemove) {
+            _remainingConsequences.Remove(consequence);
+        }
     }
-    
+
+    public int GetCurrentTurn() => _currentTurn;
+
 }
 

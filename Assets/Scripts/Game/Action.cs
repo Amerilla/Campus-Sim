@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Game
 {
@@ -15,6 +16,7 @@ namespace Game
         private int _delay;
         private int _lastCall;
         private string _description;
+        private bool _waiting;
 
         [JsonConstructor]
         private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
@@ -25,12 +27,23 @@ namespace Game
             _delay = delay ?? 0;
             _duration = duration ?? -1;
             _cooldown = cooldown ?? 0;
+
+            if (_cooldown < 0 || _duration < 0)
+                _lastCall = -1;
+            else
+                _lastCall = _delay + _duration + _cooldown;
+
         }
 
         public string GetName() => _name;
 
         public string GetDescription() => _description;
-        
+
+        public bool IsWaiting() => _waiting;
+
+        public void SetWaiting(bool waiting) {
+            _waiting = waiting;
+        }
 
         public float GetDuration() => _duration;
 
@@ -43,6 +56,12 @@ namespace Game
         }
 
         public bool CanBeExecuted(int currentTurn) {
+            foreach (var requirement in _requirements) {
+                if (!requirement.HasRequirement()) {
+                    return false;
+                }
+            }
+
             if (_cooldown < 0 || _duration < 0) {
                 return _lastCall < currentTurn;
             }
@@ -65,15 +84,22 @@ namespace Game
                     }
                 }
             }
+
+            _waiting = false;
             return remainingConsequences;
         }
 
         public ActionType GetActionType() => _actionType;
 
+        public List<Requirement> GetRequirements() => _requirements;
+
+        public List<Consequence> GetConsequences() => _consequences;
+
         public enum ActionType
         {
             Positive, Negative, Random
         }
+        
 
         public static HashSet<string> OldSubScores() => new HashSet<string>() {
             "Pollution", "Biodiversité", "Vie associative", "Diversité", "Chiffre d'affaire", "Variété de l'offre",
