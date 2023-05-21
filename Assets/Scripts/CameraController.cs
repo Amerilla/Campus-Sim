@@ -7,6 +7,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour 
 {
     private float movementSpeed = 100f;
+    private const float MAX_X = 3150;
+    private const float MIN_X = 1730;
+    private const float MIN_Z = 500;
+    private const float MAX_Z = 1400;
     private const float MIN_Y = 250;
     private const float MAX_Y = 400;
     private Transform transform;
@@ -46,7 +50,8 @@ public class CameraController : MonoBehaviour
         }
 
         Vector3 newPos = transform.position;
-        if (newPos.y > MAX_Y || newPos.y < MIN_Y) {
+        //Debug.Log(newPos);
+        if (newPos.y is > MAX_Y or < MIN_Y || newPos.x is < MIN_X or > MAX_X || newPos.z is < MIN_Z or > MAX_Z) {
             transform.position = previousPos;
         }
     }

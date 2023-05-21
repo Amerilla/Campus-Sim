@@ -23,5 +23,11 @@ namespace Game
         public Action GetRandom() => _randomAction;
 
         public Action GetNegative() => _negativeAction;
+
+        public void Reset() {
+            _positiveAction.Reset();
+            _randomAction.Reset();
+            _negativeAction.Reset();
+        }
     }
 }

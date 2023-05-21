@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private Campus _campus;
     private ActionDetails _uiActionDetails;
     private HUD _uiHUD;
+    private Intro _uiIntro;
+    private Outro _uiOutro;
     private List<Action> _actionsToDo = new();
     private List<Consequence> _remainingConsequences = new();
 
@@ -25,6 +27,9 @@ public class GameManager : MonoBehaviour
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
+        _uiIntro = GameObject.Find("Letter-Intro").GetComponent<Intro>();
+        _uiOutro = GameObject.Find("Letter-Outro").GetComponent<Outro>();
+        
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
 
         string root = "HardData/Choices";
@@ -36,13 +41,13 @@ public class GameManager : MonoBehaviour
         //var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
         var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
         Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
-           // { ScoreType.CULTURE, choicesCult },
-           //{ ScoreType.ENERGIE, choicesEne },
+            //{ ScoreType.CULTURE, choicesCult },
+            //{ ScoreType.ENERGIE, choicesEne },
             //{ ScoreType.ECONOMIE, choicesEco },
             //{ ScoreType.MOBILITE, choicesMob },
             { ScoreType.ACADEMIQUE, choicesAca },
             //{ ScoreType.POPULATION, choicesPop},
-           // { ScoreType.ENVIRONNEMENT, choicesEnv}
+            //{ ScoreType.ENVIRONNEMENT, choicesEnv}
         };
         _choiceGen = new ChoiceGenerator(choices);
         var p = 0;
@@ -50,8 +55,7 @@ public class GameManager : MonoBehaviour
         foreach (var choice in choices) {
             _uiActionDetails.CreateActions(choice.Value,choice.Key);
         }
-
-        _currentTurn++;
+        _currentTurn = 1;
         _uiHUD.InitHud(
         (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
         (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
@@ -64,10 +68,30 @@ public class GameManager : MonoBehaviour
         _uiActionDetails.InitDetails();
         
     }
+
+    private void NewGame() {
+        /// New Game
+    }
     
 
     void Update() {
         
+    }
+
+    public void Intro() {
+        NewGame();
+        _uiIntro.Show();
+    }
+
+    public void FirstTurn() {
+        _uiHUD.Show();
+        _uiActionDetails.Show();
+    }
+
+    private void LastTurn() {
+        _uiHUD.Hide();
+        _uiActionDetails.Disable();
+        _uiOutro.Show();
     }
 
     private List<T> DeserializeList<T>(string path) {
@@ -100,6 +124,9 @@ public class GameManager : MonoBehaviour
             _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
         _actionsToDo.Clear();
+        if (_currentTurn == MaxTurn) {
+            LastTurn();
+        }
         
         
     }

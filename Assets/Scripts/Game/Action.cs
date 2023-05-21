@@ -22,6 +22,7 @@ namespace Game
         private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
             int? delay, int? duration, int? cooldown) {
             _name = name;
+            _description = description ?? "";
             _consequences = consequences ?? new List<Consequence>();
             _requirements = requirements ?? new List<Requirement>();
             _delay = delay ?? 0;
@@ -33,6 +34,13 @@ namespace Game
             else
                 _lastCall = _delay + _duration + _cooldown;
 
+        }
+
+        public void Reset() {
+            if (_cooldown < 0 || _duration < 0)
+                _lastCall = -1;
+            else
+                _lastCall = _delay + _duration + _cooldown;
         }
 
         public string GetName() => _name;

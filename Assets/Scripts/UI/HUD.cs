@@ -10,6 +10,7 @@ namespace UI
         private GameManager _gameManager;
     
         private VisualElement _root;
+        private UIDocument _uiDocument;
         private Button _environmentGroupBox;
         private Button _populationGroupBox;
         private Button _economyGroupBox;
@@ -17,14 +18,16 @@ namespace UI
         private Button _academicGroupBox;
         private Button _cultureGroupBox;
         private Button _mobilityGroupBox;
-
+        private VisualElement _toolBar;
         private Button _turnGroupBox;
         private ScoreType? _showedScoreType = null;
     
         // Start is called before the first frame update
         void Start() {
             _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-            _root = GetComponent<UIDocument>().rootVisualElement;
+            _uiDocument = GetComponent<UIDocument>();
+            _root = _uiDocument.rootVisualElement;
+            Hide();
             _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Env");
             _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Pop");
             _economyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Eco");
@@ -33,12 +36,26 @@ namespace UI
             _cultureGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Cult");
             _mobilityGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Mob");
             _turnGroupBox = _root.Q("Toolbar").Q<Button>("Turn");
+            
+
+
         }
 
         // Update is called once per frame
         void Update()
         {
         
+        }
+        
+        public void Show() {
+            _root.Q("Toolbar").visible = true;
+            _root.Q("Toolbar").SetEnabled(true);
+            _uiDocument.sortingOrder = 1;
+        }
+
+        public void Hide() {
+            _root.Q("Toolbar").visible = false;
+            _uiDocument.sortingOrder = 0;
         }
 
         public void UpdateHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
@@ -50,6 +67,7 @@ namespace UI
 
         public void InitHud((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
             (int, int) cult, (int, int) mob,(int,int) turn, ActionDetails actionDetails) {
+            _showedScoreType = null;
             ScoresInit(env,pop,eco,ener,aca,cult,mob,actionDetails);
             ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox,null,null);
             _turnGroupBox.clicked += () => _gameManager.NextTurn();

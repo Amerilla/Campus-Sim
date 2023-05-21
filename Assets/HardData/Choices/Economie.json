@@ -68,6 +68,12 @@
           "score": "Environnement",
           "isByTurn": false,
           "value": 1
+        },
+  
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
         }
       ],
       "duration": null,
