@@ -123,7 +123,6 @@ public class GameManager : MonoBehaviour
             _scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetCurrentAndNextScore(),
             _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
-        _actionsToDo.Clear();
         if (_currentTurn == MaxTurn) {
             LastTurn();
         }

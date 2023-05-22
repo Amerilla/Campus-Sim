@@ -23,6 +23,7 @@ namespace UI
         private List<Button> _mobilityActions = new List<Button>();
 
         private ScoreType? _showedScoreType = null;
+        private System.Action _previsousHandler;
 
 
 
@@ -158,27 +159,28 @@ namespace UI
             _details.visible = true;
             Label description = _details.Q<Label>("Description");
             description.text = action.GetDescription();
-            Debug.Log(action.GetDescription());
             Button validation = _details.Q<Button>("Validation");
+            validation.clicked -= _previsousHandler;
             if (action.IsWaiting()) {
-                validation.clicked += null;
                 validation.SetEnabled(false);
                 validation.text = "Déjà selectionnée !";
                 Color color = new Color(0.95f, 0.67f,0.24f);
                 validation.style.backgroundColor = color;
             }
             else if (action.CanBeExecuted(_gameManager.GetCurrentTurn())) {
-                validation.clicked += () => {
+                _previsousHandler = () => {
+                    Debug.Log(action.GetName());
                     _gameManager.AddActionToDo(action);
                     _details.visible = false;
+                    
                 };
+                validation.clicked += _previsousHandler; 
                 Color color = new Color(0.67f, 0.95f, 0.24f);
                 validation.style.backgroundColor = color;
                 validation.text = "C'est parti !";
                 validation.SetEnabled(true);
             }
             else {
-                validation.clicked += null;
                 Color color = new Color(0.95f, 0.24f, 0.24f);
                 validation.style.backgroundColor = new StyleColor(color);
                 validation.text = " Pas Dispo !";
