@@ -6,7 +6,7 @@
       "description": "La fête, les amis, la musique. Un bon boost au moral quand les examens arrivent, tout le bord du lac se rappelera de cette soirée",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -47,7 +47,7 @@
       "description": "Les étudiant-es déprimeront un peu, mais c'est pour leur bien... et ils auront plus de temps pour réviser. En pleurant.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -82,7 +82,7 @@
       "description": "Pourquoi se limiter au sol? Toujours plus de son! Il faudr cependant préparer des matelas gonflables. Si, si vraiment. Et des mégaphones aussi.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -121,7 +121,7 @@
       "description": "Mettre à dispositions plus de locaux, c'est plus de convivialité, moins de solitude, plus d'organisation, et d'entraide, une société solidaire!",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -155,7 +155,7 @@
       "description": "Risque de révolution non négligeable et une dépression collective à prévoir mais gain d'espace pour la connaissance",
       "requirements": [
         {
-          "score": "",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -192,7 +192,7 @@
       "description": "Un lieu calme et réconfortant, pour étudier ou se reposer, parfait pour les durs journées d'hivers.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -225,7 +225,7 @@
       "description": "Soutenir les associations c'est important afin de maintenant un bon esprit estudiantins !",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -252,7 +252,7 @@
       "description": "Tout le monde à la même enseigne, les locaux sous-exploités seront partagés, c'est la densification urbaine, pensons écolo!",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -339,7 +339,7 @@
       "description": "La culture doit être au service de la connaissance universitaire. Seuls les événements pertinents seront subventionnés!",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -376,7 +376,7 @@
       "description": "Promouvoir les valeurs et le patrimoine suisse. Le musée promet une raclette party chaque mois pour l'intégration des étranger-ères!  ",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -404,7 +404,7 @@
       "description": "Un moment de pause pour se retrouver et prendre le temps de se connaître.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
