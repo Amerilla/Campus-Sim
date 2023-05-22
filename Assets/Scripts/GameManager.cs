@@ -34,20 +34,20 @@ public class GameManager : MonoBehaviour
 
         string root = "HardData/Choices";
         //var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
-        //var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
+        var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
         //var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
         //var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
         //var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
         //var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
-        var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
+        //var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
         Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
             //{ ScoreType.CULTURE, choicesCult },
             //{ ScoreType.ENERGIE, choicesEne },
             //{ ScoreType.ECONOMIE, choicesEco },
             //{ ScoreType.MOBILITE, choicesMob },
-            { ScoreType.ACADEMIQUE, choicesAca },
+            //{ ScoreType.ACADEMIQUE, choicesAca },
             //{ ScoreType.POPULATION, choicesPop},
-            //{ ScoreType.ENVIRONNEMENT, choicesEnv}
+            { ScoreType.ENVIRONNEMENT, choicesEnv}
         };
         _choiceGen = new ChoiceGenerator(choices);
         var p = 0;

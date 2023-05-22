@@ -159,7 +159,7 @@
           "value": 1
         },
         {
-          "score": "Consommation",
+          "score": "Energie",
           "isByTurn": false,
           "value": -2
         }
@@ -192,7 +192,7 @@
         },
   
         {
-          "score": "Consommation",
+          "score": "Energie",
           "isByTurn": false,
           "value": 1
         }
@@ -216,7 +216,7 @@
       ],
       "consequences": [
         {
-          "score": "Production",
+          "score": "Energie",
           "isByTurn": false,
           "value": 1
         },

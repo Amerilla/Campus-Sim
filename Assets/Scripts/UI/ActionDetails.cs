@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Game;
+using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -33,6 +34,9 @@ namespace UI
             _uiDocument.sortingOrder = 0;
             _root = _uiDocument.rootVisualElement;
             _actions = _root.Q<GroupBox>("Actions").Q<ScrollView>("Actions");
+            _actions.contentContainer.style.flexDirection = FlexDirection.Row;
+            _actions.contentContainer.style.justifyContent = Justify.SpaceAround;
+            _actions.contentContainer.style.flexWrap = Wrap.Wrap;
             _details = _root.Q<GroupBox>("Actions").Q<VisualElement>("Details");
             
 

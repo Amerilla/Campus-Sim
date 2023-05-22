@@ -808,6 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491723048}
   - component: {fileID: 491723049}
+  - component: {fileID: 491723050}
   m_Layer: 0
   m_Name: Letter-Outro
   m_TagString: Untagged
@@ -846,6 +847,18 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: e612dc7833e34a978a838265d22cddd8, type: 3}
   m_SortingOrder: 0
+--- !u!114 &491723050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491723047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0eed742d7c75ff45aebdea67928f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &522594440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3054449118234543b07dbf520120653, type: 3}
