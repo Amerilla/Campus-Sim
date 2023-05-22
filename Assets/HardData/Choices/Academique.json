@@ -89,7 +89,90 @@
       "cooldown": null,
       "delay": 0
     }
-  }
+  },
+  
+   {
+    "Positive": {
+      "name": "À bas les notes!",
+      "description": "Supprimer les notes pour donnez plus de souplesse à l'éducation. Sur le marché du travail, les notes ça ne veut plus dire grand chose.",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Populatoin",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+     "Negative": {
+      "name": "Double échec",
+      "description": "Rater sa première année compte double. Amplifie l'élitisme et le validisme... mais oups, ça existe déjà !",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "value": null
+        },
+        {
+          "score": " ",
+          "isByTurn": false,
+          "value": null
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Récompenser élèves assidus",
+      "description": "Récompense pour des actions de type 'venir en cours en étant malade' pour forger des citoyen-nes déterminées et productives dans la société.",
+      "requirements": [
+        {
+          "score": " ",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": 2
+        },
+  
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  } 
  
   
   
