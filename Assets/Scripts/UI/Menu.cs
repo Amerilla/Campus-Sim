@@ -7,6 +7,7 @@ namespace UI
     {
         private GameManager _gameManager;
         private VisualElement _root;
+        private VisualElement _logo;
         private UIDocument _uiDocument;
         private Button _start;
         private VisualElement _menuVisualElement;
@@ -19,6 +20,7 @@ namespace UI
             _uiDocument.sortingOrder = 1;
             _root = _uiDocument.rootVisualElement;
             _menuVisualElement = _root.Q("Menu");
+            _logo = _root.Q("Logo");
             _start = _menuVisualElement.Q<Button>("Start");
             _start.clicked += () => {
                 Hide();
@@ -33,12 +35,14 @@ namespace UI
         
         }
         public void Show() {
+            _logo.visible = true;
             _menuVisualElement.visible = true;
             _menuVisualElement.SetEnabled(true);
             _uiDocument.sortingOrder = 1;
         }
         
         private void Hide() {
+            _logo.visible = false;
             _menuVisualElement.visible = false;
             _menuVisualElement.SetEnabled(false);
             _uiDocument.sortingOrder = 0;

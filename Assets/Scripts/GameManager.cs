@@ -33,21 +33,21 @@ public class GameManager : MonoBehaviour
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
 
         string root = "HardData/Choices";
-        //var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
-        //var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
-        //var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
-        //var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
-        //var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
-        //var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
+        var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
+        var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
+        var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
+        var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
+        var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
+        var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
         var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
         Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
-            //{ ScoreType.CULTURE, choicesCult },
-            //{ ScoreType.ENERGIE, choicesEne },
-            //{ ScoreType.ECONOMIE, choicesEco },
-            //{ ScoreType.MOBILITE, choicesMob },
+            { ScoreType.CULTURE, choicesCult },
+            { ScoreType.ENERGIE, choicesEne },
+            { ScoreType.ECONOMIE, choicesEco },
+            { ScoreType.MOBILITE, choicesMob },
             { ScoreType.ACADEMIQUE, choicesAca },
-            //{ ScoreType.POPULATION, choicesPop},
-            //{ ScoreType.ENVIRONNEMENT, choicesEnv}
+            { ScoreType.POPULATION, choicesPop},
+            { ScoreType.ENVIRONNEMENT, choicesEnv}
         };
         _choiceGen = new ChoiceGenerator(choices);
         var p = 0;
@@ -123,7 +123,6 @@ public class GameManager : MonoBehaviour
             _scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetCurrentAndNextScore(),
             _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
-        _actionsToDo.Clear();
         if (_currentTurn == MaxTurn) {
             LastTurn();
         }

@@ -1,4 +1,3 @@
-
 [
   {
     "Positive": {
@@ -6,7 +5,7 @@
       "description": "Se déplacer librement en transports publics sans problème, et profiter de la ville et des paysages alentour !",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -36,13 +35,13 @@
       "cooldown": null,
       "delay": 0
     },
-    
+
     "Negative": {
       "name": "Création de parking ",
       "description": "Nous sommes à votre écoute, les plaintes répétées quant au manque de places ont été entendues. Évidemment c'est moins d'espace vert et ils restent payants ",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -62,7 +61,7 @@
           "isByTurn": false,
           "value": 1
         },
-    {
+        {
           "score": "Population",
           "isByTurn": false,
           "value": 1
@@ -76,13 +75,13 @@
       "duration": null,
       "cooldown": null,
       "delay": 0
-    }, 
+    },
     "Random": {
       "name": "Tapis roulants sur tout le campus",
       "description": "Du point de vue énergie, ce n'est pas trop ça, sans compter la perte d'activité physique... mais il y a l'impression de vivre dans le futur, et ça, c'est stylé",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -92,7 +91,6 @@
           "isByTurn": false,
           "value": -2
         },
-  
         {
           "score": "Economie",
           "isByTurn": false,
@@ -108,26 +106,26 @@
       "cooldown": null,
       "delay": 0
     }
-  }
-  
+  },
+
   {
     "Positive": {
       "name": "Zéro automobile",
       "description": "Ecologie, moins de bruit, pour un campus durable et moderne ! (Mais plus de mal de dos peut-être, à force de tout transporter",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
       "consequences": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "value": 2
         },
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "value": 4
         }
@@ -136,13 +134,13 @@
       "cooldown": null,
       "delay": 0
     },
-  
+
     "Negative": {
       "name": "Supprimer les ascenseurs",
       "description": "Les personnes à mobilité réduite n'ont plus accès aux salles de cours mais le reste de la population est plus sportive",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -174,19 +172,18 @@
       "description": "Perséverer dans les traditions suisses et avoir l'imrpession d'être tous les jours au ski, rien de mieux pour sociabiliser entre les cours!",
       "requirements":[
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
       "consequences": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "value": -3
         },
-  
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "value": 4
         }
@@ -203,7 +200,7 @@
       "description": "Allier sport et écologie, le tout vélo permet de favoriser la mobilité douce sur le campus",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -224,13 +221,13 @@
       "cooldown": null,
       "delay": 0
     },
-  
+
     "Negative": {
       "name": " Voitures de golf partout",
       "description": "Un déplacement sur batterie électrique en accord avec la croissance verte tout en faisant la promotion d'un sport vert!",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -257,36 +254,35 @@
       "delay": 0
     },
 
-  "Random": {
-    "name": "tyrolienne à gogo",
-    "description": "Entre le BM et le Rolex, ou l'Amphimax et l'Anthropole, ça aura un charme fou!",
-    "requirements":[
-      {
-        "score": " ",
-        "minRequired": null
-      }
-    ],
-    "consequences": [
-      {
-        "score": "Economie",
-        "isByTurn": false,
-        "value": -1
-      },
-      {
-        "score": "Culture",
-        "isByTurn": false,
-        "value": 1
-      },
-      {
-        "score": "Mobilite",
-        "isByTurn": false,
-        "value": 1
-      }
-      
-    ],
-    "duration": null,
-    "cooldown": null,
-    "delay": 0
+    "Random": {
+      "name": "tyrolienne à gogo",
+      "description": "Entre le BM et le Rolex, ou l'Amphimax et l'Anthropole, ça aura un charme fou!",
+      "requirements":[
+        {
+          "score": "Economie",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Mobilite",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
     }
   },
 
@@ -296,7 +292,7 @@
       "description": "Ouvrir les passages souterrains existants pour éviter tous ces détours et surtout éviter la pluie et les controlleur-euses dans le métro.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -317,13 +313,13 @@
       "cooldown": null,
       "delay": 0
     },
-  
+
     "Negative": {
       "name": "Colloque l'étranger",
       "description": "Et oui la mobilité ça intègre aussi voyager hors campus! Les colloques à l'étranger sera limité aux voyages en train",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -354,12 +350,12 @@
       "cooldown": null,
       "delay": 0
     },
-    "Negative": {
+    "Random": {
       "name": "trampoline pour se déplacer entre les étages ",
       "description": "Vous savez quand on dit: 'j'y fais juste un saut?' Maintenant c'est possible! L'énergie cinétique permet d'optimiser l'énergie pour se déplacer.",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -386,5 +382,4 @@
       "delay": 0
     }
   }
-  
 ]
