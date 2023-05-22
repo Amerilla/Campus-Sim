@@ -5,7 +5,7 @@
       "description": "Un meilleure isolation, thermique, phonique... Oui décidément le CM et l'Amphipôle ont besoin de ça, même si ce sont de longs travaux",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -30,13 +30,13 @@
       "cooldown": null,
       "delay": 0
     },
-    
+
     "Negative": {
       "name": "Sponsoriser les bâtiments",
       "description": "Des banderoles coca, Tesla, le crédit Suisse... Avoir la sensation d'être dans un terrain de foot en permanence, ça a son petit charme",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -62,7 +62,7 @@
       "description": "Le swisstech, par exemple, à quoi il sert ? À rien. Abandonnons le afin qu'il retourne à l'état sauvage (ou alors on le transforme en patinoire)",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -72,7 +72,7 @@
           "isByTurn": false,
           "value": -2
         },
-  
+
         {
           "score": "Energie",
           "isByTurn": false,
@@ -97,7 +97,7 @@
       "description": "Chaud en hiver, frais en été, une meilleure isolation règle bien des difficultés",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "minRequired": null
         }
       ],
@@ -122,13 +122,13 @@
       "cooldown": null,
       "delay": 0
     },
-  
+
     "Negative": {
       "name": "climatisation partout",
       "description": "Avec la canicule dûe au changement climatique, on se laisserait tenter, mais les conséquence en consommation d'énergie son telles, que le problème n'en serait amplifié ",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -160,7 +160,8 @@
       "description": "Utiliser intelligemment la chaleur des salles de classe bondées pour chuaffer les bâtiments",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
+          "isByTurn": false,
           "minRequired": null
         }
       ],
@@ -198,7 +199,7 @@
       "description": "Malgré un côut initial en énergie fossile, ils constituent une source d'énergie renouvelable non néglieable",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -224,13 +225,13 @@
       "cooldown": null,
       "delay": 0
     },
-  
+
     "Negative": {
       "name": "Centrale à charbon",
       "description": "Répondre à la demande croissante actuelle de l'énergie demande des sacrifie quelque part. Mais cela nous ramène à une époque bien reculée",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -262,7 +263,7 @@
       "description": "Au boulot ! Les étudiant-es se succèdent aux pédales des îlots de chargement pour alimenter leurs ordinateurs. Ecologie, sport et énergie en harmonie!",
       "requirements": [
         {
-          "score": " ",
+          "score": "Economie",
           "isByTurn": false,
           "minRequired": null
         }
@@ -288,6 +289,5 @@
       "cooldown": null,
       "delay": 0
     }
-  } 
-  
+  }
 ]
