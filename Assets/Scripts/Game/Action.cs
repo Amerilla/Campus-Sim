@@ -84,6 +84,7 @@ namespace Game
                 }
             }
             if (CanBeExecuted(currentTurn)) {
+                _waiting = false;
                 foreach (var consequence in _consequences) {
                     consequence.SetDelay(_delay);
                     consequence.SetRemainingTurns(_duration);
@@ -92,8 +93,6 @@ namespace Game
                     }
                 }
             }
-
-            _waiting = false;
             return remainingConsequences;
         }
 
