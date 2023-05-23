@@ -1,0 +1,293 @@
+[
+  {
+    "Positive": {
+      "name": "Restaurer les bâtiments",
+      "description": "Un meilleure isolation, thermique, phonique... Oui décidément le CM et l'Amphipôle ont besoin de ça, même si ce sont de longs travaux",
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 3
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Negative": {
+      "name": "Sponsoriser les bâtiments",
+      "description": "Des banderoles coca, Tesla, le crédit Suisse... Avoir la sensation d'être dans un terrain de foot en permanence, ça a son petit charme",
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": -1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Abandonner les bâtiments",
+      "description": "Le swisstech, par exemple, à quoi il sert ? À rien. Abandonnons le afin qu'il retourne à l'état sauvage (ou alors on le transforme en patinoire)",
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+
+  {
+    "Positive": {
+      "name": "Améliorer l'isolation",
+      "description": "Chaud en hiver, frais en été, une meilleure isolation règle bien des difficultés",
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Negative": {
+      "name": "climatisation partout",
+      "description": "Avec la canicule dûe au changement climatique, on se laisserait tenter, mais les conséquence en consommation d'énergie son telles, que le problème n'en serait amplifié ",
+      "requirements": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": -3
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "Chauffer les méningees",
+      "description": "Utiliser intelligemment la chaleur des salles de classe bondées pour chuaffer les bâtiments",
+      "requirements": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": -1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  },
+
+  {
+    "Positive": {
+      "name": "Panneaux solaires",
+      "description": "Malgré un côut initial en énergie fossile, ils constituent une source d'énergie renouvelable non néglieable",
+      "requirements": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": -2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Negative": {
+      "name": "Centrale à charbon",
+      "description": "Répondre à la demande croissante actuelle de l'énergie demande des sacrifie quelque part. Mais cela nous ramène à une époque bien reculée",
+      "requirements": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": -3
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 3
+        },
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "value": 1
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    },
+
+    "Random": {
+      "name": "énergie à pédale",
+      "description": "Au boulot ! Les étudiant-es se succèdent aux pédales des îlots de chargement pour alimenter leurs ordinateurs. Ecologie, sport et énergie en harmonie!",
+      "requirements": [
+        {
+          "score": "Economie",
+          "isByTurn": false,
+          "minRequired": null
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Environnement",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Energie",
+          "isByTurn": false,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": false,
+          "value": -2
+        }
+      ],
+      "duration": null,
+      "cooldown": null,
+      "delay": 0
+    }
+  }
+]
