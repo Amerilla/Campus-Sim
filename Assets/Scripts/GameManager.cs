@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Intro() {
-        NewGame();
+        //NewGame();
         _uiIntro.Show();
     }
 
