@@ -42,7 +42,7 @@
 
     "Negative": {
       "name": "Création de parking ",
-      "description": "Nous sommes à votre écoute, les plaintes répétées quant au manque de places ont été entendues. Évidemment c'est moins d'espace vert et ils restent payants ",
+      "description": "Nous sommes à votre écoute, les plaintes répétées quant au manque de places ont été entendues. Évidemment c'est moins d'espaces verts et ils restent payants ",
       "requirements": [
         {
           "score": "Economie",
