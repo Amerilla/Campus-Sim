@@ -5,8 +5,12 @@
       "description": "Se déplacer librement en transports publics sans problème, et profiter de la ville et des paysages alentour !",
       "requirements": [
         {
+          "score": "Mobilite",
+          "minRequired": 20
+        },
+        {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 20
         }
       ],
       "consequences": [
