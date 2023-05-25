@@ -5,24 +5,24 @@
       "description": "Augmenter les prix de restauration pour un service de meilleure qualité! Et finalement, manger c'est surfait",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
-          "score": "Culture",
+          "score": "Population",
           "isByTurn": false,
-          "value": 4
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -31,25 +31,29 @@
       "description": "Pour une justice sociale, réduire les prix de la nourriture sur les campus!",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Culture",
+          "isByTurn": true,
+          "value": 1
+        }
+        {
+          "score": "Population",
           "isByTurn": false,
-          "value": 3
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -58,25 +62,29 @@
       "description": "Tout le monde a droit à l'amour... même les choux-fleurs. Pourquoi ne pas leur laisser une chance ? C'est plein de fibres, plein de vitamines, et en plus c'est pas si mauvais.",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Culture",
+          "minRequired": 15
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
+        },
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": -1
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
@@ -88,98 +96,114 @@
       "description": "Les étudiant-es seront responsables de leur consommation, ce n'est pas du ressort de l'institution!",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Culture",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
-    "Negative": {
+    "Random": {
       "name": "Wifi étendu à la ville",
-      "description": "Un wifi commun pour ne plus se ruiner chez Swisscom!",
+      "description": "Un wifi commun pour ne plus se ruiner chez un opérateur téléphonique hors de prix!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 40
+        },
+        {
+          "score": "Culture",
+          "minRequired": 20
+        }
+        {
+          "score": "Energie",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": 1
         },
         {
           "score": "Culture",
           "isByTurn": false,
-          "value": 1
+          "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
-    "Random": {
+    "Négative": {
       "name": "Wifi individuel 6G",
       "description": "L'UNIL et l'EPFL considèrent Internet comme une ressource essentielle à tout instant, elles fourniront une connexion 6G individuelle, ultrarapide et gratuite aux étudiant-es inscrits",
       "requirements": [
         {
           "score": "Academique",
-          "minRequired": null
+          "minRequired": 20
+        },
+        {
+          "score": "Economie",
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
-          "score": "Energie",
-          "isByTurn": false,
+          "score": "Economie",
+          "isByTurn": true,
           "value": -2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Culture",
           "isByTurn": false,
-          "value": 1
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     }
   },
 
@@ -189,29 +213,29 @@
       "description": "Augmenter les frais de scolarité, il y aura peut-être moins d'étudiant-es, mais tout l'enseignement sera de meilleure qualité!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": 2
+          "value": 6
         },
         {
           "score": "Culture",
           "isByTurn": false,
-          "value": -2
+          "value": -3
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -220,149 +244,167 @@
       "description": "L'éducation est un droit pour tous-tes. La question financière ne devrait pas entrer en compte. En route vers une société véritablement égalitaire!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -3
+          "value": -2
         },
         {
-          "score": "Culture",
+          "score": "Population",
           "isByTurn": false,
-          "value": 2
+          "value": 4
+        },
+        {
+          "score": "Academique",
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     },
 
     "Random": {
       "name": "Un écolage PIB",
-      "description": "Aligner les frais de scolarité au PIB, une échelle progressive qui prend en compte les inégalités mondiales Nord/Sud, bien évidemment",
+      "description": "Aligner les frais de scolarité au PIB, une échelle progressive qui prend en compte les inégalités mondiales au niveau du pays d'origine, bien évidemment",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
+        },
+        {
+          "score": "Population",
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     }
   },
   {
     "Positive": {
       "name": "Offre bio!",
-      "description": "Ajouter plus d'espaces commerciaux qui seront bios, pour consommer éthiquement et surtout consommer",
+      "description": "Ajouter plus d'espaces commerciaux bios, pour consommer éthiquement et surtout consommer beaucoup",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Culture",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Population",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         },
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": 3
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Negative": {
-      "name": "Castor freegan partout",
+      "name": "Des Castor Freegan partout",
       "description": "Donner les invendus journaliers du campus, celles et ceux qui ont moins d'argent mangeront plus tard dans la journée",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": 1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": -1
+          "isByTurn": true,
+          "value": -2
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 1
+          "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
     "Random": {
       "name": "Campus Commercial",
       "description": "Transformer le campus en centre commercial, plus besoin d'aller en ville, tout est sur place. Fini les études, avec les intelligences artificielles, on n'a plus besoin des humains pour étudier. Autant s'amuser et faire du shopping toute la journée!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 30
+        },
+        {
+          "score": "Energie",
+          "minRequired": 30
+        },
+        {
+          "score": "Mobilite",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": 3
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": -3
         },
         {
           "score": "Academique",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": -3
         }
       ],
-      "duration": null,
+      "duration": 4,
       "cooldown": null,
-      "delay": 0
+      "delay": 2
     }
   },
 
@@ -379,56 +421,69 @@
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": 10
+        },
+        {
+          "score": "Mobilité",
+          "isByTurn": true,
+          "value": -4
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 1,
+      "cooldown": 2,
+      "delay": 5
     },
-    "Negative": {
+    "Random": {
       "name": "Brevet sur les découvertes",
-      "description": "Certaines universités en Amérique le font déjà, cela garantit un revenu durable et un bon retour sur investissement pour l'institution! (mais pas pour les chercheur-euses)",
+      "description": "Certaines universités en Amériques le font déjà, cela garantit un revenu durable et un bon retour sur investissement pour l'institution! (mais pas pour les chercheur-euses)",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Culture",
-          "isByTurn": false,
-          "value": -4
+          "isByTurn": true,
+          "value": -1
+        },
+        {
+          "score": "Académique",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 4,
+      "cooldown": 2,
+      "delay": 2
     },
 
-    "Random": {
+    "Négative": {
       "name": "Crowdfunding",
       "description": "L'université a vocation pour le bien commun, alors pourquoi ne pas faire contribuer tout le monde?",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": -3
+          "isByTurn": true,
+          "value": -4
         },
         {
           "score": "Culture",
@@ -436,9 +491,9 @@
           "value": 4
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 2,
+      "cooldown": 2,
+      "delay": 4
     }
   },
 
