@@ -2,59 +2,59 @@
   {
     "Positive": {
       "name": "Restaurer les bâtiments",
-      "description": "Un meilleure isolation, thermique, phonique... Oui décidément le CM et l'Amphipôle ont besoin de ça, même si ce sont de longs travaux",
+      "description": "Un meilleure isolation thermique et sonore... Oui décidément le CM et l'Amphipôle ont besoin de ça, même si ce sont de longs travaux",
       "requirements": [
         {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -3
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": -1
+          "value": 3
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": 3
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 6,
+      "cooldown": 1,
+      "delay": 3
     },
 
     "Negative": {
       "name": "Sponsoriser les bâtiments",
-      "description": "Des banderoles coca, Tesla, le crédit Suisse... Avoir la sensation d'être dans un terrain de foot en permanence, ça a son petit charme",
+      "description": "Des affichages lumineux Magros, Toblerond ou Rivello... Avoir la sensation d'être dans un terrain de foot en permanence, ça a son petit charme",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 35
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": -1
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Random": {
@@ -62,8 +62,8 @@
       "description": "Le swisstech, par exemple, à quoi il sert ? À rien. Abandonnons le afin qu'il retourne à l'état sauvage (ou alors on le transforme en patinoire)",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Evironnement",
+          "minRequired": 10
         }
       ],
       "consequences": [
@@ -75,16 +75,16 @@
 
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
-          "score": "Population",
+          "score": "Environnement",
           "isByTurn": false,
-          "value": -2
+          "value": -4
         }
       ],
-      "duration": null,
+      "duration": 6,
       "cooldown": null,
       "delay": 0
     }
@@ -94,101 +94,99 @@
   {
     "Positive": {
       "name": "Améliorer l'isolation",
-      "description": "Chaud en hiver, frais en été, une meilleure isolation règle bien des difficultés",
+      "description": "Chaud en hiver, frais en été, une meilleure isolation générale règle bien des difficultés",
       "requirements": [
         {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 60
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -10
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Negative": {
-      "name": "climatisation partout",
-      "description": "Avec la canicule dûe au changement climatique, on se laisserait tenter, mais les conséquence en consommation d'énergie son telles, que le problème n'en serait amplifié ",
+      "name": "Climatisations partout",
+      "description": "Avec la canicule dûe au changement climatique, l'air frais artificiel est plus que nécessaire",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Energie",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
+          "value": -1
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
           "value": -2
         },
         {
-          "score": "Energie",
-          "isByTurn": false,
-          "value": -3
-        },
-        {
           "score": "Population",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Random": {
-      "name": "Chauffer les méningees",
-      "description": " La chaleur naturelle d'élève suant à pleine goûte : une manière d'allier stress à énergie pour chuaffer les bâtiments!",
+      "name": "Faites chauffer les méninges",
+      "description": " La chaleur naturelle d'élève suant à pleines goûtes : une manière d'allier stress et énergie pour chuaffer les bâtiments !",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 8,
+      "cooldown": 0,
       "delay": 0
     }
   },
@@ -200,94 +198,95 @@
       "requirements": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "minRequired": 30
+        },
+        {
+          "score": "Evironnement",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
           "isByTurn": false,
-          "value": 1
+          "value": 5
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -5
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Negative": {
       "name": "Centrale à charbon",
-      "description": "Répondre à la demande croissante actuelle de l'énergie demande des sacrifie quelque part. Mais cela nous ramène à une époque bien reculée",
+      "description": "Répondre à la demande croissante actuelle de l'énergie demande des sacrifices quelque part. Même si retour en arrière.",
       "requirements": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": -3
+          "isByTurn": true,
+          "value": -2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": 3
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Random": {
-      "name": "énergie à pédale",
+      "name": "Energie à pédales",
       "description": "Au boulot ! Les étudiant-es se succèdent aux pédales des îlots de chargement pour alimenter leurs ordinateurs. Ecologie, sport et énergie en harmonie!",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Academique",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     }
   }
 ]
