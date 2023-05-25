@@ -54,7 +54,7 @@
     },
 
     "Random": {
-      "name": "Journée: aliment mal-aimé",
+      "name": "Journée: aliments mal-aimés",
       "description": "Tout le monde a droit à l'amour... même les choux-fleurs. Pourquoi ne pas leur laisser une chance ? C'est plein de fibres, plein de vitamines, et en plus c'est pas si mauvais.",
       "requirements": [
         {
