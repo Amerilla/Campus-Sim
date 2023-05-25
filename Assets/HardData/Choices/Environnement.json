@@ -5,55 +5,55 @@
       "description": "Déminéraliser les places publiques, c'est plus de biodiversité, moins d'îlots de chaleur,les petits oiseaux... laisser plus de place à la nature",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -4
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 2
+          "value": 4
         },
         {
           "score": "Mobilite",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 4,
+      "cooldown": 1,
+      "delay": 1
     },
     
     "Negative": {
-      "name": "Sous la pelouse, les pavés",
+      "name": "La pelouse, ça va sous les pavés !",
       "description": "La pelouse représente trop d'entretien et ça tache les pantalons. Les pavés c'est simple, efficace et confortable!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -4
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
@@ -62,9 +62,9 @@
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 4,
+      "cooldown": 1,
+      "delay": 1
     },
 
     "Random": {
@@ -72,36 +72,36 @@
       "description": "La mobilité est un enjeu central du campus, il faut fluidifier les relations entre les espaces, La Chamberonne est un cours d'eau de trop!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Mobilité",
+          "minRequired": 15
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -4
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -3
         },
   
         {
           "score": "Population",
           "isByTurn": false,
-          "value": -2
+          "value": -4
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 4,
+      "cooldown": 1,
+      "delay": 1
     }
   },
 
@@ -112,25 +112,30 @@
       "description": "La plantation d'arbre apporte de l'ombre, de l'oxigène et enrichit les sols. C'est est un des moyens les plus simples contre le réchauffement climatique!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -3
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 4
+          "value": 3
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
   
     "Negative": {
@@ -138,35 +143,35 @@
       "description": "Après un premier coût à l'achat ces arbres embelliront les intérieurs, pas besoin d'eau, uniquement un coup de plumeau de temps en temps! ",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -2
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Random": {
@@ -174,66 +179,64 @@
       "description": "Ces réservoirs d'eau permettront de purifier l'air comme les arbres sans l'embarras d'être planté dans la terre! ",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": -1
+          "isByTurn": true,
+          "value": 1
         },
   
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     }
   },
 
   {
     "Positive": {
       "name": "Mouton-Tondeuse",
-      "description": "Augmenter le nombre de moutons pour tondre la pelouse, c'est naturel, et les moutons sont trop mignons",
+      "description": "Augmenter le nombre de moutons pour tondre la pelouse, c'est naturel, et les moutons sont super mignons",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 2
+          "value": 3
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": 1
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
   
     "Negative": {
@@ -241,64 +244,66 @@
       "description": "C'est un progrès social de supprimer ces emplois répétitifs grâce aux robots, tout va disparaître!",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 35
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Environnement",
           "isByTurn": false,
-          "value": -1
+          "value": -2
         },
         {
           "score": "Population",
           "isByTurn": false,
           "value": -2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     },
 
     "Random": {
-      "name": "Champ de fleurs",
+      "name": "Champs de fleurs",
       "description": "Arrêter de tondre au profit du biotope, planter des bourgeons pour un décor floral, romantique, et agréable",
       "requirements": [
         {
-          "score": "Academique",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
-          "score": "Economie",
-          "isByTurn": false,
+          "score": "Mobilite",
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Academique",
-          "isByTurn": false,
-          "value": -3
+          "isByTurn": true,
+          "value": 1
         },
-  
         {
           "score": "Population",
           "isByTurn": false,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
     }
   },
 
@@ -308,60 +313,55 @@
       "description": " Moins de pollution, plus de confort, moins de plastique, plus de tri !",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": -2
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": 3
-        },
-        {
-          "score": "Economie",
-          "isByTurn": false,
-          "value": -1
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": -1
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
   
     "Negative": {
       "name": "Supprimer les poubelles",
-      "description": "Un confort moindre et un risque d'une accumulation de déchet conséquent",
+      "description": "Un confort moindre et un risque d'accumulation de déchet conséquent",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Economie",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -3
         },
         {
@@ -370,8 +370,8 @@
           "value": -3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -381,31 +381,30 @@
       "requirements": [
         {
           "score": "Academique",
-          "minRequired": null
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": -2
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
-  
         {
           "score": "Population",
           "isByTurn": false,
@@ -413,17 +412,12 @@
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
-        },
-        {
-          "score": "Population",
-          "isByTurn": false,
-          "value": -3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
@@ -434,29 +428,29 @@
       "description": "Cultiver local, une économie circulaire, et une activité douce à pratique entre ami-es pour former une société universitaire plus solidaires",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Environnement",
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
   
@@ -465,27 +459,34 @@
       "description": "Importer la nourriture à bas prix pour tous les portes-monnaies!",
       "requirements": [
         {
-          "score": "Academique",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
-          "score": "Population",
+          "score": "Economie",
+          "isByTurn": true,
           "value": -1
         },
         {
-          "score": "Economie",
+          "score": "Environnement",
+          "isByTurn": true,
+          "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
     "Random": {
-      "name": "Midi selecta",
+      "name": "Menu selecta",
       "description": "Remplacer les cafétérias par des selectas, service garanti 24h sur 24h",
       "requirements": [
         {
@@ -496,81 +497,86 @@
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": -1
         },
         {
           "score": "Population",
           "isByTurn": false,
           "value": 2
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
 
   {
     "Positive": {
-      "name": "cours sur l'écologie",
+      "name": "Cours sur l'écologie",
       "description": "intégrer un cours obligatoire sur les enjeux écologiques dans tous les cursus",
       "requirements": [
         {
           "score": "Academique",
-          "minRequired": null
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
-          "score": "Mobilite",
-          "isByTurn": false,
-          "value": 1
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     
     "Negative": {
-      "name": "cours de profit économique",
+      "name": "Cours de profit économique",
       "description": "Intégrer un cours obligatoire pour être un-e entrepreneuse efficace de le système économique actuel",
       "requirements": [
         {
           "score": "Academique",
-          "minRequired": null
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -580,29 +586,33 @@
       "requirements": [
         {
           "score": "Academique",
-          "minRequired": null
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
-  
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
+          "value": -1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": true,
           "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   }
