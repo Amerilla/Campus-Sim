@@ -6,109 +6,109 @@
       "requirements": [
         {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -4
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 1
+          "value": 4
         },
         {
           "score": "Environnement",
           "isByTurn": false,
-          "value": -2
+          "value": -4
         }
       ],
-      "duration": 1,
-      "cooldown": 6,
-      "delay": 0
+      "duration": 4,
+      "cooldown": 1,
+      "delay": 1
     },
     "Negative": {
       "name": "Interdire Balélec et Unilive",
       "description": "Les étudiant-es déprimeront un peu, mais c'est pour leur bien... et ils auront plus de temps pour réviser. En pleurant.",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 3
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         }
       ],
-      "duration": 12,
+      "duration": 6,
       "cooldown": 0,
       "delay": 0
     },
     "Random": {
       "name": "Festival de musique en mongolfière ",
-      "description": "Pourquoi se limiter au sol? Toujours plus de son! Il faudr cependant préparer des matelas gonflables. Si, si vraiment. Et des mégaphones aussi.",
+      "description": "Pourquoi se limiter au sol? Toujours plus de son! Il faudra cependant préparer des matelas gonflables et des mégaphones aussi.",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         },
         {
           "score": "Energie",
           "isByTurn": false,
-          "value": -2
+          "value": -3
         },
         {
           "score": "Environnement",
           "isByTurn": false,
-          "value": -1
+          "value": -3
         },
         {
           "score": "Culture",
-          "isByTurn": false,
-          "value": 3
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": 1,
-      "cooldown": 6,
-      "delay": 0
+      "duration": 5,
+      "cooldown": 0,
+      "delay": 1
     }
   },
   {
@@ -117,212 +117,223 @@
       "description": "Mettre à dispositions plus de locaux, c'est plus de convivialité, moins de solitude, plus d'organisation, et d'entraide, une société solidaire!",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
+          "score": "Mobilite",
+          "isByTurn": true,
+          "value": -1
+        },
+        {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     "Negative": {
-      "name": "Zelig et Satellite en salle de classe",
+      "name": "Transformer Zelig et Satellite en salles de classes",
       "description": "Risque de révolution non négligeable et une dépression collective à prévoir mais gain d'espace pour la connaissance",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
-          "value": -3
-        },
-        {
-          "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
+          "score": "Population",
+          "isByTurn": true,
+          "value": -1
+        },
+        {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Academique",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
       "name": "Yourtes sur le campus",
-      "description": "Un lieu calme et réconfortant, pour étudier ou se reposer, parfait pour les durs journées d'hivers.",
+      "description": "Un lieu calme et réconfortant, pour étudier ou se reposer, parfait pour les dures journées d'hivers.",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Culture",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -3
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
   {
     "Positive": {
       "name": "Subventions associatives",
-      "description": "Soutenir les associations c'est important afin de maintenant un bon esprit estudiantins !",
+      "description": "Soutenir les associations c'est important afin de maintenir un bon esprit estudiantin !",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 4
+          "value": 5
+        },
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 5,
+      "cooldown": 0,
       "delay": 0
     },
     "Negative": {
       "name": "Loyers des associations",
-      "description": "Tout le monde à la même enseigne, les locaux sous-exploités seront partagés, c'est la densification urbaine, pensons écolo!",
+      "description": "Tout le monde à la même enseigne, les locaux sous-exploités seront partagés, c'est la densification urbaine, pensons écolo !",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
+          "score": "Energie",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 5,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
       "name": "subventions poétiques",
-      "description": "Pour encourager la culture, les subventions seront le prix gagnant d'un concours de poésie! l'ingéniergie se (di)versifie! ",
+      "description": "Pour encourager la culture, les subventions seront le prix gagnant d'un concours de poésie ! l'ingéniergie se (di)versifie! ",
       "requirements": [
         {
           "score": "Culture",
-          "isByTurn": false,
-          "minRequired": null
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 3
         },
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 3,
+      "cooldown": 1,
+      "delay": 1
     }
   },
   {
     "Positive": {
-      "name": "Théâtre la Grange de Dorigny pour toustes!",
+      "name": "Théâtre la Grange de Dorigny pour tous/tes!",
       "description": "Valoriser les événements culturels sur le campus, aménager les horaires de cours et distribuer des bons culturels!",
       "requirements": [
         {
           "score": "Culture",
-          "minRequired": null
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 3,
+      "cooldown": 0,
       "delay": 0
     },
     "Negative": {
@@ -330,35 +341,34 @@
       "description": "La culture doit être au service de la connaissance universitaire. Seuls les événements pertinents seront subventionnés!",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
           "isByTurn": false,
-          "value": 1
+          "value": 2
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 3,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
@@ -366,24 +376,29 @@
       "description": "Promouvoir les valeurs et le patrimoine suisse. Le musée promet une raclette party chaque mois pour l'intégration des étranger-ères!  ",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
+        },
+        {
+          "score": "Population",
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 3,
+      "cooldown": 0,
       "delay": 0
     }
   },
@@ -393,25 +408,29 @@
       "description": "Un moment de pause pour se retrouver et prendre le temps de se connaître.",
       "requirements": [
         {
-          "score": "Culture",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
-          "score": "Culture",
-          "isByTurn": false,
-          "value": 4
+          "score": "Population",
+          "isByTurn": true,
+          "value": 2
+        },
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     "Negative": {
@@ -419,149 +438,176 @@
       "description": "Certes, cela signifie travailler dur, sans contact, et perdre beaucoup en moral mais c'est un coût écologie, énergétique et économique énorme!",
       "requirements": [
         {
-          "score": "Culture",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Academique",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
-          "score": "Culture",
-          "isByTurn": false,
-          "value": -4
+          "score": "Economie",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": true,
+          "value": -2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Environnement",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Academie",
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
       "name": "Fêter tous les anniversaires",
-      "description": "Certes ce sera chaotique, mais quelle belle attention pour tous-tes. Rien ne vaut une carte et un gâteau pour se sentir aimé et oublier le reste",
+      "description": "Certes ce sera chaotique, mais quelle belle attention pour tous/tes. Rien ne vaut une carte et un gâteau pour se sentir aimé et oublier le reste",
       "requirements": [
         {
-          "score": "Culture",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
   {
     "Positive": {
       "name": "Centre sportif pour tous-tes",
-      "description": "Aménager les horaires pour qu'enfin tout le monde ait le temps d'y aller. Un esprit sain dans un corps sain, un dicton universel, mais vrai en tout point ",
+      "description": "Aménager les horaires pour qu'enfin tout le monde ait le temps d'y aller. Un esprit sain dans un corps sain.",
       "requirements": [
         {
-          "score": "Culture",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Population",
-          "isByTurn": false,
-          "value": 2
-        }
-      ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
-    },
-    "Negative": {
-      "name": "Fermer le centre sportif",
-      "description": "Un esprit sain dans un corps pas ouf",
-      "requirements": [
-        {
-          "score": "Culture",
-          "isByTurn": false,
-          "minRequired": null
-        }
-      ],
-      "consequences": [
-        {
-          "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
+          "value": -2
+        },
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -2
+        }
+      ],
+      "duration": 6,
+      "cooldown": 0,
+      "delay": 0
+    },
+    "Negative": {
+      "name": "Fermer le centre sportif",
+      "description": "Un esprit sain dans un corps très moyen",
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": 30
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": 2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
-      "name": "Cours de yoga obligatoie",
-      "description": "Ouvrer vos chakras pour valider la propédeutique, maître yogi Vetterli l'a dit",
+      "name": "Cours de yoga obligatoires",
+      "description": "Ouvrez vos chakras pour valider la propédeutique, maître yogi Vetterli l'a dit",
       "requirements": [
         {
-          "score": "Culture",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Culture",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Population",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     }
   }
