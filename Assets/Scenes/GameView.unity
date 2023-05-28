@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3681416, g: 0.78847057, b: 0.88405, a: 1}
+  m_IndirectSpecularColor: {r: 0.36814147, g: 0.7884706, b: 0.88405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2597,7 +2597,7 @@ GameObject:
   - component: {fileID: 1291686363}
   - component: {fileID: 1291686364}
   m_Layer: 0
-  m_Name: Succes
+  m_Name: Success
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

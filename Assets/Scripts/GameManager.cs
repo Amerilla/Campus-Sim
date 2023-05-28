@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
         _uiSuccess = GameObject.Find("Success").GetComponent<Success>();
+        _recorder = new DataRecorder();
         
 
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));

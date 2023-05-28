@@ -27,7 +27,7 @@ namespace Game
                 }
             }
 
-            _score = GameObject.Find("Game Manager").GetComponent<GameManager>().GetScore(Utilities.RemoveAccents(score));
+            _score = GameObject.Find("Game Manager").GetComponent<GameManager>().GetScoreFromJSON(Utilities.RemoveAccents(score));
             _minRequired = minRequired ?? 0;
             _maxRequired = maxRequired ?? 100;
             _turns = turns;
