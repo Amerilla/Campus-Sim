@@ -94,6 +94,7 @@ namespace UI
             ScoresInit(env,pop,eco,ener,aca,cult,mob,actionDetails);
             ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox,null,null);
             _turnGroupBox.clicked += () => _gameManager.NextTurn();
+            _turnGroupBox.Q<GroupBox>("Score").Q<Button>("Button").clicked += () => _gameManager.NextTurn();
         }
 
         public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
@@ -160,6 +161,10 @@ namespace UI
                                         [CanBeNull] ActionDetails actionDetails) {
             if (scoreType != null && actionDetails != null) {
                 groupBox.clicked += () => {
+                    actionDetails.ShowActions((ScoreType)scoreType);
+                    ScoreGroupBoxHighlight((ScoreType)scoreType);
+                };
+                groupBox.Q<GroupBox>("Score").Q<Button>("Button").clicked += () => {
                     actionDetails.ShowActions((ScoreType)scoreType);
                     ScoreGroupBoxHighlight((ScoreType)scoreType);
                 };
