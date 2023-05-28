@@ -28,6 +28,10 @@ namespace UI
                 Hide();
                 SceneManager.LoadScene(nextScene);
             };
+            _logo.Q<Button>("Quit").clicked += () => {
+                Application.Quit();
+                
+            };
 
         }
         
