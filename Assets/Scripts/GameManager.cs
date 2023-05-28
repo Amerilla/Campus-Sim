@@ -18,21 +18,25 @@ public class GameManager : MonoBehaviour
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
     private const int MaxScore = 100;
-    private const int MaxTurn = 100;
+    private const int MaxTurn = 60;
     private Campus _campus;
     private ActionDetails _uiActionDetails;
     private HUD _uiHUD;
     private List<Action> _actionsToDo = new();
     private List<Consequence> _remainingConsequences = new();
+    private List<SuccessBehaviour> _success;
+    private Success _uiSuccess;
 
     void Awake() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
+        _uiSuccess = GameObject.Find("Success").GetComponent<Success>();
+        
 
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
-
+        _success = DeserializeList<SuccessBehaviour>("HardData/Success.json");
         string root = "HardData/Choices";
         var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
         var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
@@ -100,8 +104,12 @@ public class GameManager : MonoBehaviour
     public Score GetScore(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
+        _uiSuccess.Hide();
         UpdateRemainingConsequences();
         ExecuteActions();
+        foreach (var success in _success) {
+            _uiSuccess.Show(success.HasSuccess());
+        }
         _scoresHandler.UpdateScores();
         _uiActionDetails.Hide();
         _uiHUD.ResetShowedScore();
