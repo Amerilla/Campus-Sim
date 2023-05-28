@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         return JsonConvert.DeserializeObject<T>(json);
     }
 
-    public Score GetScore(string name) => _scoresHandler.GetScore(name);
+    public Score GetScoreFromJSON(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
         UpdateRemainingConsequences();
@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
             LastTurn();
         }
         
-        
+
     }
 
     private void ExecuteActions() {

@@ -23,7 +23,7 @@ namespace Game
                 }
             }
 
-            _score = GameObject.Find("Game Manager").GetComponent<GameManager>().GetScore(Utilities.RemoveAccents(score));
+            _score = GameObject.Find("Game Manager").GetComponent<GameManager>().GetScoreFromJSON(Utilities.RemoveAccents(score));
             _value = value ?? 0;
             _isByTurn = isByTurn ?? false;
         }

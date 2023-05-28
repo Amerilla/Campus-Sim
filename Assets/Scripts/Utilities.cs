@@ -36,6 +36,26 @@ public static class Utilities
         }
     }
     
+    /*
+    public static T Parse<TEnum>(string value) where TEnum : struct
+    {
+        if (!typeof(TEnum).IsEnum)
+        {
+            throw new ArgumentException("TEnum must be an enumerated type");
+        }
+
+        foreach (TEnum enumValue in Enum.GetValues(typeof(TEnum)))
+        {
+            if (string.Compare(value, enumValue.ToString(), CultureInfo.InvariantCulture, CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreCase) == 0)
+            {
+                return enumValue;
+            }
+        }
+
+        throw new ArgumentException($"Invalid value '{value}' for enum type {typeof(TEnum).Name}");
+    }
+    */
+    
     public static string ToString<T>(List<T> list, Func<T, string> toString) {
         if (list.Count == 0) {
             return $"List[_EMPTY_]";

@@ -17,10 +17,11 @@ namespace Game
         private int _lastCall;
         private string _description;
         private bool _waiting;
+        private int _maxIterations;
 
         [JsonConstructor]
         private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
-            int? delay, int? duration, int? cooldown) {
+            int? delay, int? duration, int? cooldown, int? maxIterations) {
             _name = name;
             _description = description ?? "";
             _consequences = consequences ?? new List<Consequence>();
@@ -28,11 +29,13 @@ namespace Game
             _delay = delay ?? 0;
             _duration = duration ?? -1;
             _cooldown = cooldown ?? 0;
+            _maxIterations = maxIterations ?? 0;
 
-            if (_cooldown < 0 || _duration < 0)
+            if (_cooldown < 0 || _duration < 0) {
                 _lastCall = -1;
-            else
+            } else {
                 _lastCall = _delay + _duration + _cooldown;
+            }
 
         }
 

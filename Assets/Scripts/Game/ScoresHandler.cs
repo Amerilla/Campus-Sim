@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -90,11 +91,18 @@ namespace Game
         }
 
         public (int, int) GetCurrentAndNextScore() => (_value, _value + _byTurn);
+        
+    }
+    
+    public class ScoresSnapshot
+    {
+        private Dictionary<ScoreType, Score> _scores;
     }
     
     public enum ScoreType
     {
         CULTURE, ECONOMIE, POPULATION, MOBILITE, ACADEMIQUE, ENVIRONNEMENT, ENERGIE
     }
+    
 
 }
