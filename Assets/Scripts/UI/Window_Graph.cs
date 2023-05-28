@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -17,9 +18,18 @@ namespace UI
         private int _maxXValue = 10;
         private int _maxYValue = 100;
 
+        private GameObject _window;
+
         private void Awake() {
             _graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
-            _graphContainer.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(_width,_height);
+            _graphContainer.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(_width, _height);
+        }
+
+        private void OnEnable() {
+            SceneManager.sceneLoaded += SceneManagerOnsceneLoaded;
+        }
+
+        private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1) {
             List<int> valueList = new List<int>() { 5, 98, 56, 30, 22, 17, 15, 13, 17, 55 };
             List<int> valueList2 = new List<int>() { 7, 48, 36, 20, 12, 27, 25, 23, 27, 45 };
             List<int> valueList3 = new List<int>() { 9, 38, 46, 10, 32, 37, 35, 33, 37, 35 };

@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
     public class Outro : MonoBehaviour
     {
+        public string nextScene;
+        
         private VisualElement _letter;
         private VisualElement _root;
         private UIDocument _uiDocument;
@@ -12,28 +15,35 @@ namespace UI
         private Menu _menu;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             _uiDocument = GetComponent<UIDocument>();
-            _menu = GameObject.Find("Menu").GetComponent<Menu>();
             _root = _uiDocument.rootVisualElement;
             _letter = _root.Q<VisualElement>("Letter");
             _next = _letter.Q<Button>("Next");
-           Hide();
-        }
-
-        public void Show() {
-            _letter.visible = true;
-            _uiDocument.sortingOrder = 1;
             _next.clicked += () => {
+                SceneManager.LoadScene(nextScene);
                 Hide();
-                _menu.Show();
             };
         }
 
-        public void Hide() {
-            _letter.visible = false;
+        
+        private void OnEnable() {
+            SceneManager.sceneLoaded += (arg0, mode) => Show();
+        }
+        
+
+
+        private void Hide() {
             _uiDocument.sortingOrder = 0;
+            _letter.visible = false;
+            _letter.SetEnabled(false);
+        }
+        
+        private void Show() {
+            _letter = _root.Q<VisualElement>("Letter");
+            _letter.visible = true;
+            _letter.SetEnabled(true);
         }
 
 
