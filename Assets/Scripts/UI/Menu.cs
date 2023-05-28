@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace UI
 {
     public class Menu : MonoBehaviour
     {
+        public string nextScene;
+        
         private GameManager _gameManager;
         private VisualElement _root;
         private VisualElement _logo;
@@ -13,9 +16,8 @@ namespace UI
         private VisualElement _menuVisualElement;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-            _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.sortingOrder = 1;
             _root = _uiDocument.rootVisualElement;
@@ -24,7 +26,7 @@ namespace UI
             _start = _menuVisualElement.Q<Button>("Start");
             _start.clicked += () => {
                 Hide();
-                _gameManager.Intro();
+                SceneManager.LoadScene(nextScene);
             };
 
         }

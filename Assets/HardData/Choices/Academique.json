@@ -5,7 +5,7 @@
 "description": "Pour une cherche plus autonome, sortir des financements privés! De quoi remotiver les chercheur-euses et améliorer les résultats!",
 "requirements": [
 {
-"score": "Académique",
+"score": "Academique",
 "minRequired": 30
 }
 ],
@@ -16,19 +16,19 @@
 "value": -1
 },
 {
-"score": "Académique",
+"score": "Academique",
 "isByTurn": true,
 "value": 3
 },
 {
 "score": "Population",
 "isByTurn": false,
-"value": 2
+"value": -2
 }
 ],
 "delay": 0,
-"duration": 4,
-"cooldown": null
+"duration": 6,
+"cooldown": 0
 },
 
 "Negative": {
@@ -36,56 +36,60 @@
 "description": " Plus de moyens mais au risque de vivre au dépends du bon vouloir de l'investisseur et ses intérêts commerciaux",
 "requirements": [
 {
-"score": "Economie",
-"minRequired": null
+"score": "Population",
+"minRequired": 30
 }
 ],
 "consequences": [
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
 "value": 2
 },
 {
-"score": "Académique",
+"score": "Academique",
 "isByTurn": true,
 "value": -1
 },
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
 "value": -1
 }
 ],
-"duration": 4,
-"cooldown": null,
+"duration": 6,
+"cooldown": 0,
 "delay": 0
 },
 
 "Random": {
 "name": "Tirage au sort",
-"description": "On pourrait faire ça sous la forme d'une tambola, comme ça, aucun favoritisme",
+"description": "On pourrait faire ça sous la forme d'une tombola, comme ça, aucun favoritisme.",
 "requirements": [
 {
 "score": "Culture",
-"minRequired": null
+"minRequired": 30
 }
 ],
 "consequences": [
 {
 "score": "Culture",
-"isByTurn": false,
+"isByTurn": true,
 "value": 1
 },
-
 {
-"score": "Académique",
+"score": "Population",
+"isByTurn": true,
+"value": 1
+},
+{
+"score": "Academique",
 "isByTurn": true,
 "value": -1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 6,
+"cooldown": 0,
 "delay": 0
 }
 },
@@ -93,28 +97,27 @@
 {
 "Positive": {
 "name": "À bas les notes!",
-"description": "Supprimer les notes pour donnez plus de souplesse à l'éducation. Sur le marché du travail, les notes ça ne veut plus dire grand chose.",
+"description": "Supprimer les notes pour donnez plus de souplesse à l'éducation. Sur le marché du travail, les notes, ça ne veut plus dire grand chose.",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 20
 }
 ],
 "consequences": [
 {
-"score": "Académique",
+"score": "Academique",
 "isByTurn": false,
-"value": -1
+"value": -3
 },
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
 "value": 2
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 6,
+"cooldown": 0,
 "delay": 0
 },
 "Negative": {
@@ -122,86 +125,92 @@
 "description": "Rater sa première année compte double. Amplifie l'élitisme et le validisme... mais oups, ça existe déjà !",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Population",
+"minRequired": 20
 }
 ],
 "consequences": [
 {
-"score": "Académique",
-"isByTurn": false,
-"value": null
+"score": "Academique",
+"isByTurn": true,
+"value": 2
 },
 {
-"score": "Académique",
-"isByTurn": false,
-"value": null
+"score": "Population",
+"isByTurn": true,
+"value": -1
+},
+{
+"score": "Mobilite",
+"isByTurn": true,
+"value": -1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 6,
+"cooldown": 0,
 "delay": 0
 },
 
 "Random": {
-"name": "Récompenser élèves assidus",
-"description": "Récompense pour des actions de type 'venir en cours en étant malade' pour forger des citoyen-nes déterminées et productives dans la société.",
+"name": "Récompenser les étudiants assidus",
+"description": "Récompense pour des actions de type 'venir en cours en étant malade' pour forger des citoyen-nes déterminés et productifs dans la société.",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 20
 }
 ],
 "consequences": [
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": 2
 },
-
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
+"value": -1
+},
+{
+"score": "Economie",
+"isByTurn": true,
 "value": -1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 6,
+"cooldown": 0,
 "delay": 0
 }
 },
 {
 "Positive": {
 "name": "Meilleur job, meilleure science!",
-"description": "Le syndicat se fait entendre, La succession de contrats à durée déterminée, les pressions de la hiérarchie et la mise en concurrence systématique nuisent à la recherche!",
+"description": "Le syndicat se fait entendre. La succession de contrats à durée déterminée, les pressions de la hiérarchie et la mise en concurrence systématique nuisent à la recherche !",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 40
 }
 ],
 "consequences": [
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": 2
 },
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
 "value": -2
 },
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
 "value": 1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 },
 "Negative": {
@@ -209,58 +218,60 @@
 "description": "Plus de variété dans le cursus, employer des personnes externes pour un semestre réduits les coûts et donne du travail à plus de monde!",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Population",
+"minRequired": 40
 }
 ],
 "consequences": [
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": -1
 },
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
+"value": 2
+},
+{
+"score": "Population",
+"isByTurn": true,
 "value": 2
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 },
 
 "Random": {
-"name": "Rétribuer au nombre de 'vu'",
-"description": "La recherche doit être utile. Plus un article est consulté, plus le/la chercheur-euses sera récompensée, sipersonne ne lit, ça ne valait pas la peine d'investir dedans",
+"name": "Rétribution au nombre de vues",
+"description": "La recherche doit être utile. Plus un article est consulté, plus le/la chercheur-euses sera récompensé, si personne ne lit, ça ne valait pas la peine d'investir dedans.",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 10
 }
 ],
 "consequences": [
 {
-"score": "Académique",
-"isByTurn": false,
-"value": 1
+"score": "Academique",
+"isByTurn": true,
+"value": 2
 },
-
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
 "value": 1
 },
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
 "value": -1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 }
 },
@@ -271,30 +282,29 @@
 "description": "Pour améliorer le confort de toutes et tous, avec des appareils à la pointe de la technologie",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Economie",
+"minRequired": 30
 }
 ],
 "consequences": [
 {
 "score": "Economie",
 "isByTurn": false,
-"value": -2
+"value": -4
 },
 {
 "score": "Energie",
-"isByTurn": false,
+"isByTurn": true,
 "value": -1
 },
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": 3
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 },
 
@@ -303,70 +313,66 @@
 "description": "Risquer des erreurs, des casses, et autres bricoles pas très agréables mais cela limite les coûts et c'est écolo!",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Environnement",
+"minRequired": 30
 }
 ],
 "consequences": [
 {
 "score": "Environnement",
-"isByTurn": false,
-"value": 1
+"isByTurn": true,
+"value": 2
 },
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
 "value": 1
 },
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": -2
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 },
 
 "Random": {
 "name": "Équipement low teck",
-"description": "Les low teck c'est l'esprit de l'économie de ressource tout en maintenant un bon niveau de performance! Un bâton devrait faire l'affaire. Utiliser un peu son imagination ne fait jamais de mal.",
+"description": "Les low teck c'est l'esprit de l'économie de ressource tout en maintenant un bon niveau de performance! Un bâton devrait faire l'affaire. Utiliser un peu son imagination ne fait pas de mal.",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 30
 }
 ],
 "consequences": [
 {
 "score": "Environnement",
-"isByTurn": false,
+"isByTurn": true,
 "value": 3
 },
 
 {
 "score": "Economie",
-"isByTurn": false,
-"value": 1
+"isByTurn": true,
+"value": 2
 },
 {
 "score": "Energie",
-"isByTurn": false,
-"value":
-
-2
+"isByTurn": true,
+"value": 2
 },
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": -1
 }
 ],
-"duration": null,
-"cooldown": null,
+"duration": 4,
+"cooldown": 0,
 "delay": 0
 }
 },
@@ -376,73 +382,76 @@
 "description": "Pourquoi se détester quand on peut s'allier ? Main dans la main, la recherche n'en sera qu'enrichie en tous points",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Academique",
+"minRequired": 20
 }
 ],
 "consequences": [
 {
 "score": "Culture",
-"isByTurn": false,
-"value": 2
+"isByTurn": true,
+"value": 1
 },
 {
 "score": "Energie",
-"isByTurn": false,
+"isByTurn": true,
 "value": -1
 },
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": 2
 },
 {
 "score": "Population",
-"isByTurn": false,
+"isByTurn": true,
 "value": 2
+},
+{
+"score": "Mobilite",
+"isByTurn": true,
+"value": -2
 }
 ],
-"duration": null,
+"duration": 5,
 "cooldown": null,
-"delay": 0
+"delay": 1
 },
 
 "Negative": {
 "name": "Centrer sur les problématiques locales",
-"description": "L'université doit servir le pays qui la finance et améliorer le patrimoine local! Les internationaux viennent en Suisse, iels doivent en connaître la culture",
+"description": "L'université doit servir le pays qui la finance et améliorer le patrimoine local! Les internationaux viennent en Suisse, ils et elles doivent en connaître la culture.",
 "requirements": [
 {
-"score": "Académique",
-"isByTurn": false,
-"minRequired": null
+"score": "Culture",
+"minRequired": 20
 }
 ],
 "consequences": [
 {
 "score": "Culture",
-"isByTurn": false,
+"isByTurn": true,
 "value": 2
 },
 {
 "score": "Economie",
-"isByTurn": false,
+"isByTurn": true,
 "value": 1
 },
 {
-"score": "Académique",
-"isByTurn": false,
+"score": "Academique",
+"isByTurn": true,
 "value": -2
 },
 {
 "score": "Population",
 "isByTurn": false,
-"value": -1
+"value": 3
 }
 ],
-"duration": null,
-"cooldown": null,
-"delay": 0
+"duration": 5,
+"cooldown": 0,
+"delay": 1
 },
 
 "Random": {

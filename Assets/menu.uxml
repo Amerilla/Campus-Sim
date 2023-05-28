@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="Logo" style="width: 100%; height: 20%; background-color: rgba(254, 239, 229, 255);">
-        <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/UnivesityEmpireLogo.png?fileID=2800000&amp;guid=d67a9ef1db49f4f668ed3ff2820b080e&amp;type=3#UnivesityEmpireLogo&apos;); width: 200px; height: 200px; margin-left: 10%;" />
+    <ui:VisualElement name="Logo" style="width: 100%; height: 25%; background-color: rgb(254, 239, 229);">
+        <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Images/GUI/logos/UnivesityEmpireLogo_1.png?fileID=2800000&amp;guid=55ed3e1aec468524f99ea27738c21dd2&amp;type=3#UnivesityEmpireLogo_1&apos;); width: 200px; height: 300px; margin-left: 10%;" />
     </ui:VisualElement>
     <ui:VisualElement name="Menu" style="width: 100%; height: 100%; background-color: rgb(254, 239, 229); align-items: center; justify-content: space-around;">
         <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/Images/GUI/University_empire_text_ecran_titre.png?fileID=2800000&amp;guid=22409d9c324694948a66a914eadc39ca&amp;type=3#University_empire_text_ecran_titre&apos;); width: 1440px; height: 500px; left: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(0, 0, 0, 0); -unity-background-scale-mode: stretch-to-fill;" />

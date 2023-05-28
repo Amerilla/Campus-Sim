@@ -5,80 +5,84 @@
       "description": "Se déplacer librement en transports publics sans problème, et profiter de la ville et des paysages alentour !",
       "requirements": [
         {
+          "score": "Mobilite",
+          "minRequired": 20
+        },
+        {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": -1
-        },
-        {
-          "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
-          "score": "Culture",
-          "isByTurn": false,
+          "score": "Energie",
+          "isByTurn": true,
+          "value": -1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
     "Negative": {
       "name": "Création de parking ",
-      "description": "Nous sommes à votre écoute, les plaintes répétées quant au manque de places ont été entendues. Évidemment c'est moins d'espace vert et ils restent payants ",
+      "description": "Nous sommes à votre écoute, les plaintes répétées quant au manque de places ont été entendues. Évidemment c'est moins d'espaces verts et ils restent payants ",
       "requirements": [
         {
           "score": "Economie",
-          "minRequired": null
+          "minRequired": 30
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
-        },
-        {
-          "score": "Culture",
-          "isByTurn": false,
-          "value": 1
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": 1
+          "value": -5
+        },
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Population",
           "isByTurn": false,
-          "value": 1
+          "value": 2
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
-          "value": -3
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 7,
+      "cooldown": 0,
+      "delay": 1
     },
     "Random": {
       "name": "Tapis roulants sur tout le campus",
-      "description": "Du point de vue énergie, ce n'est pas trop ça, sans compter la perte d'activité physique... mais il y a l'impression de vivre dans le futur, et ça, c'est stylé",
+      "description": "Du point de vue de l'énergie, ce n'est pas trop ça, sans compter la perte d'activité physique... mais il y a l'impression de vivre dans le futur, et ça, c'est stylé",
       "requirements": [
         {
           "score": "Economie",
@@ -88,13 +92,13 @@
       "consequences": [
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -2
+          "value": -4
         },
         {
           "score": "Mobilite",
@@ -102,36 +106,50 @@
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 6,
+      "cooldown": 1,
+      "delay": 1
     }
   },
 
   {
     "Positive": {
       "name": "Zéro automobile",
-      "description": "Ecologie, moins de bruit, pour un campus durable et moderne ! (Mais plus de mal de dos peut-être, à force de tout transporter",
+      "description": "Ecologie, moins de bruit, pour un campus durable et moderne ! (Mais d'avantage de mal de dos, à force de tout transporter",
       "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 50
+        },
+        {
+          "score": "Energie",
+          "minRequired": 20
         }
       ],
       "consequences": [
         {
-          "score": "Economie",
-          "isByTurn": false,
+          "score": "Environnement",
+          "isByTurn": true,
           "value": 2
         },
         {
+          "score": "Mobilite",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Population",
+          "isByTurn": true,
+          "value": -1
+        },
+        {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 4
+          "isByTurn": true,
+          "value": 3
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -140,30 +158,34 @@
       "description": "Les personnes à mobilité réduite n'ont plus accès aux salles de cours mais le reste de la population est plus sportive",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 10
         }
       ],
       "consequences": [
         {
           "score": "Energie",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Economie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -2
+        },
+        {
+          "score": "Population",
+          "isByTurn": false,
+          "value": -8
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 6,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -172,8 +194,8 @@
       "description": "Perséverer dans les traditions suisses et avoir l'imrpession d'être tous les jours au ski, rien de mieux pour sociabiliser entre les cours!",
       "requirements":[
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Energie",
+          "minRequired": 30
         }
       ],
       "consequences": [
@@ -183,42 +205,51 @@
           "value": -3
         },
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "value": 4
+          "score": "Energie",
+          "isByTurn": true,
+          "value": -2
+        },
+        {
+          "score": "Mobilite",
+          "isByTurn": true,
+          "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
-      "delay": 0
+      "duration": 5,
+      "cooldown": 0,
+      "delay": 1
     }
   },
 
   {
     "Positive": {
-      "name": "Tout vélo",
+      "name": "A bicyclette",
       "description": "Allier sport et écologie, le tout vélo permet de favoriser la mobilité douce sur le campus",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Mobilite",
-          "isByTurn": false,
-          "value": 3
+          "isByTurn": true,
+          "value": 2
         },
         {
           "score": "Environnement",
-          "isByTurn": false,
-          "value": 1
+          "isByTurn": true,
+          "value": 2
+        },
+        {
+          "score": "Academique",
+          "isByTurn": true,
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -227,40 +258,39 @@
       "description": "Un déplacement sur batterie électrique en accord avec la croissance verte tout en faisant la promotion d'un sport vert!",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 40
         }
       ],
       "consequences": [
         {
           "score": "Energie",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -3
+          "value": -2
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
     "Random": {
       "name": "tyrolienne à gogo",
       "description": "Entre le BM et le Rolex, ou l'Amphimax et l'Anthropole, ça aura un charme fou!",
-      "requirements":[
+      "requirements": [
         {
-          "score": "Economie",
-          "minRequired": null
+          "score": "Population",
+          "minRequired": 20
         }
       ],
       "consequences": [
@@ -270,18 +300,18 @@
           "value": -1
         },
         {
-          "score": "Culture",
+          "score": "Population",
           "isByTurn": false,
-          "value": 1
+          "value": 3
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   },
@@ -292,25 +322,29 @@
       "description": "Ouvrir les passages souterrains existants pour éviter tous ces détours et surtout éviter la pluie et les controlleur-euses dans le métro.",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 3
         },
         {
-          "score": "Energie",
-          "isByTurn": false,
-          "value": -1
+          "score": "Environnement",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Academique",
+          "isByTurn": true,
+          "value": 1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -319,66 +353,64 @@
       "description": "Et oui la mobilité ça intègre aussi voyager hors campus! Les colloques à l'étranger sera limité aux voyages en train",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Environnement",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Academique",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": -1
         },
         {
           "score": "Economie",
-          "isByTurn": false,
-          "value": 2
+          "isByTurn": true,
+          "value": -1
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     },
     "Random": {
       "name": "trampoline pour se déplacer entre les étages ",
-      "description": "Vous savez quand on dit: 'j'y fais juste un saut?' Maintenant c'est possible! L'énergie cinétique permet d'optimiser l'énergie pour se déplacer.",
+      "description": "Vous savez quand on dit : 'j'y fais juste un saut?' Maintenant c'est possible! L'énergie cinétique permet d'optimiser l'énergie pour se déplacer.",
       "requirements": [
         {
-          "score": "Economie",
-          "isByTurn": false,
-          "minRequired": null
+          "score": "Mobilite",
+          "minRequired": 50
         }
       ],
       "consequences": [
         {
           "score": "Population",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 1
         },
         {
           "score": "Mobilite",
-          "isByTurn": false,
+          "isByTurn": true,
           "value": 2
         },
         {
           "score": "Economie",
           "isByTurn": false,
-          "value": -1
+          "value": -2
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 4,
+      "cooldown": 0,
       "delay": 0
     }
   }

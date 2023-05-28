@@ -29,8 +29,12 @@ namespace UI
 
 
         // Start is called before the first frame update
-        void Start() {
+        void Awake() {
             _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            InitUIElements();
+            }
+
+        private void InitUIElements() {
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.sortingOrder = 0;
             _root = _uiDocument.rootVisualElement;
@@ -39,8 +43,6 @@ namespace UI
             _actions.contentContainer.style.justifyContent = Justify.SpaceAround;
             _actions.contentContainer.style.flexWrap = Wrap.Wrap;
             _details = _root.Q<GroupBox>("Actions").Q<VisualElement>("Details");
-            
-
         }
 
         // Update is called once per frame
@@ -59,6 +61,7 @@ namespace UI
         }
 
         public void InitDetails() {
+            InitUIElements();
             Hide();
         }
         
