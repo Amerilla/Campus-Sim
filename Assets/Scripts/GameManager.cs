@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -6,9 +7,13 @@ using Game;
 using Newtonsoft.Json;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Action = Game.Action;
 
 public class GameManager : MonoBehaviour
 {
+
+    public string _nextScene;
     private ScoresHandler _scoresHandler;
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
@@ -17,19 +22,15 @@ public class GameManager : MonoBehaviour
     private Campus _campus;
     private ActionDetails _uiActionDetails;
     private HUD _uiHUD;
-    private Intro _uiIntro;
-    private Outro _uiOutro;
     private List<Action> _actionsToDo = new();
     private List<Consequence> _remainingConsequences = new();
 
-    void Start() {
+    void Awake() {
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
-        _uiIntro = GameObject.Find("Letter-Intro").GetComponent<Intro>();
-        _uiOutro = GameObject.Find("Letter-Outro").GetComponent<Outro>();
-        
+
         _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
 
         string root = "HardData/Choices";
@@ -66,32 +67,20 @@ public class GameManager : MonoBehaviour
         (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
         (_currentTurn, MaxTurn),_uiActionDetails);
         _uiActionDetails.InitDetails();
-        
+
     }
 
-    private void NewGame() {
-        /// New Game
+    void Start() {
+        
     }
     
 
-    void Update() {
-        
-    }
 
-    public void Intro() {
-        //NewGame();
-        _uiIntro.Show();
-    }
-
-    public void FirstTurn() {
-        _uiHUD.Show();
-        _uiActionDetails.Show();
-    }
 
     private void LastTurn() {
         _uiHUD.Hide();
         _uiActionDetails.Disable();
-        _uiOutro.Show();
+        SceneManager.LoadScene(_nextScene);
     }
 
     private List<T> DeserializeList<T>(string path) {

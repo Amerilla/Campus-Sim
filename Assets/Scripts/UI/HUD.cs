@@ -1,7 +1,9 @@
+using System;
 using Game;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -23,11 +25,15 @@ namespace UI
         private ScoreType? _showedScoreType = null;
     
         // Start is called before the first frame update
-        void Start() {
+        void Awake() {
             _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            InitGroupBox();
+            
+        }
+
+        private void InitGroupBox() {
             _uiDocument = GetComponent<UIDocument>();
             _root = _uiDocument.rootVisualElement;
-            Hide();
             _environmentGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Env");
             _populationGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Pop");
             _economyGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Eco");
@@ -36,11 +42,28 @@ namespace UI
             _cultureGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Cult");
             _mobilityGroupBox = _root.Q("Toolbar").Q<VisualElement>("Scores").Q<Button>("Mob");
             _turnGroupBox = _root.Q("Toolbar").Q<Button>("Turn");
-            
-
-
         }
 
+        private void Start() {
+           
+        }
+
+        private void OnEnable() {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDisable() {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+            if (scene.name == "SampleScene") {
+                Show();
+            } else {
+                Hide();
+            }
+        }
+        
         // Update is called once per frame
         void Update()
         {

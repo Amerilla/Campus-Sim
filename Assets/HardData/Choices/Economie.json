@@ -45,7 +45,7 @@
           "score": "Culture",
           "isByTurn": true,
           "value": 1
-        }
+        },
         {
           "score": "Population",
           "isByTurn": false,
@@ -127,46 +127,7 @@
       "delay": 1
     },
 
-    "Random": {
-      "name": "Wifi étendu à la ville",
-      "description": "Un wifi commun pour ne plus se ruiner chez un opérateur téléphonique hors de prix!",
-      "requirements": [
-        {
-          "score": "Economie",
-          "minRequired": 40
-        },
-        {
-          "score": "Culture",
-          "minRequired": 20
-        }
-        {
-          "score": "Energie",
-          "minRequired": 20
-        }
-      ],
-      "consequences": [
-        {
-          "score": "Economie",
-          "isByTurn": true,
-          "value": 1
-        },
-        {
-          "score": "Culture",
-          "isByTurn": false,
-          "value": 2
-        },
-        {
-          "score": "Energie",
-          "isByTurn": true,
-          "value": -1
-        }
-      ],
-      "duration": 3,
-      "cooldown": 0,
-      "delay": 1
-    },
-
-    "Négative": {
+    "Negative": {
       "name": "Wifi individuel 6G",
       "description": "L'UNIL et l'EPFL considèrent Internet comme une ressource essentielle à tout instant, elles fourniront une connexion 6G individuelle, ultrarapide et gratuite aux étudiant-es inscrits",
       "requirements": [
@@ -199,6 +160,44 @@
           "score": "Culture",
           "isByTurn": false,
           "value": 2
+        }
+      ],
+      "duration": 3,
+      "cooldown": 0,
+      "delay": 1
+    },
+    "Random": {
+      "name": "Wifi étendu à la ville",
+      "description": "Un wifi commun pour ne plus se ruiner chez un opérateur téléphonique hors de prix!",
+      "requirements": [
+        {
+          "score": "Economie",
+          "minRequired": 40
+        },
+        {
+          "score": "Culture",
+          "minRequired": 20
+        },
+        {
+          "score": "Energie",
+          "minRequired": 20
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": 1
+        },
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 2
+        },
+        {
+          "score": "Energie",
+          "isByTurn": true,
+          "value": -1
         }
       ],
       "duration": 3,
@@ -403,11 +402,10 @@
         }
       ],
       "duration": 4,
-      "cooldown": null,
+      "cooldown": 0,
       "delay": 2
     }
   },
-
   {
     "Positive": {
       "name": "État, à l'aide!",
@@ -433,6 +431,31 @@
       "duration": 1,
       "cooldown": 2,
       "delay": 5
+    },
+    "Negative": {
+      "name": "Crowdfunding",
+      "description": "L'université a vocation pour le bien commun, alors pourquoi ne pas faire contribuer tout le monde?",
+      "requirements": [
+        {
+          "score": "Academique",
+          "minRequired": 30
+        }
+      ],
+      "consequences": [
+        {
+          "score": "Economie",
+          "isByTurn": true,
+          "value": -4
+        },
+        {
+          "score": "Culture",
+          "isByTurn": false,
+          "value": 4
+        }
+      ],
+      "duration": 2,
+      "cooldown": 2,
+      "delay": 4
     },
     "Random": {
       "name": "Brevet sur les découvertes",
@@ -468,32 +491,6 @@
       "duration": 4,
       "cooldown": 2,
       "delay": 2
-    },
-
-    "Négative": {
-      "name": "Crowdfunding",
-      "description": "L'université a vocation pour le bien commun, alors pourquoi ne pas faire contribuer tout le monde?",
-      "requirements": [
-        {
-          "score": "Academique",
-          "minRequired": 30
-        }
-      ],
-      "consequences": [
-        {
-          "score": "Economie",
-          "isByTurn": true,
-          "value": -4
-        },
-        {
-          "score": "Culture",
-          "isByTurn": false,
-          "value": 4
-        }
-      ],
-      "duration": 2,
-      "cooldown": 2,
-      "delay": 4
     }
   },
 
@@ -505,7 +502,7 @@
         {
           "score": "Economie",
           "isByTurn": false,
-          "minRequired": null
+          "minRequired": 0
         }
       ],
       "consequences": [
@@ -520,8 +517,8 @@
           "value": 4
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 0,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -532,7 +529,7 @@
         {
           "score": "Economie",
           "isByTurn": false,
-          "minRequired": null
+          "minRequired": 0
         }
       ],
       "consequences": [
@@ -547,8 +544,8 @@
           "value": -4
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 0,
+      "cooldown": 0,
       "delay": 0
     },
 
@@ -559,7 +556,7 @@
         {
           "score": "Economie",
           "isByTurn": false,
-          "minRequired": null
+          "minRequired": 0
         }
       ],
       "consequences": [
@@ -574,8 +571,8 @@
           "value": 4
         }
       ],
-      "duration": null,
-      "cooldown": null,
+      "duration": 0,
+      "cooldown": 0,
       "delay": 0
     }
   }

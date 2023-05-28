@@ -62,7 +62,7 @@
       "description": "Le swisstech, par exemple, à quoi il sert ? À rien. Abandonnons le afin qu'il retourne à l'état sauvage (ou alors on le transforme en patinoire)",
       "requirements": [
         {
-          "score": "Evironnement",
+          "score": "Environnement",
           "minRequired": 10
         }
       ],
@@ -201,7 +201,7 @@
           "minRequired": 30
         },
         {
-          "score": "Evironnement",
+          "score": "Environnement",
           "minRequired": 30
         }
       ],
