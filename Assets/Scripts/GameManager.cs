@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using Data;
 using Game;
 using Newtonsoft.Json;
 using UI;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public string _nextScene;
     private ScoresHandler _scoresHandler;
+    private DataRecorder _recorder;
     private ChoiceGenerator _choiceGen;
     private int _currentTurn;
     private const int MaxScore = 100;
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
         foreach (var choice in choices) {
             _uiActionDetails.CreateActions(choice.Value,choice.Key);
         }
+
+        _recorder = new DataRecorder();
         _currentTurn = 1;
         _uiHUD.InitHud(
         (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
@@ -100,6 +104,8 @@ public class GameManager : MonoBehaviour
     public Score GetScoreFromJSON(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
+        Record();
+
         UpdateRemainingConsequences();
         ExecuteActions();
         _scoresHandler.UpdateScores();
@@ -116,8 +122,22 @@ public class GameManager : MonoBehaviour
         if (_currentTurn == MaxTurn) {
             LastTurn();
         }
-        
 
+    }
+
+    private void Record() {
+        HashSet<Score> scores = new() {
+            _scoresHandler.GetScore(ScoreType.POPULATION.ToString()),
+            _scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()),
+            _scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()),
+            _scoresHandler.GetScore(ScoreType.CULTURE.ToString()),
+            _scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()),
+            _scoresHandler.GetScore(ScoreType.ENERGIE.ToString()),
+            _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()),
+        };
+        HashSet<Action> actions = new HashSet<Action>(_actionsToDo);
+        _recorder.RecordScores(scores, _currentTurn);
+        _recorder.RecordActions(actions, _currentTurn);
     }
 
     private void ExecuteActions() {

@@ -20,7 +20,7 @@ namespace Game
         private int _maxIterations;
 
         [JsonConstructor]
-        private Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
+        public Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
             int? delay, int? duration, int? cooldown, int? maxIterations) {
             _name = name;
             _description = description ?? "";
