@@ -1,0 +1,67 @@
+﻿[
+    {
+    "name":"Meilleur campus",
+    "description":"Personne ne peut rivaliser c'est le campus de rêve",
+    "requirements": [
+      {
+        "score": "Environnement",
+        "minRequired": 70,
+        "turns": 12
+      },
+      {
+        "score": "Population",
+        "minRequired": 70,
+        "turns": 12
+      },
+      {
+        "score": "Culture",
+        "minRequired": 70,
+        "turns": 12
+      }
+      ]
+    },
+    {
+      "name":"Pire campus",
+      "description":"Excellent, tout le monde vous déteste",
+      "requirements": [
+        {
+          "score": "Environnement",
+          "maxRequired": 20,
+          "turns": 12
+        },
+        {
+          "score": "Population",
+          "maxRequired": 70,
+          "turns": 12
+        }
+      ]
+    },
+    {
+      "name":"Eco-campus",
+      "description":" Personne ne peut rivaliser c'est le campus de rêve",
+      "requirements": [
+        {
+          "score": "Environnement",
+          "minRequired": 90,
+          "turns": 12
+        },
+        {
+          "score": "Energie",
+          "minRequired": 90,
+          "turns": 12
+        }
+      ]
+    },
+    {
+      "name":"Campus Energie",
+      "description":"  L'optimisation énergétique ça vous connaît!",
+      "requirements": [
+        {
+          "score": "Energie",
+          "minRequired": 90,
+          "turns": 6
+        }
+      ]
+    }
+    
+]

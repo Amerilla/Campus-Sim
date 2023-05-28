@@ -13,6 +13,8 @@ namespace UI
         private UIDocument _uiDocument;
     
         private ScrollView _actions;
+        private Label _actionsLabel;
+        private VisualElement _actionsContainer;
         private VisualElement _details;
         private List<Button> _environmentActions = new List<Button>();
         private List<Button> _populationActions = new List<Button>();
@@ -38,7 +40,9 @@ namespace UI
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.sortingOrder = 0;
             _root = _uiDocument.rootVisualElement;
-            _actions = _root.Q<GroupBox>("Actions").Q<ScrollView>("Actions");
+            _actionsContainer =_root.Q<GroupBox>("Actions").Q<VisualElement>("ActionsContainer");
+            _actions = _actionsContainer.Q<ScrollView>("Actions");
+            _actionsLabel = _actionsContainer.Q<Label>("Score");
             _actions.contentContainer.style.flexDirection = FlexDirection.Row;
             _actions.contentContainer.style.justifyContent = Justify.SpaceAround;
             _actions.contentContainer.style.flexWrap = Wrap.Wrap;
@@ -71,6 +75,10 @@ namespace UI
             button.text = action.GetName();
             button.clicked += () => ShowAction(action);
             button.style.width = new StyleLength(250);
+            button.style.borderBottomLeftRadius = new StyleLength(20);
+            button.style.borderBottomRightRadius = new StyleLength(20);
+            button.style.borderTopLeftRadius = new StyleLength(20);
+            button.style.borderTopRightRadius = new StyleLength(20);
             return button;
         }
     
@@ -112,45 +120,53 @@ namespace UI
         public void ShowActions(ScoreType? scoreType) {
             _details.visible = false;
             if (_showedScoreType == scoreType) {
-                _actions.visible = false;
+                _actionsContainer.visible = false;
                 _showedScoreType = null;
                 return;
             }
             _showedScoreType = scoreType;
-            _actions.visible = true;
+            _actionsContainer.visible = true;
             _actions.contentContainer.Clear();
+            
             switch (scoreType) {
                 case ScoreType.ENVIRONNEMENT:
+                    _actionsLabel.text = "ENVIRONNEMENT";
                     foreach (var action in _environmentActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.POPULATION:
+                    _actionsLabel.text = "POPULATION";
                     foreach (var action in _populationActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.ECONOMIE:
+                    _actionsLabel.text = "ECONOMIE";
                     foreach (var action in _economyActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.ENERGIE:
+                    _actionsLabel.text = "ENERGIE";
                     foreach (var action in _energyActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.ACADEMIQUE:
+                    _actionsLabel.text = "ACADEMIQUE";
                     foreach (var action in _academicActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.CULTURE:
+                    _actionsLabel.text = "CULTURE";
                     foreach (var action in _cultureActions) {
                         _actions.contentContainer.Add(action);
                     }
                     break;
                 case ScoreType.MOBILITE:
+                    _actionsLabel.text = "MOBILITE";
                     foreach (var action in _mobilityActions) {
                         _actions.contentContainer.Add(action);
                     }
@@ -284,7 +300,7 @@ namespace UI
         }
 
         public void Hide() {
-            _actions.visible = false;
+            _actionsContainer.visible = false;
             _showedScoreType = null;
             _details.visible = false;
             HideLabels(_details.Q<GroupBox>("Needed"));

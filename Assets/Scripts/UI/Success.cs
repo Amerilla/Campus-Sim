@@ -9,12 +9,15 @@ namespace UI
     public class Success : MonoBehaviour
     {
         private VisualElement _container;
-        private Label _label;
+        private Label _name;
+        private Label _description;
+        private bool _showed = false;
 
         private void Awake() {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
             _container = root.Q("Container");
-            _label = _container.Q<Label>("Text");
+            _name = _container.Q("Container").Q<Label>("Name");
+            _description = _container.Q("Container").Q<Label>("Description");
             Hide();
 
         }
@@ -29,12 +32,20 @@ namespace UI
 
         }
         
-        public void Show() {
-            _container.visible = true;
+        public void Show((string,string) valueTuple) {
+            if (valueTuple.Item1 != null && valueTuple.Item2 != null) {
+                _container.visible = true;
+                _name.text = valueTuple.Item1;
+                _description.text = valueTuple.Item2;
+                _showed = true;
+            }
+
         }
 
         public void Hide() {
             _container.visible = false;
+            _name.text = "";
+            _description.text = "";
         }
         
     }
