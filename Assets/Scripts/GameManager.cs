@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
         ExecuteActions();
         _scoresHandler.UpdateScores();
         _uiActionDetails.Hide();
+        _uiHUD.ResetShowedScore();
         _uiHUD.UpdateHud(_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetCurrentAndNextScore(),
             _scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetCurrentAndNextScore(),
             _scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetCurrentAndNextScore(),

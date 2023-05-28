@@ -57,7 +57,7 @@ namespace UI
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-            if (scene.name == "SampleScene") {
+            if (scene.name == "GameView") {
                 Show();
             } else {
                 Hide();
@@ -105,6 +105,19 @@ namespace UI
             ScoreGroupBoxInit(aca.Item1,aca.Item2,_academicGroupBox,ScoreType.ACADEMIQUE,actionDetails);
             ScoreGroupBoxInit(cult.Item1,cult.Item2,_cultureGroupBox, ScoreType.CULTURE,actionDetails);
             ScoreGroupBoxInit(mob.Item1,mob.Item2,_mobilityGroupBox, ScoreType.MOBILITE,actionDetails);
+        }
+
+        public void ResetShowedScore() {
+            if (_showedScoreType != null) {
+                ScoreGroupBoxClearBorder(_environmentGroupBox);
+                ScoreGroupBoxClearBorder(_populationGroupBox);
+                ScoreGroupBoxClearBorder(_academicGroupBox);
+                ScoreGroupBoxClearBorder(_economyGroupBox);
+                ScoreGroupBoxClearBorder(_energyGroupBox);
+                ScoreGroupBoxClearBorder(_cultureGroupBox);
+                ScoreGroupBoxClearBorder(_mobilityGroupBox);
+                _showedScoreType = null;
+            }
         }
     
         private void ScoresUpdate((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
@@ -183,6 +196,8 @@ namespace UI
             ScoreGroupBoxClearBorder(_energyGroupBox);
             ScoreGroupBoxClearBorder(_cultureGroupBox);
             ScoreGroupBoxClearBorder(_mobilityGroupBox);
+            
+            
             if (scoreType == _showedScoreType) {
                 _showedScoreType = null;
                 return;
