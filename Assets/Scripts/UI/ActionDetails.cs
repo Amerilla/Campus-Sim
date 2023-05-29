@@ -188,7 +188,6 @@ namespace UI
             }
             else if (action.CanBeExecuted(_gameManager.GetCurrentTurn())) {
                 _previsousHandler = () => {
-                    Debug.Log(action.GetName());
                     _gameManager.AddActionToDo(action);
                     _details.visible = false;
                     

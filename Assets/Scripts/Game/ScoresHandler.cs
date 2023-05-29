@@ -43,6 +43,14 @@ namespace Game
         private int _value;
         private int _byTurn;
         private int _coefficient = 1 ;
+        
+        public Score(Score scoreToCopy)
+        {
+            _name = scoreToCopy._name;
+            _value = scoreToCopy._value;
+            _byTurn = scoreToCopy._byTurn;
+            _coefficient = scoreToCopy._coefficient;
+        }
 
         [JsonConstructor]
         public Score(string name, int? byturn, int? initialValue, int? coefficient) {

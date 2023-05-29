@@ -29,7 +29,15 @@ public class GameManager : MonoBehaviour
     private List<SuccessBehaviour> _success;
     private Success _uiSuccess;
 
+    public static GameManager Instance;
+    
     void Awake() {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }else if (Instance != this) {
+            Destroy(gameObject);
+        }
         var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
         _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
@@ -80,9 +88,11 @@ public class GameManager : MonoBehaviour
     void Start() {
         
     }
-    
 
 
+    public int GetMaxTurn() => MaxTurn;
+
+    public int GetMaxScore() => MaxScore;
 
     private void LastTurn() {
         _uiHUD.Hide();
@@ -108,7 +118,6 @@ public class GameManager : MonoBehaviour
     
     public void NextTurn() {
         Record();
-
         _uiSuccess.Hide();
         UpdateRemainingConsequences();
         ExecuteActions();
@@ -134,13 +143,13 @@ public class GameManager : MonoBehaviour
 
     private void Record() {
         HashSet<Score> scores = new() {
-            _scoresHandler.GetScore(ScoreType.POPULATION.ToString()),
-            _scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()),
-            _scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()),
-            _scoresHandler.GetScore(ScoreType.CULTURE.ToString()),
-            _scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()),
-            _scoresHandler.GetScore(ScoreType.ENERGIE.ToString()),
-            _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()),
+            new Score(_scoresHandler.GetScore(ScoreType.POPULATION.ToString())),
+            new Score(_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString())),
+            new Score(_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString())),
+            new Score(_scoresHandler.GetScore(ScoreType.CULTURE.ToString())), 
+            new Score(_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString())),
+            new Score(_scoresHandler.GetScore(ScoreType.ENERGIE.ToString())),
+            new Score(_scoresHandler.GetScore(ScoreType.MOBILITE.ToString())),
         };
         HashSet<Action> actions = new HashSet<Action>(_actionsToDo);
         _recorder.RecordScores(scores, _currentTurn);
@@ -181,6 +190,8 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetCurrentTurn() => _currentTurn;
+
+    public DataRecorder GetRecorder() => _recorder;
 
 }
 

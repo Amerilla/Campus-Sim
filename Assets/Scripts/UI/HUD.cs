@@ -23,6 +23,8 @@ namespace UI
         private VisualElement _toolBar;
         private Button _turnGroupBox;
         private ScoreType? _showedScoreType = null;
+
+        private ActionDetails _actionDetails;
     
         // Start is called before the first frame update
         void Awake() {
@@ -65,9 +67,45 @@ namespace UI
         }
         
         // Update is called once per frame
-        void Update()
-        {
-        
+        void Update() {
+            string input = Input.inputString;
+            switch (input) {
+                case "1":
+                    ScoreGroupBoxHighlight(ScoreType.ENVIRONNEMENT);
+                    _actionDetails.ShowActions(ScoreType.ENVIRONNEMENT);
+                    break;
+                case "2" :
+                    ScoreGroupBoxHighlight(ScoreType.POPULATION);
+                    _actionDetails.ShowActions(ScoreType.POPULATION);
+                    break;
+                case "3" :
+                    ScoreGroupBoxHighlight(ScoreType.ECONOMIE);
+                    _actionDetails.ShowActions(ScoreType.ECONOMIE);
+                    break;
+                case "4" :
+                    ScoreGroupBoxHighlight(ScoreType.ENERGIE);
+                    _actionDetails.ShowActions(ScoreType.ENERGIE);
+                    break;
+                case "5" :
+                    ScoreGroupBoxHighlight(ScoreType.ACADEMIQUE);
+                    _actionDetails.ShowActions(ScoreType.ACADEMIQUE);
+                    break;
+                case "6" :
+                    ScoreGroupBoxHighlight(ScoreType.CULTURE);
+                    _actionDetails.ShowActions(ScoreType.CULTURE);
+                    break;
+                case "7" :
+                    ScoreGroupBoxHighlight(ScoreType.MOBILITE);
+                    _actionDetails.ShowActions(ScoreType.MOBILITE);
+                    break;
+                case "Return":
+                    _gameManager.NextTurn();
+                    break;
+                    
+                
+                    
+                    
+            }
         }
         
         public void Show() {
@@ -95,6 +133,7 @@ namespace UI
             ScoreGroupBoxInit(turn.Item1,turn.Item2,_turnGroupBox,null,null);
             _turnGroupBox.clicked += () => _gameManager.NextTurn();
             _turnGroupBox.Q<GroupBox>("Score").Q<Button>("Button").clicked += () => _gameManager.NextTurn();
+            _actionDetails = actionDetails;
         }
 
         public void ScoresInit((int, int) env, (int, int) pop, (int, int) eco, (int, int) ener, (int, int) aca,
