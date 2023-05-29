@@ -191,7 +191,7 @@
 
     "Random": {
       "name": "téléphérique interbâtiments",
-      "description": "Perséverer dans les traditions suisses et avoir l'imrpession d'être tous les jours au ski, rien de mieux pour sociabiliser entre les cours!",
+      "description": "Perséverer dans les traditions suisses et avoir l'impression d'être tous les jours au ski, rien de mieux pour sociabiliser entre les cours!",
       "requirements":[
         {
           "score": "Energie",
@@ -217,7 +217,8 @@
       ],
       "duration": 5,
       "cooldown": 0,
-      "delay": 1
+      "delay": 1,
+      "maxIterations": 1
     }
   },
 
@@ -384,7 +385,7 @@
       "delay": 0
     },
     "Random": {
-      "name": "trampoline pour se déplacer entre les étages ",
+      "name": "Trampoline pour se déplacer entre les étages ",
       "description": "Vous savez quand on dit : 'j'y fais juste un saut?' Maintenant c'est possible! L'énergie cinétique permet d'optimiser l'énergie pour se déplacer.",
       "requirements": [
         {

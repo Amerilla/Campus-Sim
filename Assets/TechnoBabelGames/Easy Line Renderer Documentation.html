@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">    
+
+    <link rel="stylesheet" type="text/css" href="https://technobabel.games/stylesheet.css">
+
+    <title>Easy Line Renderer by Techno Babel Games</title>
+    
+  </head>
+<body>
+<div>
+    <a href="https://technobabel.games/"><img src="https://technobabel.games/Techno_Babel_Logo512x175.png" width="512" height="175" alt="Techno Babel" border="0" /></a>
+</div>
+<h1>Easy Line Renderer</h1>
+<div>
+	<h2>The basics</h2>
+	<p>Find <em>Easy Line Renderer</em> in the Tools menu under TechnoBabelGames.</p>
+	<div>
+        <img src="https://technobabel.games/utools/menu.png" width="680" height="88" alt="" border="1" />
+    </div>
+	<p>This window will appear.</p>
+	<div>
+        <img src="https://technobabel.games/utools/tool.png" width="502" height="774" alt="" border="0" />
+    </div>
+	<p>Set the properties in each section. After clicking on the Create Line button, a new GameObject will appear in your Hierarchy and Scene.</p>
+	<p>The GameObject will have several child objects in the Hierarchy depending on the number of points in the line. these objects can be manipulated in the scene likje any other GameObject. However, do not rearrange the order of the child objects or unparent them. The object hierarchy must be maintained.</p>
+	<p>The new GameObject will have a component attached to it called <em>TB Line Renderer Component</em>.</p>
+	<div>
+        <img src="https://technobabel.games/utools/component.png" width="502" height="613" alt="" border="0" />
+    </div>
+	<p>This component allows changes to some of the properties of the line renderer.</p>
+	<h2>How-To Video</h2>
+	<p><a href="https://youtu.be/3mvNlKNlO9c">Watch this video</a> to learn how to use the <em>Easy Line Renderer Tool</em>.<p>
+	<div>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3mvNlKNlO9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<h2>Details</h2>
+	<div class="table">
+		
+		<h2>Visual Properties</h2>
+		<h3>Line Width</h3>
+		<p>Use the Line Width slider to determine the width of the line. It is a float value between 0.1 and 1.0. This value is in Unity units.<p>
+		<h3>Rounded End Caps</h3>
+		<p>Toggle value true or false. If true, 10 additional vertices will be applied to both ends of the line to created a rounded affect.</p>
+		<h3>Rounded Corners</h3>
+		<p>Toggle value true or false. If true, 10 additional vertices will be applied to each point on the 'outside' corner to create a rounded affcted.</p>
+		
+		<h2>Line Coloring</h2>
+		<h3>Coloring Type</h3>
+		<p>Drop down menu to choose between Solid Color, Gradient, and Texture.
+			<ul>
+				<li>
+					Solid Color
+					<p class="subitem">Use the color picker to select the color of the entire line.<p>
+				</li>
+				<li>
+					Gradient
+					<p class="subitem">Use the color picker to select the Start Color and End Color for the line. The Start Color will begin at Point 1 on the line. The End Color will begin at the Ending Point on the line. A gradient will be created along the surface of the line using the selected colors.<p>
+				</li>
+				<li>
+					Texture
+					<p class="subitem">A graphic can be set as the face image of the line by setting Coloring Type to Texture.</p>
+					<ol>
+						<li>
+							Click on the material selector or drag a material onto the selector from anywhere in the project.
+						</li>
+						<li>
+							Select the appropriate Mode for the Texture. If the image can be stretched without distortion, select Stretch Mode. If the image can repeat, use Tile Mode. As the line is dynamic, be sure to use an image that meets these criteria and choose the appropriate Mode.
+						</li>
+					</ol>
+				</li>
+			</ul>
+		</p>
+		<h2>Technical Properties</h2>
+		<h3>Starting Shape</h3>
+		<p>This drop down menu allows for the choice of a single line, several named polyogons, or to customize certain features of the line.</p>
+		<p>
+			Selecting Custom from the Starting Shape drop down menu will reveal Points and Close Loop.
+			<ul>
+				<li>
+					Points
+					<p class="subitem">An integer between 2 and 10. Sets the number of points in a custom line.<p>
+				</li>
+				<li>
+					Close Loop
+					<p class="subitem">Toggle value true or false. If true, an additional segment to the custom line will be drawn from the Ending Point to Point 1.<p>
+				</li>
+			</ul>
+		</p>
+		<p>Selecting Line from the Starting Shape drop down menu will reveal Shape Size and create a line with two points and Close Loop set to false. Shape Size will determine the length of the line in Unity units</p>
+		<p>Selecting any polygon from the Starting Shape drop down menu will reveal Shape Size and create the selected shape and set Close Loop to true. The shape will determine the number of points. Shape Size will determine the distance from the center of the shape for each point.</p>
+		<h2>Create GameObject</h2>
+		<p>In this section of the Easy Line Renderer tool, a name can be assigned to the line by filling in the string field, Object Name. Once the Create Line button is clicked, a gameobject by that name will appear in the Hierarchy and the line will appear in the Scene view.</p>
+	</div>
+	<h2>TB Line Renderer Component</h2>
+	<div class="table">
+		<h2>LineRenderer Properties</h2>
+		<h3>Line Width</h3>
+		<p>Use the Line Width slider to change the width of the line. It is a float value between 0.1 and 1.0. This value is in Unity units.<br />Note: This will instantly apply changes to the existng line. Use <em>Ctrl + Z</em> (PC) or <em>command + Z</em> (Mac) to undo any undersired changes.</p>
+		<h3>Close Loop</h3>
+		<p>Toggle value true or false. If true, an additional segment to the line will be drawn from the Ending Point to Point 1. Changing this value will instantly apply to the existing line.</p>
+		<h2>Color Properties</h2>
+		<p>If the line was created with a Solid Color or Gradient, Start Color and End Color will be visible with color pickers. These colors can be changed at any time and will be applied to the existing line instantly. Start Color will be the color at Point 1 and End Color will be the color at the Ending Point. A gradient will be created along the line between these points. To maintain a single color, set the same color value for both properties.</p>
+		<p>If the line was created with a Texture, no properties can be adjusted here. The material attached to this object may be adjusted to change the appearance of the line. See <a href="https://docs.unity3d.com/2021.3/Documentation/Manual/Graphics.html">Unity Docs</a> for more information on <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/Shaders.html">Materials, Textures, and Shaders</a>.</p>
+		<h2>Shape Properties - Adjust Shape</h2>
+		<p>Note: Changing the shape sise or reseting the shape will undo and changes made to point position.</p>
+		<h3>Shape Size</h3>
+		<p>This will instantly change the distance between points. All points will be equal distance from the center of the shape and each other. This will reset the shape.</p>
+		<h3>Reset Shape</h3>
+		<p>This button will reset any changes made to the shape of the line without changing the Shape Size. All points will be equal distance from the center of the shape and each other.<p>
+	</div>
+</div>
+
+<div class="footer">
+  <img ID="footerlogo" src="https://technobabel.games/small_logo.png" />
+  <span><a href="https://mastodon.gamedev.place/@Techno_Babel"><img src="https://technobabel.games/mastodon_logo.svg" width="38" height="40" alt="@Techno_Babel@mastodon.gamedev.place" border="0" /></a></span>
+  <span><a href="https://twitter.com/intent/tweet?screen_name=TechnoBabelGame&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @TechnoBabelGame</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+</div>
+</body>
+</html>
