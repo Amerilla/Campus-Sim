@@ -2,8 +2,6 @@
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Props;
-using UnityEngine;
-
 namespace Game
 {
     public class Action

@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
 using Newtonsoft.Json;
 
 namespace Game
@@ -64,6 +63,7 @@ namespace Game
             _name = name;
             _description = description;
             _requirements = requirements;
+
         }
 
         public (string,string) HasSuccess() {

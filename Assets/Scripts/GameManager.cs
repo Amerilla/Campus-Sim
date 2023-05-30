@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using Data;
 using Game;
 using Newtonsoft.Json;
@@ -38,39 +37,29 @@ public class GameManager : MonoBehaviour
         }else if (Instance != this) {
             Destroy(gameObject);
         }
-        var buildingsHandler = new BuildingsHandler(DeserializeList<BuildingStats>("HardData/Buildings.json"));
-        _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
+
+        var jsonFiles = DataLoader.Instance.GetJsonStrings();
+        StartCoroutine(DataLoader.Instance.LoadJSON<BuildingStats>(jsonFiles[0], result => {
+            var buildingsHandler = new BuildingsHandler(result);
+            _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
+        }));
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
         _uiSuccess = GameObject.Find("Success").GetComponent<Success>();
         _recorder = new DataRecorder();
-        
-
-        _scoresHandler = new ScoresHandler(DeserializeList<Score>("HardData/Scores.json"));
-        _success = DeserializeList<SuccessBehaviour>("HardData/Success.json");
-        string root = "HardData/Choices";
-        var choicesEco = DeserializeList<Choice>($"{root}/Economie.json");
-        var choicesEnv = DeserializeList<Choice>($"{root}/Environnement.json");
-        var choicesMob = DeserializeList<Choice>($"{root}/Mobilite.json");
-        var choicesPop = DeserializeList<Choice>($"{root}/Population.json");
-        var choicesCult = DeserializeList<Choice>($"{root}/Culture.json");
-        var choicesEne = DeserializeList<Choice>($"{root}/Energie.json");
-        var choicesAca = DeserializeList<Choice>($"{root}/Academique.json");
-        Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
-            { ScoreType.CULTURE, choicesCult },
-            { ScoreType.ENERGIE, choicesEne },
-            { ScoreType.ECONOMIE, choicesEco },
-            { ScoreType.MOBILITE, choicesMob },
-            { ScoreType.ACADEMIQUE, choicesAca },
-            { ScoreType.POPULATION, choicesPop},
-            { ScoreType.ENVIRONNEMENT, choicesEnv}
-        };
-        _choiceGen = new ChoiceGenerator(choices);
-        var p = 0;
-
-        foreach (var choice in choices) {
-            _uiActionDetails.CreateActions(choice.Value,choice.Key);
-        }
+        StartCoroutine(DataLoader.Instance.LoadJSON<Score>(jsonFiles[1], result => {
+            _scoresHandler = new ScoresHandler(result);
+        }));
+        StartCoroutine(DataLoader.Instance.LoadJSON<SuccessBehaviour>(jsonFiles[2], result => {
+            _success = result;
+        }));
+        StartCoroutine(LoadChoices(choices => {
+            _choiceGen = new ChoiceGenerator(choices);
+            var p = 0;
+            foreach (var choice in choices) {
+                _uiActionDetails.CreateActions(choice.Value,choice.Key);
+            } 
+        }));
         _currentTurn = 1;
         _uiHUD.InitHud(
         (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
@@ -89,7 +78,50 @@ public class GameManager : MonoBehaviour
         
     }
 
+    IEnumerator LoadChoices(Action<Dictionary<ScoreType, List<Choice>>> onLoaded) {
 
+        var jsonFiles = DataLoader.Instance.GetJsonStrings();
+        
+        var choicesEco = new List<Choice>();
+        var choicesEnv = new List<Choice>();
+        var choicesMob = new List<Choice>();
+        var choicesPop = new List<Choice>();
+        var choicesCult = new List<Choice>();
+        var choicesEne = new List<Choice>();
+        var choicesAca = new List<Choice>();
+        var choicesList = new [] {
+            choicesAca,
+            choicesCult,
+            choicesEco,
+            choicesEne,
+            choicesEnv,
+            choicesMob,
+            choicesPop
+        };
+        for (int i = 0; i < choicesList.Length; i++) {
+            int j = i;
+            yield return (DataLoader.Instance.LoadJSON<Choice>(jsonFiles[j+3], result => {
+                choicesList[j] = result;
+            }));
+        }
+        
+        
+        Dictionary<ScoreType, List<Choice>> choices = new Dictionary<ScoreType, List<Choice>>() {
+            { ScoreType.CULTURE, choicesList[1] },
+            { ScoreType.ENERGIE, choicesList[3] },
+            { ScoreType.ECONOMIE, choicesList[2] },
+            { ScoreType.MOBILITE, choicesList[5] },
+            { ScoreType.ACADEMIQUE, choicesList[0] },
+            { ScoreType.POPULATION, choicesList[6]},
+            { ScoreType.ENVIRONNEMENT, choicesList[4]}
+        };
+        
+        onLoaded?.Invoke(choices);
+
+        yield return null;
+
+    }   
+    
     public int GetMaxTurn() => MaxTurn;
 
     public int GetMaxScore() => MaxScore;
@@ -117,6 +149,9 @@ public class GameManager : MonoBehaviour
     public Score GetScoreFromJSON(string name) => _scoresHandler.GetScore(name);
     
     public void NextTurn() {
+        if (_currentTurn == MaxTurn+1) {
+            LastTurn();
+        }
         Record();
         _uiSuccess.Hide();
         UpdateRemainingConsequences();
@@ -135,9 +170,7 @@ public class GameManager : MonoBehaviour
             _scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetCurrentAndNextScore(),
             _scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetCurrentAndNextScore(),_currentTurn);
         _currentTurn++;
-        if (_currentTurn == MaxTurn) {
-            LastTurn();
-        }
+        
 
     }
 
