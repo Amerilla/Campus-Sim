@@ -8,6 +8,9 @@ namespace Props
         public GameObject chairLift;
         public GameObject vendingMachines;
         public GameObject demineralization;
+        public GameObject publicPlazas;
+        public GameObject airConditioning;
+        public GameObject solarPanels;
         
         private static PropManager _instance;
 
@@ -40,6 +43,15 @@ namespace Props
                     break;
                 case 3:
                     demineralization.GetComponent<Demineralization>().Upgrade();
+                    break;
+                case 4:
+                    publicPlazas.GetComponent<PublicPlazas>().Upgrade();
+                    break;
+                case 5:
+                    airConditioning.GetComponent<AirConditioning>().Upgrade();
+                    break;
+                case 6:
+                    solarPanels.GetComponent<SolarPanels>().Upgrade();
                     break;
                     
             }

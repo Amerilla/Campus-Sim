@@ -151,7 +151,9 @@
       ],
       "duration": 7,
       "cooldown": 0,
-      "delay": 1
+      "delay": 1,
+      "maxIterations": 4,
+      "effectID": 5
     },
 
     "Random": {
@@ -224,7 +226,9 @@
       ],
       "duration": 7,
       "cooldown": 0,
-      "delay": 1
+      "delay": 1,
+      "maxIterations": 4,
+      "effectID": 6
     },
 
     "Negative": {
