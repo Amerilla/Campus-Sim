@@ -190,7 +190,7 @@
     },
 
     "Random": {
-      "name": "téléphérique interbâtiments",
+      "name": "Télésiège intercampus",
       "description": "Perséverer dans les traditions suisses et avoir l'impression d'être tous les jours au ski, rien de mieux pour sociabiliser entre les cours!",
       "requirements":[
         {
@@ -218,7 +218,8 @@
       "duration": 5,
       "cooldown": 0,
       "delay": 1,
-      "maxIterations": 1
+      "maxIterations": 1,
+      "effectID": 1
     }
   },
 

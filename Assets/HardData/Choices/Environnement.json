@@ -33,7 +33,9 @@
       ],
       "duration": 4,
       "cooldown": 1,
-      "delay": 1
+      "delay": 1,
+      "maxIterations": 3,
+      "effectID": 3
     },
     
     "Negative": {
@@ -513,7 +515,9 @@
       ],
       "duration": 4,
       "cooldown": 0,
-      "delay": 0
+      "delay": 0,
+      "maxIterations": 3,
+      "effectID": 2
     }
   },
 

@@ -17,8 +17,10 @@ namespace Props
         private bool _isSpawning = true;
         private int _invokeHandle;
         private Vector3 _spawnPoint;
+        private bool _isEnabled;
 
         private void Awake() {
+            _isEnabled = false;
             _initialCheckpoints = new();
             GameObject station1 = GameObject.Find("Station1");
             for (int j = 1; j <= 10; j++) {
@@ -48,6 +50,11 @@ namespace Props
             }
 
             _chairs = new HashSet<Chair>();
+            
+        }
+
+        public void Enable() {
+            _isEnabled = true;
             GameObject chair = Instantiate(_chairPrefab, _initialCheckpoints.Peek(), Quaternion.identity, transform);
             _spawnPoint = _initialCheckpoints.Peek();
             _spawnPoint = new Vector3(_spawnPoint.x, _spawnPoint.y, _spawnPoint.z);
@@ -64,11 +71,14 @@ namespace Props
         }
         
         private void Update() {
+            if (!_isEnabled) return;
+            
             foreach (var chair in _chairs) {
                 chair.Update();
             }
 
-            if (_isSpawning && _chairs.Count > 1 && (_chairs.ToList()[0].GetPosition() - _spawnPoint).magnitude < 10) {
+            if (_isSpawning && _chairs.Count > 1 &&
+                (_chairs.ToList()[0].GetPosition() - _spawnPoint).magnitude < 10) {
                 _isSpawning = false;
                 CancelInvoke();
             }

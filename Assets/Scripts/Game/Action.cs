@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using Props;
 using UnityEngine;
 
 namespace Game
@@ -18,10 +19,12 @@ namespace Game
         private string _description;
         private bool _waiting;
         private int _maxIterations;
+        private int _totalUsed;
+        private int _effectID;
 
         [JsonConstructor]
         public Action(string name, [CanBeNull] string description, [CanBeNull] List<Requirement> requirements, [CanBeNull] List<Consequence> consequences,
-            int? delay, int? duration, int? cooldown, int? maxIterations) {
+            int? delay, int? duration, int? cooldown, int? maxIterations, int? effectID) {
             _name = name;
             _description = description ?? "";
             _consequences = consequences ?? new List<Consequence>();
@@ -30,6 +33,8 @@ namespace Game
             _duration = duration ?? -1;
             _cooldown = cooldown ?? 0;
             _maxIterations = maxIterations ?? 0;
+            _totalUsed = 0;
+            _effectID = effectID ?? -1;
 
             if (_cooldown < 0 || _duration < 0) {
                 _lastCall = -1;
@@ -62,11 +67,15 @@ namespace Game
 
         public float GetDelay() => _delay;
 
+        public int GetEffectID() => _effectID;
+
         public void SetActionType(ActionType actionType) {
             _actionType = actionType;
         }
 
         public bool CanBeExecuted(int currentTurn) {
+            if (_maxIterations > 0 && _totalUsed >= _maxIterations) return false;
+            
             foreach (var requirement in _requirements) {
                 if (!requirement.HasRequirement()) {
                     return false;
@@ -96,10 +105,15 @@ namespace Game
                     }
                 }
             }
+
+            PropManager.Instance.ApplyEffect(_effectID);
+            ++_totalUsed;
             return remainingConsequences;
         }
 
         public ActionType GetActionType() => _actionType;
+
+        public int MaxCount() => _maxIterations;
 
         public List<Requirement> GetRequirements() => _requirements;
 

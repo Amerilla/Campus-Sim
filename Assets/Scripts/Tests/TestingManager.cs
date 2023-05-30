@@ -21,8 +21,8 @@ namespace DefaultNamespace
                 new Score("Academique", 0, 10, 1),
             };
             HashSet<Action> actions1 = new() {
-                new Action("CM devient CMigros", "description", null, null, 0, 5, 2, 1),
-                new Action("Eau chaude dans les toilettes", "description2", null, null, 2, 3, 2, 1),
+                new Action("CM devient CMigros", "description", null, null, 0, 5, 2, 1, null),
+                new Action("Eau chaude dans les toilettes", "description2", null, null, 2, 3, 2, 1, null),
             };
             HashSet<Score> scores2 = new() {
                 new Score("Mobilité", 0, 35, 1),
@@ -34,8 +34,8 @@ namespace DefaultNamespace
                 new Score("Academique", 10, 10, 1),
             };
             HashSet<Action> actions2 = new() {
-                new Action("Parking a vélo payant", null, null, null, 2, 2, 2, 1),
-                new Action("Toilettes payantes", null, null, null, 0, 4, 3, 1)
+                new Action("Parking a vélo payant", null, null, null, 2, 2, 2, 1, null),
+                new Action("Toilettes payantes", null, null, null, 0, 4, 3, 1, null)
             };
             recorder.RecordScores(scores1, 1);
             recorder.RecordActions(actions1, 1);
