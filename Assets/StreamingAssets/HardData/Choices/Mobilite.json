@@ -283,7 +283,9 @@
       ],
       "duration": 4,
       "cooldown": 0,
-      "delay": 0
+      "delay": 0,
+      "maxIterations": 3,
+      "effectID": 7
     },
 
     "Random": {

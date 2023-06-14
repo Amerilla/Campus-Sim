@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour 
 {
-    private const float MAX_X = 3150;
-    private const float MIN_X = 1730;
-    private const float MIN_Z = 500;
+    private const float MAX_X = 3450;
+    private const float MIN_X = 1500;
+    private const float MIN_Z = 200;
     private const float MAX_Z = 1400;
     private const float MIN_Y = 120;
     private const float MAX_Y = 400;

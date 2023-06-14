@@ -227,7 +227,7 @@
       "duration": 7,
       "cooldown": 0,
       "delay": 1,
-      "maxIterations": 4,
+      "maxIterations": 3,
       "effectID": 6
     },
 

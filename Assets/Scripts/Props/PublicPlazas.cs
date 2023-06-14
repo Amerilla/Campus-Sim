@@ -22,7 +22,7 @@ namespace Props
 
         public void Upgrade() {
             ++_currentLevel;
-            if (_currentLevel <= 1) {
+            if (_currentLevel <= 3) {
                 string groupName = "Group" + _currentLevel;
                 Transform group = transform.Find(groupName);
 

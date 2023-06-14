@@ -77,8 +77,7 @@ namespace Props
                 chair.Update();
             }
 
-            if (_isSpawning && _chairs.Count > 1 &&
-                (_chairs.ToList()[0].GetPosition() - _spawnPoint).magnitude < 10) {
+            if (_isSpawning && _chairs.Count > 1 && (_chairs.ToList()[0].GetPosition() - _spawnPoint).magnitude < 10) {
                 _isSpawning = false;
                 CancelInvoke();
             }
@@ -116,6 +115,7 @@ namespace Props
                 _checkPoints.Enqueue(_checkPoints.Dequeue());
             }
         }
+        
         
         void RotateTowardsTarget(Vector3 target) {
             Vector3 direction = target - _gameObject.transform.position;

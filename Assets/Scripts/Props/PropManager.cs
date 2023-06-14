@@ -11,6 +11,7 @@ namespace Props
         public GameObject publicPlazas;
         public GameObject airConditioning;
         public GameObject solarPanels;
+        public GameObject golfCarts;
         
         private static PropManager _instance;
 
@@ -53,7 +54,9 @@ namespace Props
                 case 6:
                     solarPanels.GetComponent<SolarPanels>().Upgrade();
                     break;
-                    
+                case 7:
+                    golfCarts.GetComponent<GolfCarts>().Upgrade();
+                    break;
             }
         }
 

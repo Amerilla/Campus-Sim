@@ -426,7 +426,7 @@
       "duration": 4,
       "cooldown": 0,
       "delay": 0,
-      "maxIterations": 4,
+      "maxIterations": 3,
       "effectID": 4
     },
 
