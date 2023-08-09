@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48edb669b9f5e66408eafcac328acc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextScene: GameView
+  _nextScene: Tuto
 --- !u!114 &299938669
 MonoBehaviour:
   m_ObjectHideFlags: 0

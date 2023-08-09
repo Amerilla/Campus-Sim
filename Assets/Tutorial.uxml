@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Global" style="height: 1076px; background-image: url(&apos;project://database/Assets/Images/GUI/Tutorial.png?fileID=2800000&amp;guid=d5b683f5d94cd1c4895024f691267253&amp;type=3#Tutorial&apos;);">
+        <ui:Button text="Next" display-tooltip-when-elided="true" name="Next" style="bottom: 20px; position: absolute; left: 45%; width: 10%; height: 50px; border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; font-size: 16px; -unity-font-style: bold; background-color: rgb(197, 79, 82); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px;" />
+    </ui:VisualElement>
+</ui:UXML>
