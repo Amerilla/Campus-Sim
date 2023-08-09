@@ -12,11 +12,13 @@ namespace Data
         private DateTime _endTime;
         private Dictionary<int, HashSet<Action>> _actions;
         private Dictionary<int, HashSet<Score>> _scores;
+        private Dictionary<int, (string,string)> _successes;
 
         public DataRecorder() {
             _startDate = DateTime.Now;
             _actions = new();
             _scores = new();
+            _successes = new();
         }
 
         public void RecordActions(HashSet<Action> recorded, int currentTurn) {
@@ -39,6 +41,10 @@ namespace Data
             }
         }
 
+        public void RecordSuccess((string,string) recorded, int currentTurn) {
+            _successes[currentTurn] = recorded;
+        }
+        
         public HashSet<Score> GetScoresAt(int turn) {
             if (_scores.ContainsKey(turn)) {
                 return _scores[turn];
@@ -54,6 +60,8 @@ namespace Data
 
             throw new ArgumentException($"Turn {turn} has not been recorded yet!");
         }
+
+        public Dictionary<int,(string,string)> GetSucesses => _successes;
 
         public Dictionary<int, HashSet<Score>> GetScores => _scores;
 

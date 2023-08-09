@@ -6,17 +6,17 @@
       {
         "score": "Environnement",
         "minRequired": 70,
-        "turns": 12
+        "turns": 50
       },
       {
         "score": "Population",
         "minRequired": 70,
-        "turns": 12
+        "turns": 50
       },
       {
         "score": "Culture",
         "minRequired": 70,
-        "turns": 12
+        "turns": 50
       }
       ]
     },
@@ -27,12 +27,12 @@
         {
           "score": "Environnement",
           "maxRequired": 20,
-          "turns": 12
+          "turns": 50
         },
         {
           "score": "Population",
-          "maxRequired": 70,
-          "turns": 12
+          "maxRequired": 60,
+          "turns": 50
         }
       ]
     },
@@ -42,13 +42,13 @@
       "requirements": [
         {
           "score": "Environnement",
-          "minRequired": 90,
-          "turns": 12
+          "minRequired": 70,
+          "turns": 50
         },
         {
           "score": "Energie",
-          "minRequired": 90,
-          "turns": 12
+          "minRequired": 70,
+          "turns": 50
         }
       ]
     },
@@ -58,8 +58,8 @@
       "requirements": [
         {
           "score": "Energie",
-          "minRequired": 90,
-          "turns": 6
+          "minRequired": 70,
+          "turns": 40
         }
       ]
     }

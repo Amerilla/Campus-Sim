@@ -172,7 +172,11 @@ public class GameManager : MonoBehaviour
         UpdateRemainingConsequences();
         ExecuteActions();
         foreach (var success in _success) {
-            _uiSuccess.Show(success.HasSuccess());
+            var value = success.HasSuccess();
+            _uiSuccess.Show(value);
+            if (value != (null,null)) {
+                _recorder.RecordSuccess(value,_currentTurn);
+            }
         }
         _scoresHandler.UpdateScores();
         _uiActionDetails.Hide();
