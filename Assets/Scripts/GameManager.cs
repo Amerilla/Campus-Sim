@@ -31,47 +31,63 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }else if (Instance != this) {
-            Destroy(gameObject);
-        }
-
-        var jsonFiles = DataLoader.Instance.GetJsonStrings();
-        StartCoroutine(DataLoader.Instance.LoadJSON<BuildingStats>(jsonFiles[0], result => {
-            var buildingsHandler = new BuildingsHandler(result);
-            _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
-        }));
         _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
         _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
         _uiSuccess = GameObject.Find("Success").GetComponent<Success>();
         _recorder = new DataRecorder();
-        StartCoroutine(DataLoader.Instance.LoadJSON<Score>(jsonFiles[1], result => {
-            _scoresHandler = new ScoresHandler(result);
-        }));
-        StartCoroutine(DataLoader.Instance.LoadJSON<SuccessBehaviour>(jsonFiles[2], result => {
-            _success = result;
-        }));
-        StartCoroutine(LoadChoices(choices => {
-            _choiceGen = new ChoiceGenerator(choices);
-            var p = 0;
-            foreach (var choice in choices) {
-                _uiActionDetails.CreateActions(choice.Value,choice.Key);
-            } 
-        }));
-        _currentTurn = 1;
-        _uiHUD.InitHud(
-        (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
-        (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
-        (_currentTurn, MaxTurn),_uiActionDetails);
-        _uiActionDetails.InitDetails();
+    }
 
+    private void OnEnable() {
+        SceneManager.sceneLoaded += NewGame;
+    }
+
+    private void OnDisable() {
+        SceneManager.sceneLoaded -= NewGame;
+    }
+
+    void NewGame(Scene scene, LoadSceneMode mode) {
+        if (scene.name == "GameView") {
+            _uiActionDetails = GameObject.Find("ActionDetails").GetComponent<ActionDetails>();
+            _uiHUD = GameObject.Find("HUD").GetComponent<HUD>();
+            _uiSuccess = GameObject.Find("Success").GetComponent<Success>();
+            _recorder = new DataRecorder();
+            if (Instance == null) {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else if (Instance != this) {
+                Destroy(gameObject);
+            }
+
+            var jsonFiles = DataLoader.Instance.GetJsonStrings();
+            StartCoroutine(DataLoader.Instance.LoadJSON<BuildingStats>(jsonFiles[0], result => {
+                var buildingsHandler = new BuildingsHandler(result);
+                _campus = new("EPFL-UNIL", 0, 100100000, 0, 100000, 0, Campus.State.Neutral, buildingsHandler);
+            }));
+
+            StartCoroutine(DataLoader.Instance.LoadJSON<Score>(jsonFiles[1],
+                result => { _scoresHandler = new ScoresHandler(result); }));
+            StartCoroutine(
+                DataLoader.Instance.LoadJSON<SuccessBehaviour>(jsonFiles[2], result => { _success = result; }));
+            StartCoroutine(LoadChoices(choices => {
+                _choiceGen = new ChoiceGenerator(choices);
+                var p = 0;
+                foreach (var choice in choices) {
+                    _uiActionDetails.CreateActions(choice.Value, choice.Key);
+                }
+            }));
+            _currentTurn = 1;
+            _uiHUD.InitHud(
+                (_scoresHandler.GetScore(ScoreType.ENVIRONNEMENT.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.POPULATION.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.ECONOMIE.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.ENERGIE.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.ACADEMIQUE.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.CULTURE.ToString()).GetValue(), MaxScore),
+                (_scoresHandler.GetScore(ScoreType.MOBILITE.ToString()).GetValue(), MaxScore),
+                (_currentTurn, MaxTurn), _uiActionDetails);
+            _uiActionDetails.InitDetails();
+        }
     }
 
     void Start() {

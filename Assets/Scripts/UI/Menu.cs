@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -18,6 +19,7 @@ namespace UI
         // Start is called before the first frame update
         void Awake()
         {
+            
             _uiDocument = GetComponent<UIDocument>();
             _uiDocument.sortingOrder = 1;
             _root = _uiDocument.rootVisualElement;
@@ -35,24 +37,31 @@ namespace UI
 
         }
         
+
         // Update is called once per frame
         void Update()
         {
         
         }
-        public void Show() {
-            _logo.visible = true;
-            _menuVisualElement.visible = true;
-            _menuVisualElement.SetEnabled(true);
-            _uiDocument.sortingOrder = 1;
+        private void Show(Scene scene, LoadSceneMode mode) {
+            if (scene.name == "Menu") {
+                _logo.visible = true;
+                _menuVisualElement.visible = true;
+                _menuVisualElement.SetEnabled(true);
+                _uiDocument.sortingOrder = 1;
+            }
         }
         
         private void Hide() {
             _logo.visible = false;
             _menuVisualElement.visible = false;
             _menuVisualElement.SetEnabled(false);
-            _uiDocument.sortingOrder = 0;
+            _uiDocument.sortingOrder = -1;
         }
-
+        
+        private void OnEnable() {
+            SceneManager.sceneLoaded += Show;
+            
+        }
     }
 }
