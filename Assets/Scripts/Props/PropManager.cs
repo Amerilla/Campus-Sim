@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Props
 {
@@ -27,10 +28,42 @@ namespace Props
 
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
+            
         }
         
         private void Start() {
-            chairLift.SetActive(false);
+            
+        }
+
+        private void OnLoadedScene(Scene scene, LoadSceneMode mode) {
+            if (scene.name =="GameView") {
+                GameObject[] rootGameObjects = scene.GetRootGameObjects();
+                foreach (var gameObject in rootGameObjects) {
+                    if (gameObject.name == "Environment") {
+                        Transform propsTransform = gameObject.transform.Find("Props");
+                        if (propsTransform != null) {
+                            chairLift = propsTransform.Find("Chairlift").gameObject;
+                            demineralization = propsTransform.Find("Demineralization").gameObject;
+                            vendingMachines = propsTransform.Find("Vending Machines").gameObject;
+                            publicPlazas = propsTransform.Find("Public Plazas").gameObject;
+                            solarPanels = propsTransform.Find("Solar Panels").gameObject;
+                            airConditioning = propsTransform.Find("Air Conditioning").gameObject;
+                            golfCarts = propsTransform.Find("Golf Carts").gameObject;
+                            chairLift.SetActive(false);
+                        }
+                        break;
+                    }
+                    
+                }
+            }
+        }
+
+        private void OnEnable() {
+            SceneManager.sceneLoaded += OnLoadedScene;
+        }
+
+        private void OnDisable() {
+            SceneManager.sceneLoaded -= OnLoadedScene;
         }
 
         public void ApplyEffect(int id) {
